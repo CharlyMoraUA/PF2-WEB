@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+To publish the app pf2-web:
+docker build -t us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/pf2-web:v1.0.0 .
+docker push us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/pf2-web:v1.0.0
