@@ -45,5 +45,5 @@ jobs:
             # mandatory
             -Dsonar.projectKey=CharlyMoraUA_PF2-WEB
             -Dsonar.organization=charlymoraua
-            -Dsonar.coverage.exclusions=*.spec.ts
+            -Dsonar.coverage.exclusions=**/*.spec.ts
 
