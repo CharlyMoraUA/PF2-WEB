@@ -39,7 +39,6 @@ jobs:
             # mandatory
             -Dsonar.projectKey=CharlyMoraUA_PF2-WEB
             -Dsonar.organization=charlymoraua
-            -Dsonar.sources=src
             -Dsonar.exclusions=**/node_modules/**
             -Dsonar.tests=src
             -Dsonar.tests.inclusions=**/*.spec.ts
