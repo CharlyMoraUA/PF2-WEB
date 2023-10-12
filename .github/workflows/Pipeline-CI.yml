@@ -40,6 +40,7 @@ jobs:
             -Dsonar.projectKey=CharlyMoraUA_PF2-WEB
             -Dsonar.organization=charlymoraua
             -Dsonar.coverage.exclusions=**/*.spec.ts
+            -Dsonar.exclusions=**/node_modules/**
             -Dsonar.tests.inclusions=**/*.spec.ts
             -Dsonar.exclusions=**/app-routing.module.ts,src/main.ts
 
