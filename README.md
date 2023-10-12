@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 To publish the app pf2-web:
 docker build -t us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/pf2-web:v1.0.0 .
 docker push us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/pf2-web:v1.0.0
+
+test change
