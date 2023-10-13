@@ -26,6 +26,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run test:prod
+  Analysis:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
