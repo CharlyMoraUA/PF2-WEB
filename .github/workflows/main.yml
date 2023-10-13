@@ -26,3 +26,20 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run test:prod
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          # Additional arguments for the sonarcloud scanner
+          args:
+            # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
+            # mandatory
+            -Dsonar.projectKey=CharlyMoraUA_PF2-WEB
+            -Dsonar.organization=charlymoraua
+            -Dsonar.exclusions=**/node_modules/**
+            -Dsonar.tests=src
+            -Dsonar.tests.inclusions=**/*.spec.ts
+            -Dsonar.exclusions=**/app-routing.module.ts,src/main.ts
