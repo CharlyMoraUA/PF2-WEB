@@ -43,3 +43,4 @@ jobs:
             -Dsonar.tests=src
             -Dsonar.tests.inclusions=**/*.spec.ts
             -Dsonar.exclusions=**/app-routing.module.ts,src/main.ts
+            -Dsonar.verbose=true
