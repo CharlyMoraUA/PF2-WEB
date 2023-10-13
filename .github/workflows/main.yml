@@ -2,9 +2,9 @@ name: Pipeline CI
 
 on:
   push:
-    branches: [ "base" ]
+    branches: [ "branch-1" ]
   pull_request:
-    branches: [ "base" ]
+    branches: [ "branch-1" ]
 
 jobs:
 
