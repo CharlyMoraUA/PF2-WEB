@@ -3,6 +3,10 @@ git branch -m develop main
 git fetch origin
 git branch -u origin/main main
 git remote set-head origin -a
+
+docker build -t us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/micro-web:0.0.1 .
+docker run -d -p 80:80 us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/micro-web:0.0.1
+docker push us-central1-docker.pkg.dev/proyecto-final-01-399101/proyecto-2/micro-web:0.0.1
 # [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
 
 ![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/material-dashboard-angular.gif)
