@@ -11,7 +11,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import { CandidatoComponent } from 'app/candidato/candidato.component';
+import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
