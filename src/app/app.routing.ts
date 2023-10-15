@@ -4,6 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { CandidatoComponent } from './candidato/candidato-crear/candidato.component';
 
 const routes: Routes =[
   {
@@ -17,6 +18,10 @@ const routes: Routes =[
       path: '',
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
+  },
+  {
+    path: 'candidato',
+    component: CandidatoComponent,
   }
 ];
 
