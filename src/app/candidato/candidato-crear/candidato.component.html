@@ -8,12 +8,14 @@
                       <p class="card-category">Registro como candidato</p>
                   </div>
                   <div class="card-body">
-                      <form>
+                      <form
+                      [formGroup]="candidatoForm"
+                      (ngSubmit)="!candidatoForm.invalid && crearCandidato(candidatoForm.value)"
+                      >
                           <div class="row">
                               <div class="col-md-3">
                                   <mat-form-field>
-                                    <select matNativeControl required>
-                                      <option value="Cedula">Tipo documento</option>
+                                    <select matNativeControl required formControlName="tipo_doc" novalidate>
                                       <option value="Cedula">Cedula</option>
                                       <option value="Cextranjeria">Cextranjeria</option>
                                       <option value="Pasaporte">Pasaporte</option>
@@ -22,65 +24,65 @@
                               </div>
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Número documento candidato">
+                                    <input novalidate matInput placeholder="Número documento candidato" formControlName="num_doc">                        
                                   </mat-form-field>
                               </div>
                               <div class="col-md-5">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nombre del candidato" type="email">
+                                    <input novalidate matInput placeholder="Nombre del candidato" type="text" formControlName="nombre">
                                   </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Correo electrónico candidato" type="text">
+                                  <input novalidate matInput placeholder="Correo electrónico candidato" type="email" formControlName="email">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Teléfono candidato" type="text">
+                                  <input novalidate matInput placeholder="Teléfono candidato" type="text" formControlName="telefono">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="País del candidato" type="text">
+                                  <input novalidate matInput placeholder="País del candidato" type="text" formControlName="pais">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Ciudad del candidato" type="text">
+                                  <input novalidate matInput placeholder="Ciudad del candidato" type="text" formControlName="ciudad">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Aspiración salarial" type="text">
+                                  <input novalidate matInput placeholder="Aspiración salarial" type="text" formControlName="aspiracion_salarial">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fecha de nacimiento" type="text">
+                                  <input novalidate matInput placeholder="Fecha de nacimiento" type="text" formControlName="fecha_nacimiento">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Usuario" type="text">
+                                  <input novalidate matInput placeholder="Usuario" type="text" formControlName="usuario">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Clave" type="text">
+                                  <input novalidate matInput placeholder="Clave" type="text" formControlName="clave">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-12">
                                 <mat-form-field>
-                                  <input matInput placeholder="Idiomas" type="text">
+                                  <input novalidate matInput placeholder="Idiomas" type="text" formControlName="idiomas">
                                 </mat-form-field>
                               </div>
                           </div>
@@ -91,7 +93,12 @@
                                   <button mat-raised-button class="btn btn-danger btn-block">Regresar</button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button mat-raised-button class="btn btn-danger btn-block">Registrarse como candidato</button>
+                                    <button 
+                                    mat-raised-button class="btn btn-danger btn-block" 
+                                    type="submit" 
+                                    [disabled]="!candidatoForm.valid"
+                                    >Registrarse como candidato
+                                  </button>
                                 </div>
                               </div>
                             </div>
