@@ -1,29 +1,29 @@
-name: Pipeline CI
+# name: Pipeline CI
 
-on:
-  push:
-    branches: [ "branch-cd-1" ]
-  pull_request:
-    branches: [ "branch-cd-1" ]
+# on:
+#   push:
+#     branches: [ "branch-cd-1" ]
+#   pull_request:
+#     branches: [ "branch-cd-1" ]
 
-jobs:
+# jobs:
 
-  build:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
 
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run test:prod
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - run: npm ci
+#       - run: npm run test:prod
 
