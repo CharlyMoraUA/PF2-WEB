@@ -5,10 +5,24 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CandidatoComponent } from './candidato/candidato-crear/candidato.component';
+import { LandingComponent } from './landing/landing.component';
+import { LoginEmpresaComponent } from './landing/login-empresa/login-empresa.component';
 
 const routes: Routes =[
   {
     path: '',
+    redirectTo: 'landing',
+    pathMatch: 'full',
+  },
+  { 
+    path: 'login-company',  
+    component: LoginEmpresaComponent 
+  },
+  { 
+    path: 'landing',        
+    component: LandingComponent },
+  {
+    path: 'dashboard',
     redirectTo: 'dashboard',
     pathMatch: 'full',
   }, {
@@ -19,10 +33,6 @@ const routes: Routes =[
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
   },
-  {
-    path: 'candidato',
-    component: CandidatoComponent,
-  }
 ];
 
 @NgModule({
