@@ -21,6 +21,9 @@ const routes: Routes =[
   { 
     path: 'landing',        
     component: LandingComponent },
+  { 
+    path: 'candidato',        
+    component: CandidatoComponent },
   {
     path: 'dashboard',
     redirectTo: 'dashboard',

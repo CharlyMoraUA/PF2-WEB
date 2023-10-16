@@ -15,6 +15,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -33,15 +35,18 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    ToastrModule.forRoot({
+      positionClass :'toast-bottom-right'
+    })
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     LandingComponent,
     LoginEmpresaComponent,
-
+    CandidatoComponent
   ],
-  providers: [],
+  providers:[ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

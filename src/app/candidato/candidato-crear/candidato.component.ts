@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { CandidatoCrearService } from '../candidatoCrear.service';
 import { Candidato } from '../candidato';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidato',
@@ -16,7 +17,8 @@ export class CandidatoComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private candidatoService: CandidatoCrearService
+    private candidatoService: CandidatoCrearService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -43,6 +45,11 @@ export class CandidatoComponent implements OnInit {
       this.toastr.success("Candidato creado")
       this.candidatoForm.reset();
     })
+  }
+
+
+  backToLanding(){
+    this._router.navigate(["landing"])
   }
 
 }
