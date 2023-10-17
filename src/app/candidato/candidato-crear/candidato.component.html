@@ -15,7 +15,7 @@
                           <div class="row">
                               <div class="col-md-3">
                                   <mat-form-field>
-                                    <select matNativeControl required formControlName="tipo_doc" novalidate>
+                                    <select matNativeControl required formControlName="tipo_doc" novalidate placeholder="Tipo documento">
                                       <option value="Cedula">Cedula</option>
                                       <option value="Cextranjeria">Cextranjeria</option>
                                       <option value="Pasaporte">Pasaporte</option>
@@ -25,11 +25,19 @@
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
                                     <input novalidate matInput placeholder="Número documento candidato" formControlName="num_doc">                        
+                                    <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('num_doc')!.hasError('minlength') && candidatoForm.get('num_doc')!.touched">
+                                    Ingrese al menos 5 caracteres
+                                  </div>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-5">
                                   <mat-form-field class="example-full-width">
                                     <input novalidate matInput placeholder="Nombre del candidato" type="text" formControlName="nombre">
+                                    <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('nombre')!.hasError('minlength') && candidatoForm.get('nombre')!.touched">
+                                    Ingrese al menos 5 caracteres
+                                  </div>
                                   </mat-form-field>
                               </div>
                           </div>
@@ -37,11 +45,23 @@
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
                                   <input novalidate matInput placeholder="Correo electrónico candidato" type="email" formControlName="email">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('email')!.hasError('email') && candidatoForm.get('email')!.touched">
+                                    Ingrese un formato de correo válido
+                                  </div>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
                                   <input novalidate matInput placeholder="Teléfono candidato" type="text" formControlName="telefono">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('telefono')!.hasError('minlength') && candidatoForm.get('telefono')!.touched">
+                                    Telefono debe contener al menor 7 dígitos
+                                  </div>
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('telefono')!.hasError('pattern') && candidatoForm.get('telefono')!.touched">
+                                    No se permiten letras
+                                  </div>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
@@ -59,11 +79,23 @@
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
                                   <input novalidate matInput placeholder="Aspiración salarial" type="text" formControlName="aspiracion_salarial">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('aspiracion_salarial')!.hasError('minlength') && candidatoForm.get('aspiracion_salarial')!.touched">
+                                    Valor debe tener al menos 5 dígitos
+                                  </div>
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('aspiracion_salarial')!.hasError('pattern') && candidatoForm.get('aspiracion_salarial')!.touched">
+                                    Solo se permite valor numérico
+                                  </div>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input novalidate matInput placeholder="Fecha de nacimiento" type="text" formControlName="fecha_nacimiento">
+                                 <input novalidate matInput placeholder="Fecha de nacimiento" type="text" formControlName="fecha_nacimiento">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('fecha_nacimiento')!.hasError('pattern') && candidatoForm.get('fecha_nacimiento')!.touched">
+                                    Fecha en formato aaaa-mm-dd
+                                  </div>
                                 </mat-form-field>
                               </div>
                           </div>
@@ -71,11 +103,19 @@
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
                                   <input novalidate matInput placeholder="Usuario" type="text" formControlName="usuario">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('usuario')!.hasError('minlength') && candidatoForm.get('usuario')!.touched">
+                                    Mínimo 5 caracteres
+                                  </div>
                                 </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input novalidate matInput placeholder="Clave" type="text" formControlName="clave">
+                                  <input novalidate matInput placeholder="Clave" type="text" formControlName="clave" [type]="hide ? 'password' : 'text'">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" candidatoForm.get('clave')!.hasError('minlength') && candidatoForm.get('clave')!.touched">
+                                    Mínimo 5 caracteres
+                                  </div>
                                 </mat-form-field>
                               </div>
                           </div>

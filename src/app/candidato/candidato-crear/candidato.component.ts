@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class CandidatoComponent implements OnInit {
 
   candidatoForm!: FormGroup;
+  hide : boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,27 +24,31 @@ export class CandidatoComponent implements OnInit {
 
   ngOnInit() {
     this.candidatoForm = this.formBuilder.group({
-      tipo_doc: ["", Validators.minLength(2)],
-      num_doc: ["", Validators.required],
+      tipo_doc: ["", Validators.required],
+      num_doc: ["", [Validators.required, Validators.minLength(5)]],
       nombre: ["", [Validators.required, Validators.minLength(5)]],
-      usuario: ["", Validators.required],
+      usuario: ["", [Validators.required, Validators.minLength(5)]],
       clave: ["", Validators.required],
-      telefono: ["", Validators.required],
-      email: ["", Validators.required],
+      telefono: ["", [Validators.required, Validators.minLength(7), Validators.pattern('[- +()0-9]+')]],
+      email: ["", [Validators.required, Validators.email]],
       pais: ["", Validators.required],
       ciudad: ["", Validators.required],
-      aspiracion_salarial: ["", Validators.required],
-      fecha_nacimiento: ["", Validators.required],
+      aspiracion_salarial: ["", [Validators.required, Validators.minLength(5), Validators.pattern("^[0-9]*$")]],
+      fecha_nacimiento: ["", [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
       idiomas: ["", Validators.required]
     })
+  }
+
+  myFunction() {
+    this.hide = !this.hide;
   }
   
 
   crearCandidato(candidato: Candidato){
     this.candidatoService.crearCandidato(candidato).subscribe(candidato=>{
       console.info("Candidato creado correctamente: ", candidato)
-      this.toastr.success("Candidato creado")
-      this.candidatoForm.reset();
+      this.toastr.success("Confirmación", "Candidato creado")
+      this._router.navigate(["dashboard"])
     })
   }
 
