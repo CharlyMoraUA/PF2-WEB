@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CandidatoCrearService } from '../candidatoCrear.service';
 import { Candidato } from '../candidato';
 import { Router } from '@angular/router';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-candidato',
@@ -14,6 +15,10 @@ export class CandidatoComponent implements OnInit {
 
   candidatoForm!: FormGroup;
   hide : boolean = true;
+  idiomas = new FormControl('');
+  idiomasList: string[] = ['Español', 'Inglés', 'Francés', 'Alemán', 'Italiano', 'Portugués', 'Ruso'];
+  candidatos: Array<Candidato> = [];
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,7 +40,7 @@ export class CandidatoComponent implements OnInit {
       ciudad: ["", Validators.required],
       aspiracion_salarial: ["", [Validators.required, Validators.minLength(5), Validators.pattern("^[0-9]*$")]],
       fecha_nacimiento: ["", [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-      idiomas: ["", Validators.required]
+      idiomas: ["Español"]
     })
   }
 
