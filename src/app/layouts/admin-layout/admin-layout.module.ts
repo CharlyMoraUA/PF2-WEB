@@ -17,6 +17,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
+import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 
 @NgModule({
   imports: [
@@ -40,6 +42,8 @@ import { MatSelectModule } from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    GestionCandidatoComponent,
+    HistorialEntrevistasComponent
   ]
 })
 
