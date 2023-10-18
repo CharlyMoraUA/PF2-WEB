@@ -26,7 +26,7 @@ const routes: Routes =[
     component: CandidatoComponent },
   {
     path: 'dashboard',
-    redirectTo: 'dashboard',
+    redirectTo: 'gestionCandidatos',
     pathMatch: 'full',
   }, {
     path: '',

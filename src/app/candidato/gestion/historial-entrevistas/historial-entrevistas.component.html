@@ -1,0 +1,39 @@
+<div class="table-responsive">
+    <div style="color: gray">
+        Mis Entrevistas
+    </div>
+    <div>
+        <table class="table">
+            <thead class=" text-primary">
+                <th style="color:black">
+                    Fecha Entrevista
+                </th>
+                <th style="color:black">
+                    Estado
+                </th>
+                <th style="color:black">
+                    Empresa
+                </th>
+                <th>
+                    
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let entrevista of listaPrueba">
+                    <td style="width:25%">
+                        {{entrevista["fecha_entrevista"]}}
+                    </td>
+                    <td style="width:25%">
+                        {{entrevista["estado"]}}
+                    </td>
+                    <td style="width:25%">
+                        {{entrevista["empresa"]}}
+                    </td>
+                    <td style="width:25%">
+                        <img style="width:8%;height:8%" src="/assets/img/editar_gris.png"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
