@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LoginCandidatoComponent } from './landing/login-candidato/login-candidato.component';
 import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 
@@ -42,6 +43,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    LoginCandidatoComponent, 
     LandingComponent,
     LoginEmpresaComponent,
     CandidatoComponent

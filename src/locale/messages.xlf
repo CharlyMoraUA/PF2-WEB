@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="CandidateLoginTitle" datatype="html">
+        <source>Candidate LogIn</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Candidate Login Title</note>
+      </trans-unit>
+      <trans-unit id="UserInputLabel" datatype="html">
+        <source>User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">User input placeholder</note>
+      </trans-unit>
+      <trans-unit id="PasswordInputLabel" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">Password input placeholder</note>
+      </trans-unit>
+      <trans-unit id="BackButton" datatype="html">
+        <source>Back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">Back button label</note>
+      </trans-unit>
+      <trans-unit id="LogInButton" datatype="html">
+        <source>LogIn</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">LogIn button label</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
