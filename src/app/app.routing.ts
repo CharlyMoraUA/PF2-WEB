@@ -5,13 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CandidatoComponent } from './candidato/candidato-crear/candidato.component';
+import { LoginCandidatoComponent } from './landing/login-candidato/login-candidato.component';
 
 const routes: Routes =[
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }, {
+  }, 
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [{
@@ -22,7 +24,11 @@ const routes: Routes =[
   {
     path: 'candidato',
     component: CandidatoComponent,
-  }
+  },
+  { 
+    path: 'login-candidato',  
+    component: LoginCandidatoComponent 
+  },
 ];
 
 @NgModule({
