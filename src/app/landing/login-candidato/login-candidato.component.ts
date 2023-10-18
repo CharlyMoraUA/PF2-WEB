@@ -5,6 +5,7 @@ import { AutenticacionCandidatoService } from '../autenticacion-candidato.servic
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-login-candidato',
   templateUrl: './login-candidato.component.html',
@@ -33,7 +34,7 @@ export class LoginCandidatoComponent implements OnInit {
   }
 
 
-  loginCandidato(usuario, clave){
+  loginCandidato(usuario: string, clave: string){
     this.error = false
     this.autenticacionCandidatoService.candidatoLogIn(usuario, clave)
       .subscribe(res => {
@@ -44,7 +45,7 @@ export class LoginCandidatoComponent implements OnInit {
         error => {
           console.log(error);
           this.error = true
-          this.toastr.error("Error", "Autenticación fallida")
+          this.toastr.error("Error", "Authentication failed")
         })
   }
 

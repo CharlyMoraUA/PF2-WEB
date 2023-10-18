@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CandidatoComponent } from './candidato.component';
 import { Candidato } from '../candidato';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 
 describe('CandidatoComponent', () => {
@@ -22,7 +22,10 @@ describe('CandidatoComponent', () => {
         FormsModule,
         ToastrModule.forRoot()
       ],
-      declarations: [ CandidatoComponent ]
+      declarations: [ CandidatoComponent ],
+      providers: [
+        FormBuilder
+      ]
     })
     .compileComponents();
   }));
