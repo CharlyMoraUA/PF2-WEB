@@ -2,10 +2,12 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { CandidatoCrearService } from './candidatoCrear.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('Service: CandidatoCrear', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [CandidatoCrearService]
     });
   });

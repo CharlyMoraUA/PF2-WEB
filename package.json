@@ -57,6 +57,7 @@
     "@angular/cli": "~14.2.7",
     "@angular/compiler-cli": "^14.2.0",
     "@angular/language-service": "14.2.0",
+    "@faker-js/faker": "^6.2.0",
     "@types/jasmine": "~4.0.0",
     "@types/jasminewd2": "~2.0.10",
     "@types/node": "^17.0.21",

@@ -16,6 +16,7 @@ export class CandidatoCrearService {
 constructor(private http: HttpClient) { }
 
 crearCandidato(candidato: Candidato): Observable<Candidato> {
+  candidato.idiomas = candidato.idiomas.toString()
   const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
