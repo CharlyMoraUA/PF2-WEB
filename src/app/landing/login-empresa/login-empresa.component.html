@@ -1,0 +1,52 @@
+<div class="main-content">
+    <div class="container" style="padding-top:10%">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger text-center" >
+                        <h4 class="card-title">ABC JOBS</h4>
+                        <p class="card-category">Autenticacion de representante</p>
+                    </div>
+                    <div class="card-body">
+                        <form
+                        [formGroup]="loginEmpresaForm"
+                        (ngSubmit)="!loginEmpresaForm.invalid && loginEmpresa()"
+                        >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input novalidate matInput placeholder="Usuario" formControlName="usuario">                        
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input novalidate matInput placeholder="Contraseña" type="text" formControlName="clave">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-6 col-md-10 ml-auto mr-auto">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <button mat-raised-button class="btn btn-danger btn-block" (click)="backToLanding()">Regresar</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <button 
+                                      mat-raised-button class="btn btn-danger btn-block" 
+                                      type="submit" 
+                                      [disabled]="!loginEmpresaForm.valid"
+                                      >Iniciar Sesion
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

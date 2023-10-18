@@ -59,6 +59,7 @@
     "@angular/cli": "~14.2.7",
     "@angular/compiler-cli": "^14.2.0",
     "@angular/language-service": "14.2.0",
+    "@faker-js/faker": "^6.2.0",
     "@types/bootstrap": "4.5.0",
     "@types/chartist": "0.11.1",
     "@types/google.maps": "3.47.4",
@@ -79,5 +80,17 @@
     "sass": "1.32.13",
     "ts-node": "~10.9.1",
     "typescript": "~4.7.2"
-  }
+  },
+  "description": "test change 3\r git branch -m develop main\r git fetch origin\r git branch -u origin/main main\r git remote set-head origin -a\r # [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlyMoraUA/PF2-WEB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/CharlyMoraUA/PF2-WEB/issues"
+  },
+  "homepage": "https://github.com/CharlyMoraUA/PF2-WEB#readme"
 }
