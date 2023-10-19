@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { CandidatoCrearService } from '../candidatoCrear.service';
-import { Candidato } from '../candidato';
+import { Candidato } from '../representaciones/candidato';
 import { Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
 
