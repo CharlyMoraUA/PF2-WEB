@@ -57,4 +57,8 @@ export class CandidatoComponent implements OnInit {
     })
   }
 
+  backToLanding(){
+    this._router.navigate(["landing"])
+  }
+
 }

@@ -37,10 +37,6 @@ const routes: Routes =[
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
   },
-  {
-    path: 'candidato',
-    component: CandidatoComponent,
-  },
   { 
     path: 'login-candidato',  
     component: LoginCandidatoComponent 
