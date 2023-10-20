@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
 
 @Component({
   selector: 'app-historial-entrevistas',
@@ -7,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialEntrevistasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private candidatoService: CandidatoCrearService,) { }
 
-  listaPrueba = 
-  [
-    {"fecha_entrevista" : "2023-01-05", "estado" : "Finalizada", "empresa" : "Empresa de Prueba TS"},
-    {"fecha_entrevista" : "2023-01-07", "estado" : "Programada", "empresa" : "Empresa de Prueba 2S"},
-    {"fecha_entrevista" : "2023-02-05", "estado" : "Finalizada", "empresa" : "Empresa de Prueba 3Z"},
-  ]
+  listaPrueba:any;
 
   ngOnInit(): void {
+    this.cargarEntrevistas(localStorage.getItem("id_candidato"))
+  }
+
+  cargarEntrevistas(id_candidato){
+    this.candidatoService.obtenerHistorialEntrevista(id_candidato).subscribe(entrevistas=>{
+      this.listaPrueba = entrevistas.response
+    })
   }
 
 }

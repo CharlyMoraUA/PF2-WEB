@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 import { faker } from '@faker-js/faker';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CandidatoComponent } from './candidato.component';
-import { Candidato } from '../candidato';
+import { Candidato } from '../representaciones/candidato';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 
