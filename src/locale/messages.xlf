@@ -2,6 +2,238 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="CompanySignUpTitle" datatype="html">
+        <source>Company Sign Up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Company Sign Up title</note>
+      </trans-unit>
+      <trans-unit id="companyInformationInformation" datatype="html">
+        <source>Company information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Company information title</note>
+      </trans-unit>
+      <trans-unit id="companyDocumentTypeLabel" datatype="html">
+        <source>Company document type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Company document type</note>
+      </trans-unit>
+      <trans-unit id="companyDocumentIDLabel" datatype="html">
+        <source>Company document ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">Company document ID</note>
+      </trans-unit>
+      <trans-unit id="minLengthCompanyDocumentIDError" datatype="html">
+        <source> Please enter at least 5 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+        <note priority="1" from="description">Min length company document ID error</note>
+      </trans-unit>
+      <trans-unit id="companyNameLabel" datatype="html">
+        <source>Company name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Company name</note>
+      </trans-unit>
+      <trans-unit id="minLengthCompanyNameError" datatype="html">
+        <source> Please enter at least 5 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+        <note priority="1" from="description">Min length company name error</note>
+      </trans-unit>
+      <trans-unit id="companyEmailLabel" datatype="html">
+        <source>Company email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">Company email</note>
+      </trans-unit>
+      <trans-unit id="companyEmailError" datatype="html">
+        <source> Please enter a valid email address </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">50,52</context>
+        </context-group>
+        <note priority="1" from="description">Company email error</note>
+      </trans-unit>
+      <trans-unit id="companyPhoneNumberLabel" datatype="html">
+        <source>Company phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">Company phone number</note>
+      </trans-unit>
+      <trans-unit id="minLengthCompanyPhoneNumberError" datatype="html">
+        <source> Please enter a phone number with at least 7 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">59,61</context>
+        </context-group>
+        <note priority="1" from="description">Min length company phone number error</note>
+      </trans-unit>
+      <trans-unit id="companyPhoneNumberFormatError" datatype="html">
+        <source> Letters are not allowed </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">63,65</context>
+        </context-group>
+        <note priority="1" from="description">Company phone number format error</note>
+      </trans-unit>
+      <trans-unit id="representativeInformationInformation" datatype="html">
+        <source>Representative information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">Representative information title</note>
+      </trans-unit>
+      <trans-unit id="representativeDocumentTypeLabel" datatype="html">
+        <source>Representative document type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <note priority="1" from="description">Representative document type</note>
+      </trans-unit>
+      <trans-unit id="representativeDocumentIDLabel" datatype="html">
+        <source>Representative document ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <note priority="1" from="description">Representative document ID</note>
+      </trans-unit>
+      <trans-unit id="minLengthRepresentativeDocumentIDError" datatype="html">
+        <source> Please enter at least 5 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">84,86</context>
+        </context-group>
+        <note priority="1" from="description">Min length representative document ID error</note>
+      </trans-unit>
+      <trans-unit id="representativeNameLabel" datatype="html">
+        <source>Representative name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <note priority="1" from="description">Representative name</note>
+      </trans-unit>
+      <trans-unit id="minLengthRepresentativeNameError" datatype="html">
+        <source> Please enter at least 5 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">93,95</context>
+        </context-group>
+        <note priority="1" from="description">Min length representative name error</note>
+      </trans-unit>
+      <trans-unit id="representativeEmailLabel" datatype="html">
+        <source>Representative email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+        <note priority="1" from="description">Representative email</note>
+      </trans-unit>
+      <trans-unit id="crepresentativeEmailError" datatype="html">
+        <source> Please enter a valid email address </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">104,106</context>
+        </context-group>
+        <note priority="1" from="description">Representative email error</note>
+      </trans-unit>
+      <trans-unit id="representativePhoneNumberLabel" datatype="html">
+        <source>Representative phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+        <note priority="1" from="description">Representative phone number</note>
+      </trans-unit>
+      <trans-unit id="minLengthRepresentativePhoneNumberError" datatype="html">
+        <source> Please enter a phone number with at least 7 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">113,115</context>
+        </context-group>
+        <note priority="1" from="description">Min length representative phone number error</note>
+      </trans-unit>
+      <trans-unit id="representativePhoneNumberFormatError" datatype="html">
+        <source> Letters are not allowed </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">117,119</context>
+        </context-group>
+        <note priority="1" from="description">Representative phone number format error</note>
+      </trans-unit>
+      <trans-unit id="representativeUserLabel" datatype="html">
+        <source>Representative user</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+        <note priority="1" from="description">Representative user</note>
+      </trans-unit>
+      <trans-unit id="crepresentativeUserError" datatype="html">
+        <source> Please enter at least 5 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">128,130</context>
+        </context-group>
+        <note priority="1" from="description">Representative user error</note>
+      </trans-unit>
+      <trans-unit id="representativePasswordLabel" datatype="html">
+        <source>Representative password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+        <note priority="1" from="description">Representative password</note>
+      </trans-unit>
+      <trans-unit id="crepresentativePasswordError" datatype="html">
+        <source> Please enter at least 5 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">137,139</context>
+        </context-group>
+        <note priority="1" from="description">Representative password error</note>
+      </trans-unit>
+      <trans-unit id="companySignUpBackButton" datatype="html">
+        <source>Back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">147</context>
+        </context-group>
+        <note priority="1" from="description">Company signup return button</note>
+      </trans-unit>
+      <trans-unit id="companySignUpButton" datatype="html">
+        <source>SignUp as Company </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
+          <context context-type="linenumber">153,154</context>
+        </context-group>
+        <note priority="1" from="description">Company signup button</note>
+      </trans-unit>
       <trans-unit id="CandidateLoginTitle" datatype="html">
         <source>Candidate LogIn</source>
         <context-group purpose="location">

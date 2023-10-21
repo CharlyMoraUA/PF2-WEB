@@ -1,0 +1,169 @@
+<div class="main-content">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger text-center" >
+                      <h4 class="card-title">ABC JOBS</h4>
+                      <p class="card-category" i18n="Company Sign Up title@@CompanySignUpTitle">Company Sign Up</p>
+                  </div>
+                  <div class="card-body">
+                      <form
+                      [formGroup]="crearEmpresaForm"
+                      (ngSubmit)="!crearEmpresaForm.invalid && crearEmpresa(crearEmpresaForm.value)"
+                      >
+                          <h4 class="card-title text-center" i18n="Company information title@@companyInformationInformation">Company information</h4>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="text-center">
+                                    <select matNativeControl required formControlName="empresa_tipo_doc" novalidate placeholder="Company document type" ngDefaultControl i18n-placeholder="Company document type@@companyDocumentTypeLabel">
+                                      <option value="NIT">NIT</option>
+                                      <option value="RUT">RUT</option>
+                                      <option value="TAXID">Tax ID</option>
+                                    </select>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width text-center">
+                                    <input novalidate matInput placeholder="Company document ID" type="text" formControlName="empresa_num_doc" ngDefaultControl i18n-placeholder="Company document ID@@companyDocumentIDLabel">
+                                    <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('empresa_num_doc')!.hasError('minlength') && crearEmpresaForm.get('empresa_num_doc')!.touched" i18n="Min length company document ID error@@minLengthCompanyDocumentIDError">
+                                    Please enter at least 5 characters
+                                  </div>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width text-center">
+                                    <input novalidate matInput placeholder="Company name" type="text" formControlName="empresa_nombre" ngDefaultControl i18n-placeholder="Company name@@companyNameLabel">
+                                    <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('empresa_nombre')!.hasError('minlength') && crearEmpresaForm.get('empresa_nombre')!.touched" i18n="Min length company name error@@minLengthCompanyNameError">
+                                    Please enter at least 5 characters
+                                  </div>
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width text-center">
+                                  <input novalidate matInput placeholder="Company email" type="email" formControlName="empresa_email" ngDefaultControl i18n-placeholder="Company email@@companyEmailLabel">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('empresa_email')!.hasError('email') && crearEmpresaForm.get('empresa_email')!.touched" i18n="Company email error@@companyEmailError">
+                                    Please enter a valid email address
+                                  </div>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width text-center">
+                                  <input novalidate matInput placeholder="Company phone number" type="text" formControlName="empresa_telefono" ngDefaultControl i18n-placeholder="Company phone number@@companyPhoneNumberLabel">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('empresa_telefono')!.hasError('minlength') && crearEmpresaForm.get('empresa_telefono')!.touched" i18n="Min length company phone number error@@minLengthCompanyPhoneNumberError">
+                                    Please enter a phone number with at least 7 characters
+                                  </div>
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('empresa_telefono')!.hasError('pattern') && crearEmpresaForm.get('empresa_telefono')!.touched" i18n="Company phone number format error@@companyPhoneNumberFormatError">
+                                    Letters are not allowed
+                                  </div>
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <br>
+                          <hr>
+                          <br>
+                          <h4 class="card-title text-center" i18n="Representative information title@@representativeInformationInformation">Representative information</h4>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="text-center">
+                                    <select matNativeControl required formControlName="representante_tipo_doc" novalidate placeholder="Representative document type" ngDefaultControl i18n-placeholder="Representative document type@@representativeDocumentTypeLabel">
+                                      <option value="NIT">CC</option>
+                                      <option value="RUT">CE</option>
+                                      <option value="TAXID">PAS</option>
+                                    </select>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width text-center">
+                                    <input novalidate matInput placeholder="Representative document ID" type="text" formControlName="representante_num_doc" ngDefaultControl i18n-placeholder="Representative document ID@@representativeDocumentIDLabel">
+                                    <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('representante_num_doc')!.hasError('minlength') && crearEmpresaForm.get('representante_num_doc')!.touched" i18n="Min length representative document ID error@@minLengthRepresentativeDocumentIDError">
+                                    Please enter at least 5 characters
+                                  </div>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width text-center">
+                                    <input novalidate matInput placeholder="Representative name" type="text" formControlName="representante_nombre" ngDefaultControl i18n-placeholder="Representative name@@representativeNameLabel">
+                                    <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('representante_nombre')!.hasError('minlength') && crearEmpresaForm.get('representante_nombre')!.touched" i18n="Min length representative name error@@minLengthRepresentativeNameError">
+                                    Please enter at least 5 characters
+                                  </div>
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width text-center">
+                                  <input novalidate matInput placeholder="Representative email" type="email" formControlName="representante_email" ngDefaultControl i18n-placeholder="Representative email@@representativeEmailLabel">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('representante_email')!.hasError('email') && crearEmpresaForm.get('representante_email')!.touched" i18n="Representative email error@@crepresentativeEmailError">
+                                    Please enter a valid email address
+                                  </div>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width text-center">
+                                  <input novalidate matInput placeholder="Representative phone number" type="text" formControlName="representante_telefono" ngDefaultControl i18n-placeholder="Representative phone number@@representativePhoneNumberLabel">
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('representante_telefono')!.hasError('minlength') && crearEmpresaForm.get('representante_telefono')!.touched" i18n="Min length representative phone number error@@minLengthRepresentativePhoneNumberError">
+                                    Please enter a phone number with at least 7 characters
+                                  </div>
+                                  <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEmpresaForm.get('representante_telefono')!.hasError('pattern') && crearEmpresaForm.get('representante_telefono')!.touched" i18n="Representative phone number format error@@representativePhoneNumberFormatError">
+                                    Letters are not allowed
+                                  </div>
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width text-center">
+                                <input novalidate matInput placeholder="Representative user" type="text" formControlName="representante_usuario" ngDefaultControl i18n-placeholder="Representative user@@representativeUserLabel">
+                                <div class="alert alert-danger alert-dismissible fade show"
+                                  *ngIf=" crearEmpresaForm.get('representante_usuario')!.hasError('minlength') && crearEmpresaForm.get('representante_usuario')!.touched" i18n="Representative user error@@crepresentativeUserError">
+                                  Please enter at least 5 characters
+                                </div>
+                              </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width text-center">
+                                <input novalidate matInput placeholder="Representative password" type="password" formControlName="representante_clave" ngDefaultControl i18n-placeholder="Representative password@@representativePasswordLabel">
+                                <div class="alert alert-danger alert-dismissible fade show"
+                                  *ngIf=" crearEmpresaForm.get('representante_clave')!.hasError('minlength') && crearEmpresaForm.get('representante_clave')!.touched" i18n="Representative password error@@crepresentativePasswordError">
+                                  Please enter at least 5 characters
+                                </div>
+                              </mat-form-field>
+                            </div>
+                        </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-10 ml-auto mr-auto">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <button mat-raised-button class="btn btn-danger btn-block" i18n="Company signup return button@@companySignUpBackButton">Back</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button 
+                                    mat-raised-button class="btn btn-danger btn-block" 
+                                    type="submit" 
+                                    [disabled]="!crearEmpresaForm.valid" i18n="Company signup button@@companySignUpButton">SignUp as Company
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

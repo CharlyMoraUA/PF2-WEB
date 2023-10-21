@@ -18,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { LoginCandidatoComponent } from './landing/login-candidato/login-candidato.component';
 import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     LoginCandidatoComponent, 
     LandingComponent,
     LoginEmpresaComponent,
-    CandidatoComponent
+    CandidatoComponent,
+    CrearEmpresaComponent
   ],
   providers:[ToastrService],
   bootstrap: [AppComponent]
