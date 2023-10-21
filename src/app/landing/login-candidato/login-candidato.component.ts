@@ -39,6 +39,7 @@ export class LoginCandidatoComponent implements OnInit {
     this.autenticacionCandidatoService.candidatoLogIn(usuario, clave)
       .subscribe(res => {
         sessionStorage.setItem('candidato-token', res.token);
+        sessionStorage.setItem('id_candidato',res.info_candidato.id)
         console.log("Candidato autenticado con token: "+res.token);
         this._router.navigate(["dashboard"])
       },

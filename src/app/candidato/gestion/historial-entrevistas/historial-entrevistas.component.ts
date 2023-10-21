@@ -13,7 +13,7 @@ export class HistorialEntrevistasComponent implements OnInit {
   listaPrueba:any;
 
   ngOnInit(): void {
-    this.cargarEntrevistas(localStorage.getItem("id_candidato"))
+    this.cargarEntrevistas(sessionStorage.getItem("id_candidato"))
   }
 
   cargarEntrevistas(id_candidato){

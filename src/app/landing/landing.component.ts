@@ -23,4 +23,8 @@ export class LandingComponent implements OnInit {
     this._router.navigate(["candidato"])
   }
 
+  goToLoginCandidato(){
+    this._router.navigate(["login-candidato"])
+  }
+
 }
