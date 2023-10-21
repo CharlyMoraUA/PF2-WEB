@@ -13,6 +13,7 @@ import { Empresa } from '../representaciones/empresa';
 export class CrearEmpresaComponent implements OnInit {
   crearEmpresaForm!: FormGroup;
   hide : boolean = true;
+  error: boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,14 +42,28 @@ export class CrearEmpresaComponent implements OnInit {
   myFunction() {
     this.hide = !this.hide;
   }
-  
 
   crearEmpresa(empresa: Empresa){
-    /*this.crearEmpresaService.crearCandidato(candidato).subscribe(candidato=>{
-      console.info("Candidato creado correctamente: ", candidato)
-      this.toastr.success("Confirmación", "Candidato creado")
-      this._router.navigate(["dashboard"])
-    })*/
+    this.error = false
+    this.crearEmpresaService.crearEmpresa(empresa).subscribe(res => {
+      if (res.status_code == "200"){
+        this.toastr.success("Success", "Company succesfully created")
+        this._router.navigate(["landing"])
+      }else{
+        this.error = true
+        this.toastr.error("Error", res.message)  
+      }
+
+    },
+    error => {
+      console.log("Ocurrió un error:")
+      console.log(error)
+      this.error = true
+      this.toastr.error("Error", "Company SignUp error: "+error.error.message)
+    })
   }
 
+  backToLanding(){
+    this._router.navigate(["landing"])
+  }
 }

@@ -5,8 +5,10 @@
 //const baseUrl = 'http://127.0.0.1:5000/';
 const baseUrl = '/';
 const urlBaseAutenticacion = '/';
+const urlBaseEmpresa = '/';
 export const environment = {
   production: false,
   baseUrl,
-  urlBaseAutenticacion
+  urlBaseAutenticacion,
+  urlBaseEmpresa
 };
