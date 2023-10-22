@@ -7,6 +7,7 @@ import { CandidatoComponent } from './candidato/candidato-crear/candidato.compon
 import { LoginCandidatoComponent } from './landing/login-candidato/login-candidato.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginEmpresaComponent } from './landing/login-empresa/login-empresa.component';
+import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
 
 const routes: Routes =[
   {
@@ -44,6 +45,10 @@ const routes: Routes =[
   { 
     path: 'login-candidato',  
     component: LoginCandidatoComponent 
+  },
+  { 
+    path: 'crear-empresa',  
+    component: CrearEmpresaComponent 
   },
 ];
 
