@@ -59,6 +59,36 @@ describe('CandidatoComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should create form with all required fields', () => {
+    expect(component.candidatoForm.contains('tipo_doc')).toBeTruthy();
+    expect(component.candidatoForm.contains('num_doc')).toBeTruthy();
+    expect(component.candidatoForm.contains('nombre')).toBeTruthy();
+    expect(component.candidatoForm.contains('usuario')).toBeTruthy();
+    expect(component.candidatoForm.contains('clave')).toBeTruthy();
+    expect(component.candidatoForm.contains('email')).toBeTruthy();
+    expect(component.candidatoForm.contains('pais')).toBeTruthy();
+    expect(component.candidatoForm.contains('ciudad')).toBeTruthy();
+    expect(component.candidatoForm.contains('aspiracion_salarial')).toBeTruthy();
+    expect(component.candidatoForm.contains('fecha_nacimiento')).toBeTruthy();
+    expect(component.candidatoForm.contains('idiomas')).toBeTruthy();
+  });
+
+  it('should be true when invalid form', () => {
+    component.candidatoForm.controls['tipo_doc'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['num_doc'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['nombre'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['usuario'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['clave'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['telefono'].setValue(faker.datatype.number());
+    component.candidatoForm.controls['email'].setValue('');
+    component.candidatoForm.controls['pais'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['ciudad'].setValue(faker.datatype.string());
+    component.candidatoForm.controls['aspiracion_salarial'].setValue(faker.datatype.number());
+    component.candidatoForm.controls['fecha_nacimiento'].setValue(faker.datatype.datetime);
+    component.candidatoForm.controls['idiomas'].setValue(faker.datatype.string());
+    expect(component.candidatoForm.invalid).toBeTruthy();
+  });
+
   it('should have a dashboard element ', () => {
     expect(debug.query(By.css('h4')).attributes["class"]).toEqual("card-title");
   });
