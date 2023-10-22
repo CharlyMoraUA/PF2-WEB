@@ -8,7 +8,7 @@
                         <p class="card-category">Autenticacion de representante</p>
                     </div>
                     <div class="card-body">
-                        <form
+                        <form 
                         [formGroup]="loginEmpresaForm"
                         (ngSubmit)="!loginEmpresaForm.invalid && loginEmpresa(usuario.value, clave.value)"
                         >

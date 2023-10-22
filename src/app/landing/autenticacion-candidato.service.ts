@@ -13,12 +13,10 @@ export class AutenticacionCandidatoService {
   constructor(private http: HttpClient) { }
 
   candidatoLogIn(usuario: string, clave: string): Observable<any> {
-      console.log("Entro al servicio")
       return this.http.post<any>(`${this.backUrl}/autenticacion/candidatos/login`, { "usuario": usuario, "clave": clave });
   }
 
   empresaLogIn(usuario: string, clave: string): Observable<any> {
-    console.log("Entro al servicio")
     return this.http.post<any>(`${this.backUrl}/autenticacion/empresas/login`, { "usuario": usuario, "clave": clave });
   }
 

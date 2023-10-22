@@ -40,11 +40,9 @@ export class LoginCandidatoComponent implements OnInit {
       .subscribe(res => {
         sessionStorage.setItem('candidato-token', res.token);
         sessionStorage.setItem('id_candidato',res.info_candidato.id)
-        console.log("Candidato autenticado con token: "+res.token);
         this._router.navigate(["dashboard"])
       },
         error => {
-          console.log(error);
           this.error = true
           this.toastr.error("Error", "Authentication failed")
         })

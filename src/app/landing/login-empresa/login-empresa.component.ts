@@ -16,7 +16,7 @@ export class LoginEmpresaComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private _router: Router, 
-    private autenticacionCandidatoService: AutenticacionCandidatoService,
+    private autenticacionService: AutenticacionCandidatoService,
     private toastr: ToastrService,
   ) { }
 
@@ -36,7 +36,7 @@ export class LoginEmpresaComponent implements OnInit {
 
   loginEmpresa(usuario: string, clave: string){
     this.error = false
-    this.autenticacionCandidatoService.empresaLogIn(usuario, clave)
+    this.autenticacionService.empresaLogIn(usuario, clave)
       .subscribe(res => {
         sessionStorage.setItem('empresa-token', res.token);
         sessionStorage.setItem('id_empresa', res.info_empresa.id_empresa);
@@ -47,26 +47,13 @@ export class LoginEmpresaComponent implements OnInit {
         sessionStorage.setItem('usuario_representante', res.info_representante.usuario);
         sessionStorage.setItem('nombre_empresa', res.info_empresa.nombre);
 
-        console.log('empresa-token', res.token);
-        console.log('id_empresa', res.info_empresa.id_empresa);
-        console.log('id_representante', res.info_representante.id_representante);
-        console.log('nombre_representante', res.info_representante.nombre);
-        console.log('num_doc_representante', res.info_representante.num_doc);
-        console.log('tipo_doc_representante', res.info_representante.tipo_doc);
-        console.log('usuario_representante', res.info_representante.usuario);
-        console.log('nombre_empresa', res.info_empresa.nombre);
-
-        console.log("Empresa autenticada con token: ");
-        console.log(res)
         this.toastr.info("Exito!", "Auitenticacion Exitosa")
         //this._router.navigate(["dashboard"])
       },
         error => {
-          console.log(error);
           this.error = true
           this.toastr.error("Error", "Authentication failed")
         })
-    console.log("loggedIn")
   }
 
   backToLanding(){
