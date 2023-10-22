@@ -44,7 +44,6 @@ export class LoginCandidatoComponent implements OnInit {
         this._router.navigate(["dashboard"])
       },
         error => {
-          console.log(error);
           this.error = true
           this.toastr.error("Error", "Authentication failed")
         })
