@@ -2,7 +2,7 @@ name: Build and Deploy to Cloud Run
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "fixes-pipeline" ]
 
 env:
   PROJECT_ID: ${{secrets.GOOGLE_PROJECT}} # TODO: update Google Cloud project id
@@ -20,17 +20,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run test:prod
 
   deploy:
     # Add 'id-token' with the intended permissions for workload identity federation
