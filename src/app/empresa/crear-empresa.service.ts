@@ -9,8 +9,8 @@ import { Empresa } from './representaciones/empresa';
   providedIn: 'root'
 })
 export class CrearEmpresaService {
-  //private apiUrl = environment.urlBaseEmpresa
-  private apiUrl: string = "http://localhost:5000"
+  private apiUrl = environment.urlBaseEmpresa
+  //private apiUrl: string = "http://localhost:5000"
 
   constructor(private http: HttpClient) { }
 

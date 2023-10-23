@@ -4,9 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 //const baseUrl = 'http://127.0.0.1:5000/';
-const baseUrl = '/';
-const urlBaseAutenticacion = '/';
-const urlBaseEmpresa = '/';
+const baseUrl = 'https://micro-candidatos-kdbo2knypq-uc.a.run.app/';
+const urlBaseAutenticacion = 'https://micro-autenticacion-kdbo2knypq-uc.a.run.app';
+const urlBaseEmpresa = 'https://micro-empresa-kdbo2knypq-uc.a.run.app';
 export const environment = {
   production: false,
   baseUrl,
