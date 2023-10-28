@@ -19,6 +19,7 @@ import { LoginCandidatoComponent } from './landing/login-candidato/login-candida
 import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
+import { GestionEmpresaComponent } from './empresa/gestion-empresa/gestion-empresa.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.com
     LandingComponent,
     LoginEmpresaComponent,
     CandidatoComponent,
-    CrearEmpresaComponent
+    CrearEmpresaComponent,
+    GestionEmpresaComponent,
   ],
   providers:[ToastrService],
   bootstrap: [AppComponent]
