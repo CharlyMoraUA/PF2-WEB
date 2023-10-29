@@ -43,7 +43,7 @@ export function getRoutes() : RouteInfo[]{
   }
   else{
     return [
-      { path: '/gestionEmpresas', title: 'Gestion de Empresa',  icon: '', class: '' },
+      { path: '/gestion-empresa', title: 'Gestion de Empresa',  icon: '', class: '' },
     ];
   }
 }

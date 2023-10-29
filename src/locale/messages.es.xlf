@@ -2,6 +2,14 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="6253617594708746884" datatype="html">
+        <source>Company management</source>
+        <target>Gestión de la empresa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="CompanySignUpTitle" datatype="html">
         <source>Company Sign Up</source>
         <target>Registro de empresa</target>
@@ -262,6 +270,78 @@
           <context context-type="linenumber">78,79</context>
         </context-group>
         <note priority="1" from="description">Company signup button</note>
+      </trans-unit>
+      <trans-unit id="newProjectTitle" datatype="html">
+        <source>New project</source>
+        <target>Proyecto Nuevo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">New project title</note>
+      </trans-unit>
+      <trans-unit id="projectTitleLabel" datatype="html">
+        <source>Project title</source>
+        <target>Título del proyecto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Project title</note>
+      </trans-unit>
+      <trans-unit id="projectTitleError" datatype="html">
+        <source> Please enter max 100 characters </source>
+        <target> Por favor ingrese máximo 100 caracteres</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <note priority="1" from="description">Max length project title error</note>
+      </trans-unit>
+      <trans-unit id="startProjectDateLabel" datatype="html">
+        <source>Project start date</source>
+        <target>Fecha de inicio de proyecto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">Start project date</note>
+      </trans-unit>
+      <trans-unit id="endProjectDateLabel" datatype="html">
+        <source>Project end date</source>
+        <target>Fecha de fin de proyecto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">End project date</note>
+      </trans-unit>
+      <trans-unit id="teamsTitle" datatype="html">
+        <source>Teams</source>
+        <target>Equipos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Teams title</note>
+      </trans-unit>
+      <trans-unit id="createProjectButton" datatype="html">
+        <source>Create project </source>
+        <target>Crear proyecto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+        <note priority="1" from="description">Create project button</note>
+      </trans-unit>
+      <trans-unit id="projectsTitle" datatype="html">
+        <source> Projects </source>
+        <target> Proyectos </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/gestion-empresa.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+        <note priority="1" from="description">Projects title</note>
       </trans-unit>
       <trans-unit id="CandidateLoginTitle" datatype="html">
         <source>Candidate LogIn</source>

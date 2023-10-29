@@ -12,6 +12,7 @@ import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-emp
 export const AdminLayoutRoutes: Routes = [
     { path: 'gestionCandidatos',      component: GestionCandidatoComponent },
     { path: 'gestion-empresa',        component: GestionEmpresaComponent },
+    // { path: 'gestionEmpresa',         component: GestionEmpresaComponent},
     { path: 'user-profile',           component: UserProfileComponent },
     { path: 'typography',             component: TypographyComponent },
     { path: 'icons',                  component: IconsComponent },

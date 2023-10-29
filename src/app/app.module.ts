@@ -19,7 +19,7 @@ import { LoginCandidatoComponent } from './landing/login-candidato/login-candida
 import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
-import { GestionEmpresaComponent } from './empresa/gestion-empresa/gestion-empresa.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -40,7 +40,8 @@ import { GestionEmpresaComponent } from './empresa/gestion-empresa/gestion-empre
     MatTooltipModule,
     ToastrModule.forRoot({
       positionClass :'toast-bottom-right'
-    })
+    }),
+    MatIconModule,
   ],
   declarations: [
     AppComponent,
@@ -50,7 +51,6 @@ import { GestionEmpresaComponent } from './empresa/gestion-empresa/gestion-empre
     LoginEmpresaComponent,
     CandidatoComponent,
     CrearEmpresaComponent,
-    GestionEmpresaComponent,
   ],
   providers:[ToastrService],
   bootstrap: [AppComponent]

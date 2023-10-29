@@ -53,6 +53,11 @@ const routes: Routes = [
     path: 'crear-empresa',
     component: CrearEmpresaComponent
   },
+  {
+    path: 'dashboard-empresa',
+    redirectTo: 'gestion-empresa',
+    pathMatch: 'full',
+  }, 
 ];
 
 @NgModule({
