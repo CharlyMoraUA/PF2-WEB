@@ -50,7 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
     LandingComponent,
     LoginEmpresaComponent,
     CandidatoComponent,
-    CrearEmpresaComponent
+    CrearEmpresaComponent,
   ],
   providers:[ToastrService],
   bootstrap: [AppComponent]

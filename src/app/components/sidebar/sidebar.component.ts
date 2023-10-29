@@ -7,17 +7,6 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = [
-    { path: '/gestionCandidatos', title: 'Gestion de Candidatos',  icon: '', class: '' },
-    { path: '/gestionEmpresa', title: $localize`Company management` ,  icon: '', class: '' },
-    // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    // { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    // { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    // { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    // { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    // { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-];
 
 @Component({
   selector: 'app-sidebar',
@@ -27,10 +16,13 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
+  ROUTES
+
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.ROUTES = getRoutes()
+    this.menuItems = this.ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -38,4 +30,20 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+}
+
+export function getRoutes() : RouteInfo[]{
+  let usertype = sessionStorage.getItem("usertype")
+  console.log('usertype')
+  console.log(usertype)
+  if(usertype == 'candidato'){
+    return [
+      { path: '/gestionCandidatos', title: 'Gestion de Candidatos',  icon: '', class: '' },
+    ];
+  }
+  else{
+    return [
+      { path: '/gestion-empresa', title: 'Gestion de Empresa',  icon: '', class: '' },
+    ];
+  }
 }
