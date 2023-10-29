@@ -1,0 +1,50 @@
+<mat-icon matPrefix>arrow_back</mat-icon><h4 class="card-title text-left" i18n="New project title@@newProjectTitle">New project</h4>
+<div class="card-body">
+    <form
+    [formGroup]="crearProyectoForm"
+    (ngSubmit)="!crearProyectoForm.invalid && crearProyecto(crearProyectoForm.value)"
+    >
+        <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width text-center">
+                <input novalidate matInput placeholder="Project title" type="text" formControlName="titulo" ngDefaultControl i18n-placeholder="Project title@@projectTitleLabel">
+                <div class="alert alert-danger alert-dismissible fade show"
+                *ngIf=" crearProyectoForm.get('titulo')!.hasError('maxlength') && crearProyectoForm.get('titulo')!.touched" i18n="Max length project title error@@projectTitleError">
+                Please enter max 100 characters
+              </div>
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <input novalidate matInput placeholder="Project start date" type="date" formControlName="fecha_inicio" ngDefaultControl i18n-placeholder="Start project date@@startProjectDateLabel">
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf=" crearProyectoForm.get('fecha_inicio')!.hasError('pattern') && crearProyectoForm.get('fecha_inicio')!.touched">
+                  Please enter a date with format YYYY-MM-DD
+                </div>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <input novalidate matInput placeholder="Project end date" type="date" formControlName="fecha_fin" ngDefaultControl i18n-placeholder="End project date@@endProjectDateLabel">
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf=" crearProyectoForm.get('fecha_fin')!.hasError('pattern') && crearProyectoForm.get('fecha_fin')!.touched">
+                  Please enter a date with format YYYY-MM-DD
+                </div>
+              </mat-form-field>
+            </div>
+        </div>
+        <h3 class="card-title text-left" i18n="Teams title@@teamsTitle">Teams</h3>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 ml-auto mr-auto">
+            <button 
+              mat-raised-button class="btn btn-danger btn-block" 
+              type="submit" 
+              [disabled]="!crearProyectoForm.valid" i18n="Create project button@@createProjectButton">Create project
+            </button>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>

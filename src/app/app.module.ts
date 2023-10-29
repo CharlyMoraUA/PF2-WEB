@@ -19,6 +19,7 @@ import { LoginCandidatoComponent } from './landing/login-candidato/login-candida
 import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.com
     MatTooltipModule,
     ToastrModule.forRoot({
       positionClass :'toast-bottom-right'
-    })
+    }),
+    MatIconModule,
   ],
   declarations: [
     AppComponent,

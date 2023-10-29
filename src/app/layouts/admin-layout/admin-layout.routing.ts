@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
+import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,6 +55,7 @@ export const AdminLayoutRoutes: Routes = [
     //     }]
     // }
     { path: 'gestionCandidatos',      component: GestionCandidatoComponent },
+    { path: 'gestionEmpresa',         component: GestionEmpresaComponent},
     { path: 'dashboard',              component: DashboardComponent },
     { path: 'user-profile',           component: UserProfileComponent },
     { path: 'table-list',             component: TableListComponent },
