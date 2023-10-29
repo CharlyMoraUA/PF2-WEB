@@ -7,7 +7,6 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = getRoutes();
 
 @Component({
   selector: 'app-sidebar',
@@ -17,10 +16,13 @@ export const ROUTES: RouteInfo[] = getRoutes();
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
+  ROUTES
+
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.ROUTES = getRoutes()
+    this.menuItems = this.ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -30,7 +32,7 @@ export class SidebarComponent implements OnInit {
   };
 }
 
-function getRoutes(){
+export function getRoutes() : RouteInfo[]{
   let usertype = sessionStorage.getItem("usertype")
   console.log('usertype')
   console.log(usertype)
