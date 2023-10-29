@@ -2,6 +2,13 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="6253617594708746884" datatype="html">
+        <source>Company management</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="CompanySignUpTitle" datatype="html">
         <source>Company Sign Up</source>
         <context-group purpose="location">
@@ -102,7 +109,7 @@
         <source>Representative information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <note priority="1" from="description">Representative information title</note>
       </trans-unit>
@@ -110,7 +117,7 @@
         <source>Representative document type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <note priority="1" from="description">Representative document type</note>
       </trans-unit>
@@ -118,7 +125,7 @@
         <source>Representative document ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <note priority="1" from="description">Representative document ID</note>
       </trans-unit>
@@ -126,7 +133,7 @@
         <source> Please enter at least 5 characters </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">84,86</context>
+          <context context-type="linenumber">87,89</context>
         </context-group>
         <note priority="1" from="description">Min length representative document ID error</note>
       </trans-unit>
@@ -134,7 +141,7 @@
         <source>Representative name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <note priority="1" from="description">Representative name</note>
       </trans-unit>
@@ -142,7 +149,7 @@
         <source> Please enter at least 5 characters </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">93,95</context>
+          <context context-type="linenumber">96,98</context>
         </context-group>
         <note priority="1" from="description">Min length representative name error</note>
       </trans-unit>
@@ -150,7 +157,7 @@
         <source>Representative email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">105</context>
         </context-group>
         <note priority="1" from="description">Representative email</note>
       </trans-unit>
@@ -158,7 +165,7 @@
         <source> Please enter a valid email address </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">104,106</context>
+          <context context-type="linenumber">107,109</context>
         </context-group>
         <note priority="1" from="description">Representative email error</note>
       </trans-unit>
@@ -166,7 +173,7 @@
         <source>Representative phone number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">111</context>
+          <context context-type="linenumber">114</context>
         </context-group>
         <note priority="1" from="description">Representative phone number</note>
       </trans-unit>
@@ -174,7 +181,7 @@
         <source> Please enter a phone number with at least 7 characters </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">113,115</context>
+          <context context-type="linenumber">116,118</context>
         </context-group>
         <note priority="1" from="description">Min length representative phone number error</note>
       </trans-unit>
@@ -182,7 +189,7 @@
         <source> Letters are not allowed </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">117,119</context>
+          <context context-type="linenumber">120,122</context>
         </context-group>
         <note priority="1" from="description">Representative phone number format error</note>
       </trans-unit>
@@ -190,7 +197,7 @@
         <source>Representative user</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <note priority="1" from="description">Representative user</note>
       </trans-unit>
@@ -198,7 +205,7 @@
         <source> Please enter at least 5 characters </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">128,130</context>
+          <context context-type="linenumber">131,133</context>
         </context-group>
         <note priority="1" from="description">Representative user error</note>
       </trans-unit>
@@ -206,7 +213,7 @@
         <source>Representative password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">138</context>
         </context-group>
         <note priority="1" from="description">Representative password</note>
       </trans-unit>
@@ -214,7 +221,7 @@
         <source> Please enter at least 5 characters </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">137,139</context>
+          <context context-type="linenumber">140,142</context>
         </context-group>
         <note priority="1" from="description">Representative password error</note>
       </trans-unit>
@@ -222,7 +229,7 @@
         <source>Back</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">147</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <note priority="1" from="description">Company signup return button</note>
       </trans-unit>
@@ -230,9 +237,73 @@
         <source>SignUp as Company </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/crear-empresa/crear-empresa.component.html</context>
-          <context context-type="linenumber">153,154</context>
+          <context context-type="linenumber">156,157</context>
         </context-group>
         <note priority="1" from="description">Company signup button</note>
+      </trans-unit>
+      <trans-unit id="newProjectTitle" datatype="html">
+        <source>New project</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">New project title</note>
+      </trans-unit>
+      <trans-unit id="projectTitleLabel" datatype="html">
+        <source>Project title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Project title</note>
+      </trans-unit>
+      <trans-unit id="projectTitleError" datatype="html">
+        <source> Please enter max 100 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <note priority="1" from="description">Max length project title error</note>
+      </trans-unit>
+      <trans-unit id="startProjectDateLabel" datatype="html">
+        <source>Project start date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Start project date</note>
+      </trans-unit>
+      <trans-unit id="endProjectDateLabel" datatype="html">
+        <source>Project end date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">End project date</note>
+      </trans-unit>
+      <trans-unit id="teamsTitle" datatype="html">
+        <source>Teams</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Teams title</note>
+      </trans-unit>
+      <trans-unit id="createProjectButton" datatype="html">
+        <source>Create project </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+        <note priority="1" from="description">Create project button</note>
+      </trans-unit>
+      <trans-unit id="projectsTitle" datatype="html">
+        <source> Projects </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/gestion-empresa.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+        <note priority="1" from="description">Projects title</note>
       </trans-unit>
       <trans-unit id="CandidateLoginTitle" datatype="html">
         <source>Candidate LogIn</source>
