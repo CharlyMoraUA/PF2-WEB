@@ -19,6 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
+import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-e
     NotificationsComponent,
     UpgradeComponent,
     GestionCandidatoComponent,
-    HistorialEntrevistasComponent
+    HistorialEntrevistasComponent,
+    CandidatoEditarComponent
   ]
 })
 

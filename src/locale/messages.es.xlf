@@ -161,11 +161,138 @@
       </trans-unit>
       <trans-unit id="RegisterButton" datatype="html">
         <source>Register </source>
+        <target>Registrar</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
           <context context-type="linenumber">148,149</context>
         </context-group>
         <note priority="1" from="description">Register button label</note>
+      </trans-unit>
+      <trans-unit id="CandidateInformationTitle" datatype="html">
+        <source> Candidate information</source>
+        <target>Información del candidato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Candidate information title</note>
+      </trans-unit>
+      <trans-unit id="DocTypeLabel" datatype="html">
+        <source>Document type</source>
+        <target>Tipo de documento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Doc type label</note>
+      </trans-unit>
+      <trans-unit id="DocumentNumberLabel" datatype="html">
+        <source>Document number</source>
+        <target>Número de documento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Document number label</note>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">Name label@NameLabel</note>
+      </trans-unit>
+      <trans-unit id="EmailLabel" datatype="html">
+        <source>Email</source>
+        <target>Correo electrónico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Email label</note>
+      </trans-unit>
+      <trans-unit id="TelephoneLabel" datatype="html">
+        <source>Telephone</source>
+        <target>Teléfono</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">Telephone label</note>
+      </trans-unit>
+      <trans-unit id="CountryLabel" datatype="html">
+        <source>Country</source>
+        <target>País</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">Country label</note>
+      </trans-unit>
+      <trans-unit id="CityLabel" datatype="html">
+        <source>City</source>
+        <target>Ciudad</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">City label</note>
+      </trans-unit>
+      <trans-unit id="WageAspirationLabel" datatype="html">
+        <source>Wage aspiration</source>
+        <target>Aspiración salarial</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">Wage aspiration label</note>
+      </trans-unit>
+      <trans-unit id="BirthdateLabel" datatype="html">
+        <source>Birthdate</source>
+        <target>Fecha de nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">Birthdate label</note>
+      </trans-unit>
+      <trans-unit id="AcademicInformationButton" datatype="html">
+        <source>Academic information</source>
+        <target>Información académica</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <note priority="1" from="description">Academic information button</note>
+      </trans-unit>
+      <trans-unit id="TechnicalInformationButton" datatype="html">
+        <source>Technical Information</source>
+        <target>Información técnica</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <note priority="1" from="description">Technical Information button</note>
+      </trans-unit>
+      <trans-unit id="WorkingInformationButton" datatype="html">
+        <source>Working Information</source>
+        <target>Información laboral</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <note priority="1" from="description">Working information button</note>
+      </trans-unit>
+      <trans-unit id="DeleteAccountButton" datatype="html">
+        <source>Delete Account</source>
+        <target>Eliminar cuenta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <note priority="1" from="description">Delete account button</note>
       </trans-unit>
       <trans-unit id="CompanySignUpTitle" datatype="html">
         <source>Company Sign Up</source>
