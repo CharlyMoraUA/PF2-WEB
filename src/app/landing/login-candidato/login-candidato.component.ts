@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AutenticacionCandidatoService } from '../autenticacion-candidato.service';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { ToastrService } from 'ngx-toastr';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-candidato',
@@ -17,8 +17,13 @@ export class LoginCandidatoComponent implements OnInit {
     private formBuilder: FormBuilder,
     private _router: Router,
     private autenticacionCandidatoService: AutenticacionCandidatoService,
-    private toastr: ToastrService,
-  ) { }
+    private toastr: ToastrService, public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+   }
 
   error: boolean = false
   helper = new JwtHelperService();
@@ -52,6 +57,11 @@ export class LoginCandidatoComponent implements OnInit {
 
   backToLanding(){
     this._router.navigate(["landing"])
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }

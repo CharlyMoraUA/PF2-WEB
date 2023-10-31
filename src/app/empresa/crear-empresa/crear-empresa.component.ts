@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { CrearEmpresaService } from 'app/empresa/crear-empresa.service';
 import { Empresa } from '../representaciones/empresa';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-crear-empresa',
@@ -19,8 +20,14 @@ export class CrearEmpresaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private crearEmpresaService: CrearEmpresaService,
-    private _router: Router
-  ) { }
+    private _router: Router,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+   }
 
   ngOnInit() {
     this.crearEmpresaForm = this.formBuilder.group({
@@ -65,5 +72,10 @@ export class CrearEmpresaComponent implements OnInit {
 
   backToLanding(){
     this._router.navigate(["landing"])
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 }

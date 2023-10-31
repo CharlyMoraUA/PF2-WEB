@@ -7,6 +7,7 @@ import { Proyecto } from 'app/empresa/representaciones/proyecto';
 import { ToastrService } from 'ngx-toastr';
 import {SelectionModel} from '@angular/cdk/collections';
 import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-crear-proyecto',
@@ -26,7 +27,13 @@ export class CrearProyectoComponent implements OnInit {
     private toastr: ToastrService,
     private _router: Router,
     private crearProyectoService: CrearProyectoService,
-    private consultarFichasService: ConsultarFichasService) { }
+    private consultarFichasService: ConsultarFichasService,
+    public translate: TranslateService) { 
+      // Register translation languages
+      translate.addLangs(['en', 'es']);
+      // Set default language
+      translate.setDefaultLang('es');
+    }
 
   ngOnInit() {
     this.crearProyectoForm = this.formBuilder.group({
@@ -91,4 +98,8 @@ export class CrearProyectoComponent implements OnInit {
         this.equiposDataSource.equipos$.value.forEach(row => this.selection.select(row));
   }
 
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 }
