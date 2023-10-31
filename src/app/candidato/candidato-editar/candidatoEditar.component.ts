@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidatoEditar',
@@ -10,6 +11,7 @@ export class CandidatoEditarComponent implements OnInit {
 
   constructor(
     private candidatoService: CandidatoCrearService,
+    private _router: Router
   ) { }
 
   lista:any;
@@ -22,6 +24,10 @@ export class CandidatoEditarComponent implements OnInit {
     this.candidatoService.obtenerInfoCandidato(id_candidato).subscribe(candidato=>{
       this.lista = candidato.response
     })
+  }
+
+  goToInfoTecnica(){
+    this._router.navigate(["infoTecnica"])
   }
 
 }

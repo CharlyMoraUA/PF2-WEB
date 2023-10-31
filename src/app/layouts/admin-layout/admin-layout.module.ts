@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
+import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candida
     UpgradeComponent,
     GestionCandidatoComponent,
     HistorialEntrevistasComponent,
-    CandidatoEditarComponent
+    CandidatoEditarComponent,
+    CandidatoInfoTecnicaComponent
   ]
 })
 

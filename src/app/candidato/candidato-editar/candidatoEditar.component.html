@@ -5,7 +5,7 @@
               <div class="card">
                   <div class="card-header card-header-danger text-center">
                       <h4 class="card-title ">ABC JOBS</h4>
-                      <p class="card-category" i18n="Candidate information title@@CandidateInformationTitle"> Candidate information</p>
+                      <p class="card-category" i18n="Technical information title@@TechnicalInformationTitle"> Technical information</p>
                   </div>
                   <div class="card-body">
                     <form>
@@ -49,53 +49,52 @@
                           </mat-form-field>
                         </div>
                       </div>
-                    </form>
-
-                    <div class="row">
-                      <div class="col-md-4">
-                        <mat-form-field>
-                          <mat-label i18n="City label@@CityLabel">City</mat-label>
-                          <textarea matInput cdkTextareaAutosize readonly>{{lista["ciudad"]}}</textarea>
-                        </mat-form-field>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <mat-form-field>
+                            <mat-label i18n="City label@@CityLabel">City</mat-label>
+                            <textarea matInput cdkTextareaAutosize readonly>{{lista["ciudad"]}}</textarea>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                          <mat-form-field>
+                            <mat-label i18n="Wage aspiration label@@WageAspirationLabel">Wage aspiration</mat-label>
+                            <textarea matInput cdkTextareaAutosize readonly>{{lista["aspiracion_salarial"]}}</textarea>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                          <mat-form-field>
+                            <mat-label i18n="Birthdate label@@BirthdateLabel">Birthdate</mat-label>
+                            <textarea matInput cdkTextareaAutosize readonly>{{lista["fecha_nacimiento"]}}</textarea>
+                          </mat-form-field>
+                        </div>
                       </div>
-                      <div class="col-md-4">
-                        <mat-form-field>
-                          <mat-label i18n="Wage aspiration label@@WageAspirationLabel">Wage aspiration</mat-label>
-                          <textarea matInput cdkTextareaAutosize readonly>{{lista["aspiracion_salarial"]}}</textarea>
-                        </mat-form-field>
-                      </div>
-                      <div class="col-md-4">
-                        <mat-form-field>
-                          <mat-label i18n="Birthdate label@@BirthdateLabel">Birthdate</mat-label>
-                          <textarea matInput cdkTextareaAutosize readonly>{{lista["fecha_nacimiento"]}}</textarea>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6 col-md-10 ml-auto mr-auto">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <button mat-raised-button class="btn btn-danger btn-block" i18n="Academic information button@@AcademicInformationButton">Academic information</button>
-                          </div>
-                          <div class="col-md-6">
-                            <button mat-raised-button class="btn btn-danger btn-block" i18n="Technical Information button@@TechnicalInformationButton">Technical Information</button>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-10 ml-auto mr-auto">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <button mat-raised-button class="btn btn-danger btn-block" i18n="Academic information button@@AcademicInformationButton">Academic information</button>
+                            </div>
+                            <div class="col-md-6">
+                              <button mat-raised-button class="btn btn-danger btn-block" (click)="goToInfoTecnica()" i18n="Technical Information button@@TechnicalInformationButton">Technical Information</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="row">
-                      <div class="col-lg-6 col-md-10 ml-auto mr-auto">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <button mat-raised-button class="btn btn-danger btn-block" i18n="Working information button@@WorkingInformationButton">Working Information</button>
-                          </div>
-                          <div class="col-md-6">
-                            <button mat-raised-button class="btn btn-danger btn-block" i18n="Delete account button@@DeleteAccountButton">Delete Account</button>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-10 ml-auto mr-auto">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <button mat-raised-button class="btn btn-danger btn-block" i18n="Working information button@@WorkingInformationButton">Working Information</button>
+                            </div>
+                            <div class="col-md-6">
+                              <button mat-raised-button class="btn btn-danger btn-block" i18n="Delete account button@@DeleteAccountButton">Delete Account</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </form>  
                   </div>
               </div>
           </div>

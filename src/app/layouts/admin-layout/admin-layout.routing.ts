@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
+import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -55,7 +56,8 @@ export const AdminLayoutRoutes: Routes = [
     //     }]
     // }
     { path: 'gestionCandidatos',      component: GestionCandidatoComponent },
-    { path: 'editarCandidatos',      component:  CandidatoEditarComponent},
+    { path: 'editarCandidatos',       component:  CandidatoEditarComponent},
+    { path: 'infoTecnica',            component:  CandidatoInfoTecnicaComponent},
     { path: 'dashboard',              component: DashboardComponent },
     { path: 'user-profile',           component: UserProfileComponent },
     { path: 'table-list',             component: TableListComponent },
