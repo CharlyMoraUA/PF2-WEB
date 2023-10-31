@@ -20,6 +20,9 @@ import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.comp
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { EquiposDataSource } from './empresa/datasources/EquiposDataSource';
+import { ConsultarFichasService } from './empresa/consultar-fichas.service';
 
 @NgModule({
   imports: [
@@ -42,6 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
       positionClass :'toast-bottom-right'
     }),
     MatIconModule,
+    MatTableModule,
   ],
   declarations: [
     AppComponent,
@@ -52,7 +56,9 @@ import { MatIconModule } from '@angular/material/icon';
     CandidatoComponent,
     CrearEmpresaComponent,
   ],
-  providers:[ToastrService],
+  providers:[ToastrService,
+    EquiposDataSource,
+    ConsultarFichasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

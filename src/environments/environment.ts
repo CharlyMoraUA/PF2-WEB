@@ -10,9 +10,11 @@
 const baseUrl = 'http://127.0.0.1:8080/'; //micro Candidate
 const urlBaseAutenticacion = 'http://127.0.0.1:8081'; // micro auth
 const urlBaseEmpresa = 'http://127.0.0.1:8082/'; //micro Gestion empresa
+const urlBaseEquipos = 'http://127.0.0.1:8083/'; //micro Gestion equipos
 export const environment = {
   production: false,
   baseUrl,
   urlBaseAutenticacion,
-  urlBaseEmpresa
+  urlBaseEmpresa,
+  urlBaseEquipos
 };

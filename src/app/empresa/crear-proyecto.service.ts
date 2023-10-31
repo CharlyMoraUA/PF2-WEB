@@ -8,8 +8,7 @@ import { Proyecto } from './representaciones/proyecto';
   providedIn: 'root'
 })
 export class CrearProyectoService {
-  private apiUrl = environment.urlBaseEmpresa
-  //private apiUrl: string = "http://localhost:5000"
+  private apiUrl = environment.urlBaseEquipos
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +18,12 @@ export class CrearProyectoService {
     })
   }; 
 
-  crearProyecto(proyecto: Proyecto): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/proyeto/crear`, proyecto);
+  crearProyecto(proyecto: Proyecto, token: string): Observable<any> {
+    console.log(proyecto)
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    })
+    return this.http.post<any>(`${this.apiUrl}proyecto/crear`, proyecto, { headers: headers });
   }
 
 }
