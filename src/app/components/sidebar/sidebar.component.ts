@@ -27,10 +27,13 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
+  ROUTES
+
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.ROUTES = getRoutes()
+    this.menuItems = this.ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -38,4 +41,20 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+}
+
+export function getRoutes() : RouteInfo[]{
+  let usertype = sessionStorage.getItem("usertype")
+  console.log('usertype')
+  console.log(usertype)
+  if(usertype == 'candidato'){
+    return [
+      { path: '/gestionCandidatos', title: 'Gestion de Candidatos',  icon: '', class: '' },
+    ];
+  }
+  else{
+    return [
+      { path: '/gestion-empresa', title: 'Gestion de Empresa',  icon: '', class: '' },
+    ];
+  }
 }
