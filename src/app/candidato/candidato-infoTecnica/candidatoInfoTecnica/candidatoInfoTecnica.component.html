@@ -1,0 +1,48 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger text-center">
+                      <h4 class="card-title ">ABC JOBS</h4>
+                      <p class="card-category" i18n="Technical information title@@TechnicalInformationTitle"> Technical information</p>
+                  </div>
+                  <div class="card-body">
+                    <div class=""table-responsive>
+                      <table class="table">
+                        <thead class=" text-primary">
+                          <th>
+                              Tipo de habilidad técnica
+                          </th>
+                          <th>
+                              Habilidad
+                          </th>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let info of lista">
+                              <td style="width:25%">
+                                  {{info["tipo"]}}
+                              </td>
+                              <td style="width:25%">
+                                  {{info["valor"]}}
+                              </td>
+                          </tr>
+                      </tbody>
+                      </table>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-10 ml-auto mr-auto">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <button mat-raised-button class="btn btn-danger btn-block" (click)="backToInfo()" i18n="Back button@@BackButton">Back</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -11,7 +11,6 @@ import { HttpHeaders } from '@angular/common/http';
 export class CandidatoCrearService {
 
   private apiUrl = environment.baseUrl + 'candidato/';
-  //private apiUrl = '/api/candidato/create';
 
 constructor(private http: HttpClient) { }
 
@@ -31,6 +30,14 @@ crearCandidato(candidato: Candidato): Observable<Candidato> {
 
 obtenerHistorialEntrevista(id_candidato): Observable<any> {
   return this.http.get<any>(this.apiUrl+"historialEntrevistas?id_candidato="+id_candidato);
+}
+
+obtenerInfoCandidato(id_candidato): Observable<any> {
+  return this.http.get<any>(this.apiUrl+"detalle?id_candidato="+id_candidato);
+}
+
+obtenerInfoTecnica(id_candidato): Observable<any> {
+  return this.http.get<any>(this.apiUrl+"infoTecnica?id_candidato="+id_candidato)
 }
 
 }
