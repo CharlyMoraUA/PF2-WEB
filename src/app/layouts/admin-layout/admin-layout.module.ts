@@ -19,6 +19,10 @@ import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-e
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
+import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -32,7 +36,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    CommonModule,
+    MatCheckboxModule,
   ],
   declarations: [
     UserProfileComponent,
@@ -43,7 +50,11 @@ import { MatIconModule } from '@angular/material/icon';
     GestionCandidatoComponent,
     HistorialEntrevistasComponent,
     GestionEmpresaComponent,
-    CrearProyectoComponent
+    CrearProyectoComponent,
+  ],
+  providers: [
+    EquiposDataSource,
+    ConsultarFichasService
   ]
 })
 
