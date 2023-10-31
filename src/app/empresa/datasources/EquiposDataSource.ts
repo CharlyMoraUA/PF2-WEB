@@ -24,8 +24,14 @@ export class EquiposDataSource extends DataSource<EquipoElement> {
   cargarEquipos(id_empresa: string, token:string): void {
     this.isLoading$.next(true);
     this.fichasService.consultarEquipos(id_empresa, token).subscribe((equipos) => {
-        console.log("equipos", equipos["fichas"])
-        this.equipos$.next(equipos["fichas"]);
+        let equiposArray = equipos["fichas"];
+        let equiposDisponibles = [];
+        equiposArray.forEach((equipo: any) => {
+           if(equipo["id_proyecto"] == null){ 
+            equiposDisponibles.push(equipo)
+           }
+        });
+        this.equipos$.next(equiposDisponibles);
         this.isLoading$.next(false);
     });
   }

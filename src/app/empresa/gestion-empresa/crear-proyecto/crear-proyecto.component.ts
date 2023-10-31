@@ -32,7 +32,7 @@ export class CrearProyectoComponent implements OnInit {
     this.crearProyectoForm = this.formBuilder.group({
       titulo: ["", [Validators.required, Validators.maxLength(100)]],
       fecha_inicio: ["", [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-      fecha_fin: ["", [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
+      fecha_fin: ["", [Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
     })
     this.equiposDataSource.cargarEquipos(sessionStorage.getItem("id_empresa"), sessionStorage.getItem("empresa-token"));
   }
@@ -47,32 +47,44 @@ export class CrearProyectoComponent implements OnInit {
 
   crearProyecto(proyecto: Proyecto){
     this.error = false
-    this.crearProyectoService.crearProyecto(proyecto).subscribe(res => {
-      if (res.status_code == "200"){
-        this.toastr.success("Success", "Company succesfully created")
-        this._router.navigate(["dashboard-empresa"])
-      }else{
-        this.error = true
-        this.toastr.error("Error", res.message)  
-      }
-
-    },
-    error => {
-      console.log("Ocurrió un error:")
-      console.log(error)
+    let date_fecha_inicio = new Date(proyecto.fecha_inicio)
+    let date_fecha_fin = null
+    if(proyecto.fecha_fin != null){
+      date_fecha_fin = new Date(proyecto.fecha_fin)
+    }
+    console.log(proyecto)
+    if (date_fecha_fin != null && date_fecha_inicio > date_fecha_fin){
+      this.toastr.error("Error", "Start date must be before end date")
       this.error = true
-      this.toastr.error("Error", "Company SignUp error: "+error.error.message)
-    })
+    }else{
+        proyecto.equipos = this.selection.selected
+        proyecto.id_empresa = Number(sessionStorage.getItem("id_empresa"));
+        this.crearProyectoService.crearProyecto(proyecto, sessionStorage.getItem("empresa-token")).subscribe(res => {
+        if (res.status_code == "200"){
+          this.toastr.success("Success", "Project succesfully created")
+          this.crearProyectoForm.reset()
+          this._router.navigate(["gestion-empresa"])
+        }else{
+          this.error = true
+          this.toastr.error("Error", res.message)  
+        }
+  
+      },
+      error => {
+        console.log("Ocurrió un error:")
+        console.log(error)
+        this.error = true
+        this.toastr.error("Error", "Project creation error: "+error.error.message)
+      })
+    }
   }
 
-  /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.equiposDataSource.equipos$.value.length;
     return numSelected === numRows;
   }
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     this.isAllSelected() ?
         this.selection.clear() :

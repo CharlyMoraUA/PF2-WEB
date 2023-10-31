@@ -46,7 +46,6 @@ describe('CrearProyectoComponent', () => {
   it('should be true when valid form', () => {
     component.crearProyectoForm.controls['titulo'].setValue(faker.datatype.string());
     component.crearProyectoForm.controls['fecha_inicio'].setValue('2021-01-01');
-    component.crearProyectoForm.controls['fecha_fin'].setValue('2021-01-30');
     expect(component.crearProyectoForm.valid).toBeTruthy();
   });
 
