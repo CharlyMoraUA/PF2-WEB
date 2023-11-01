@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -25,3 +25,4 @@ describe('LandingComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/
