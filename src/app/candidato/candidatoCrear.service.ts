@@ -4,6 +4,7 @@ import { environment } from 'environments/environment'
 import { Observable } from 'rxjs';
 import { Candidato } from './representaciones/candidato';
 import { HttpHeaders } from '@angular/common/http';
+import { infoTecnica } from './representaciones/infoTecnica';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,13 @@ obtenerInfoCandidato(id_candidato): Observable<any> {
 
 obtenerInfoTecnica(id_candidato): Observable<any> {
   return this.http.get<any>(this.apiUrl+"infoTecnica?id_candidato="+id_candidato)
+}
+
+agregarInfoTecnica(infotecnica: infoTecnica, token: string): Observable<infoTecnica> {
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  })
+  return this.http.post<infoTecnica>(this.apiUrl+"infoTecnica", infotecnica, { headers: headers });
 }
 
 }

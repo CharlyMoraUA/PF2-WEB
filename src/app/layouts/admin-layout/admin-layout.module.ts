@@ -17,7 +17,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
-import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -42,6 +41,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTableModule,
     CommonModule,
     MatCheckboxModule,
+    MatIconModule,
   ],
   declarations: [
     UserProfileComponent,
@@ -52,7 +52,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     GestionCandidatoComponent,
     HistorialEntrevistasComponent,
     CandidatoEditarComponent,
-    CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
     CrearProyectoComponent,
   ],
