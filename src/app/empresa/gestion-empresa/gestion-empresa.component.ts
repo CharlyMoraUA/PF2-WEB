@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gestion-empresa',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionEmpresaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public translate: TranslateService
+  ){
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+  }
 
   selectedIndex =0
   ngOnInit(): void {
@@ -31,6 +39,11 @@ export class GestionEmpresaComponent implements OnInit {
 
   onClickOption(index){
     this.selectedIndex = index
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }

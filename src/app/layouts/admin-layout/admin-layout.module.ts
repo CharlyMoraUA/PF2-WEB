@@ -24,6 +24,16 @@ import { MatTableModule } from '@angular/material/table';
 import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
 import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   imports: [
@@ -41,7 +51,14 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTableModule,
     CommonModule,
     MatCheckboxModule,
-    MatIconModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    BrowserModule
   ],
   declarations: [
     UserProfileComponent,

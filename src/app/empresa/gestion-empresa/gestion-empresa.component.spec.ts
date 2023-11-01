@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { GestionEmpresaComponent } from './gestion-empresa.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('GestionEmpresaComponent', () => {
   let component: GestionEmpresaComponent;
@@ -11,6 +12,9 @@ describe('GestionEmpresaComponent', () => {
 
   beforeEach(async() => {
     TestBed.configureTestingModule({
+      imports: [
+        TranslateModule.forRoot()
+      ],
       declarations: [ GestionEmpresaComponent ]
     })
     .compileComponents();

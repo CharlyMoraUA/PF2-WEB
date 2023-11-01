@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { CrearEmpresaService } from 'app/empresa/crear-empresa.service';
 import { Empresa } from '../representaciones/empresa';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-crear-empresa',
@@ -19,8 +20,14 @@ export class CrearEmpresaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private crearEmpresaService: CrearEmpresaService,
-    private _router: Router
-  ) { }
+    private _router: Router,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+   }
 
   ngOnInit() {
     this.crearEmpresaForm = this.formBuilder.group({
@@ -37,14 +44,10 @@ export class CrearEmpresaComponent implements OnInit {
       representante_usuario: ["", [Validators.required, Validators.minLength(5)]],
       representante_clave: ["", [Validators.required, Validators.minLength(5)]],
     })
-  }
-
-  myFunction() {
-    this.hide = !this.hide;
+    this.error = false
   }
 
   crearEmpresa(empresa: Empresa){
-    this.error = false
     this.crearEmpresaService.crearEmpresa(empresa).subscribe(res => {
       if (res.status_code == "200"){
         this.toastr.success("Success", "Company succesfully created")
@@ -56,8 +59,6 @@ export class CrearEmpresaComponent implements OnInit {
 
     },
     error => {
-      console.log("Ocurrió un error:")
-      console.log(error)
       this.error = true
       this.toastr.error("Error", "Company SignUp error: "+error.error.message)
     })
@@ -65,5 +66,10 @@ export class CrearEmpresaComponent implements OnInit {
 
   backToLanding(){
     this._router.navigate(["landing"])
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 }
