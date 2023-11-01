@@ -6,6 +6,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 import { LoginCandidatoComponent } from './login-candidato.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('LoginCandidatoComponent', () => {
   let component: LoginCandidatoComponent;
@@ -18,7 +19,8 @@ describe('LoginCandidatoComponent', () => {
       imports: [HttpClientTestingModule, 
         ReactiveFormsModule, 
         FormsModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        TranslateModule.forRoot()
       ],
       declarations: [ LoginCandidatoComponent ]
     })

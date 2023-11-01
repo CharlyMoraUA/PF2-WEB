@@ -6,6 +6,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './crear-empresa.component';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 describe('CrearEmpresaComponent', () => {
   let component: CrearEmpresaComponent;
@@ -18,7 +20,8 @@ describe('CrearEmpresaComponent', () => {
       imports: [HttpClientTestingModule, 
         ReactiveFormsModule, 
         FormsModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        TranslateModule.forRoot()
       ],
       declarations: [ CrearEmpresaComponent ]
     })
