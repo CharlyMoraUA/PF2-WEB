@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 import { CrearProyectoComponent } from './crear-proyecto.component';
 import { faker } from '@faker-js/faker';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('CrearProyectoComponent', () => {
   let component: CrearProyectoComponent;
@@ -15,7 +16,8 @@ describe('CrearProyectoComponent', () => {
       imports: [HttpClientTestingModule, 
         ReactiveFormsModule, 
         FormsModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        TranslateModule.forRoot()
       ],
       declarations: [ CrearProyectoComponent ]
     })
