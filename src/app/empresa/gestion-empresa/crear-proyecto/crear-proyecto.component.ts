@@ -42,24 +42,15 @@ export class CrearProyectoComponent implements OnInit {
       fecha_fin: ["", [Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
     })
     this.equiposDataSource.cargarEquipos(sessionStorage.getItem("id_empresa"), sessionStorage.getItem("empresa-token"));
-  }
-
-  myFunction() {
-    this.hide = !this.hide;
-  }
-
-  backToDashboard(){
-    this._router.navigate(["dashboard-empresa"])
+    this.error = false
   }
 
   crearProyecto(proyecto: Proyecto){
-    this.error = false
     let date_fecha_inicio = new Date(proyecto.fecha_inicio)
     let date_fecha_fin = null
     if(proyecto.fecha_fin != null){
       date_fecha_fin = new Date(proyecto.fecha_fin)
     }
-    console.log(proyecto)
     if (date_fecha_fin != null && date_fecha_inicio > date_fecha_fin){
       this.toastr.error("Error", "Start date must be before end date")
       this.error = true
@@ -75,11 +66,8 @@ export class CrearProyectoComponent implements OnInit {
           this.error = true
           this.toastr.error("Error", res.message)  
         }
-  
       },
       error => {
-        console.log("Ocurrió un error:")
-        console.log(error)
         this.error = true
         this.toastr.error("Error", "Project creation error: "+error.error.message)
       })

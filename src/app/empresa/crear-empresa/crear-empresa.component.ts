@@ -44,14 +44,10 @@ export class CrearEmpresaComponent implements OnInit {
       representante_usuario: ["", [Validators.required, Validators.minLength(5)]],
       representante_clave: ["", [Validators.required, Validators.minLength(5)]],
     })
-  }
-
-  myFunction() {
-    this.hide = !this.hide;
+    this.error = false
   }
 
   crearEmpresa(empresa: Empresa){
-    this.error = false
     this.crearEmpresaService.crearEmpresa(empresa).subscribe(res => {
       if (res.status_code == "200"){
         this.toastr.success("Success", "Company succesfully created")
@@ -63,8 +59,6 @@ export class CrearEmpresaComponent implements OnInit {
 
     },
     error => {
-      console.log("Ocurrió un error:")
-      console.log(error)
       this.error = true
       this.toastr.error("Error", "Company SignUp error: "+error.error.message)
     })

@@ -30,23 +30,20 @@ export class LoginCandidatoComponent implements OnInit {
   loginCandidatoForm!: FormGroup;
 
   ngOnInit(): void {
-
     this.loginCandidatoForm = this.formBuilder.group({
       usuario: ["", Validators.required],
       clave: ["", Validators.required],
     })
-
+    this.error = false
   }
 
 
   loginCandidato(usuario: string, clave: string){
-    this.error = false
     this.autenticacionCandidatoService.candidatoLogIn(usuario, clave)
       .subscribe(res => {
         sessionStorage.setItem('candidato-token', res.token);
         sessionStorage.setItem('id_candidato', res.info_candidato.id);
         sessionStorage.setItem('usertype', 'candidato');
-        console.log("Candidato autenticado con token: "+res.token);
         this._router.navigate(["dashboard"])
       },
         error => {
