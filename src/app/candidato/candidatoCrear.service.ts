@@ -32,12 +32,19 @@ obtenerHistorialEntrevista(id_candidato): Observable<any> {
   return this.http.get<any>(this.apiUrl+"historialEntrevistas?id_candidato="+id_candidato);
 }
 
-obtenerInfoCandidato(id_candidato): Observable<any> {
-  return this.http.get<any>(this.apiUrl+"detalle?id_candidato="+id_candidato);
+obtenerInfoCandidato(id_candidato, token: string): Observable<any> {
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  })
+  return this.http.get<any>(this.apiUrl+"detalle?id_candidato="+id_candidato, { headers: headers});
 }
 
-obtenerInfoTecnica(id_candidato): Observable<any> {
-  return this.http.get<any>(this.apiUrl+"infoTecnica?id_candidato="+id_candidato)
+obtenerInfoTecnica(id_candidato, token: string): Observable<any> {
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  })
+  return this.http.get<any>(this.apiUrl+"infoTecnica?id_candidato="+id_candidato, { headers: headers})
 }
+
 
 }

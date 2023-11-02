@@ -21,6 +21,7 @@ import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.compone
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
 import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecni
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatIconModule
   ],
   declarations: [
     DashboardComponent,

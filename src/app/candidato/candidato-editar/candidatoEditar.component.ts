@@ -14,14 +14,14 @@ export class CandidatoEditarComponent implements OnInit {
     private _router: Router
   ) { }
 
-  lista:any;
+  lista:any = {};
 
   ngOnInit(): void {
     this.consultarInfo(localStorage.getItem("id_candidato"))
   }
 
   consultarInfo(id_candidato){
-    this.candidatoService.obtenerInfoCandidato(id_candidato).subscribe(candidato=>{
+    this.candidatoService.obtenerInfoCandidato(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }

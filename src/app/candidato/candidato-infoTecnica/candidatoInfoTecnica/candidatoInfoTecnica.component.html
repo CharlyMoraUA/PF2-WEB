@@ -4,19 +4,23 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger text-center">
-                      <h4 class="card-title ">ABC JOBS</h4>
-                      <p class="card-category" i18n="Technical information title@@TechnicalInformationTitle"> Technical information</p>
+                    <h4 class="card-title" i18n="Technical information title@@TechnicalInformationTitle">Technical information</h4>
                   </div>
                   <div class="card-body">
-                    <div class=""table-responsive>
+                    <div>
+                      <button mat-fab color="success">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                  </div>
+                    <div class="table-responsive">
                       <table class="table">
                         <thead class=" text-primary">
-                          <th>
-                              Tipo de habilidad técnica
-                          </th>
-                          <th>
-                              Habilidad
-                          </th>
+                          <th class="mat-h2">
+                            Tipo de habilidad técnica
+                        </th>
+                        <th class="mat-h2">
+                            Habilidad
+                        </th>
                         </thead>
                         <tbody>
                           <tr *ngFor="let info of lista">
@@ -32,9 +36,9 @@
                       
                     </div>
                     <div class="row">
-                      <div class="col-lg-6 col-md-10 ml-auto mr-auto">
+                      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                         <div class="row">
-                          <div class="col-md-6">
+                          <div class="col-md-12">
                             <button mat-raised-button class="btn btn-danger btn-block" (click)="backToInfo()" i18n="Back button@@BackButton">Back</button>
                           </div>
                         </div>

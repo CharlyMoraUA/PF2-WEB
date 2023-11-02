@@ -14,14 +14,14 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
     private _router: Router
   ) { }
 
-  lista:any;
+  lista:any = {};
 
   ngOnInit(): void {
     this.consultarInfoTecnica(localStorage.getItem("id_candidato"))
   }
 
   consultarInfoTecnica(id_candidato){
-    this.candidatoService.obtenerInfoTecnica(id_candidato).subscribe(candidato=>{
+    this.candidatoService.obtenerInfoTecnica(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }
