@@ -42,7 +42,7 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
     translate.setDefaultLang('es');
    }
 
-  lista:any = {};
+  lista: string[] = [];
 
   ngOnInit(): void {
     this.consultarInfoTecnica(sessionStorage.getItem("id_candidato"))
