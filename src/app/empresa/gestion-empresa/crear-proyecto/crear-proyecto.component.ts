@@ -46,12 +46,7 @@ export class CrearProyectoComponent implements OnInit {
   }
 
   crearProyecto(proyecto: Proyecto){
-    let date_fecha_inicio = new Date(proyecto.fecha_inicio)
-    let date_fecha_fin = null
-    if(proyecto.fecha_fin != null){
-      date_fecha_fin = new Date(proyecto.fecha_fin)
-    }
-    if (date_fecha_fin != null && date_fecha_inicio > date_fecha_fin){
+    if (proyecto.fecha_fin != null && proyecto.fecha_fin.toString() != "" && proyecto.fecha_inicio > proyecto.fecha_fin){
       this.toastr.error("Error", "Start date must be before end date")
       this.error = true
     }else{
@@ -60,8 +55,7 @@ export class CrearProyectoComponent implements OnInit {
         this.crearProyectoService.crearProyecto(proyecto, sessionStorage.getItem("empresa-token")).subscribe(res => {
         if (res.status_code == "200"){
           this.toastr.success("Success", "Project succesfully created")
-          this.crearProyectoForm.reset()
-          this._router.navigate(["gestion-empresa"])
+          this.goBack()
         }else{
           this.error = true
           this.toastr.error("Error", res.message)  
