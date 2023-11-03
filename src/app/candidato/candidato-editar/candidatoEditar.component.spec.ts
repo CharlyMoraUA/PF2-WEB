@@ -4,13 +4,14 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
-import { CandidatoInfoTecnicaComponent } from './candidatoInfoTecnica.component';
+import { CandidatoEditarComponent } from './candidatoEditar.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TranslateModule } from '@ngx-translate/core';
+import { element } from 'protractor';
 
-describe('CandidatoInfoTecnicaComponent', () => {
-  let component: CandidatoInfoTecnicaComponent;
-  let fixture: ComponentFixture<CandidatoInfoTecnicaComponent>;
+describe('CandidatoEditarComponent', () => {
+  let component: CandidatoEditarComponent;
+  let fixture: ComponentFixture<CandidatoEditarComponent>;
   let debug: DebugElement;
 
   beforeEach(async(() => {
@@ -20,13 +21,13 @@ describe('CandidatoInfoTecnicaComponent', () => {
         ToastrModule.forRoot(),
         TranslateModule.forRoot()
       ],
-      declarations: [ CandidatoInfoTecnicaComponent ]
+      declarations: [ CandidatoEditarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CandidatoInfoTecnicaComponent);
+    fixture = TestBed.createComponent(CandidatoEditarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     debug = fixture.debugElement;
@@ -34,14 +35,6 @@ describe('CandidatoInfoTecnicaComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should create headers of table ', () => {
-    expect(debug.query(By.css('th')).attributes["class"]).toEqual("mat-h2");
-  });
-
-  it('should create button to add new technical info', () => {
-    expect(debug.query(By.css('button')).attributes["color"]).toEqual("success");
   });
 
   it('should show the title', () => {

@@ -18,9 +18,13 @@ import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.compone
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
 import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
+import { MatIconModule } from '@angular/material/icon';
+import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
+import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
 import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
@@ -28,7 +32,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
 
 
 // Factory function required during AOT compilation
@@ -49,8 +52,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     MatSelectModule,
     MatTooltipModule,
     MatIconModule,
+    HttpClientModule,
+    MatDialogModule,
     MatTableModule,
-    CommonModule,
     MatCheckboxModule,
     TranslateModule.forRoot({
       loader: {
@@ -59,7 +63,6 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    BrowserModule
   ],
   declarations: [
     UserProfileComponent,
@@ -72,12 +75,15 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidatoEditarComponent,
     CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
-    CrearProyectoComponent,
+    CrearProyectoComponent
   ],
-  providers: [
+  providers:[
+    CandidatoCrearService,
+    CandidatoInfoService,
     EquiposDataSource,
     ConsultarFichasService
-  ]
+  ],
+
 })
 
 export class AdminLayoutModule {}

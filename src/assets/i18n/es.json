@@ -52,5 +52,47 @@
         "TeamNameHeader": "Nombre",
         "TeamDescHeader": "Descripción",
         "CreateProject": "Crear Proyecto"
+    },
+    "CREATE_CANDIDATE":{
+        "Title": "Registrarse como candidato",
+        "DocumentType": "Tipo de documento",
+        "IdentificationCard": "Cédula de Ciudadanía",
+        "ForeignerCardId": "Cédula de extranjería",
+        "Passport": "Pasaporte",
+        "DocumentNumber": "Número de documento",
+        "Name": "Nombre",
+        "Email": "Correo",
+        "TelephoneNumber": "Número de teléfono",
+        "Country": "País",
+        "City": "Ciudad",
+        "WageAspiration": "Aspiración salarial",
+        "BirthDate": "Fecha de nacimiento",
+        "User": "Usuario",
+        "Password": "Clave",
+        "Languages": "Idiomas",
+        "BackButton": "Regresar",
+        "RegisterButton": "Registrar"
+    },
+    "INFO_CANDIDATE":{
+        "Title": "Información técnica",
+        "DocumentType": "Tipo de documento",
+        "DocumentNumber": "Número de documento",
+        "Name": "Nombre",
+        "Email": "Correo",
+        "Telephone": "Teléfono",
+        "Country": "País",
+        "City": "Ciudad",
+        "WageAspiration": "Aspiración salarial",
+        "BirthDate": "Fecha de nacimiento",
+        "AcademicInformation": "Información académica",
+        "TechnicalInformation": "Información técnica",
+        "WorkingInformation": "Información laboral",
+        "DeleteAccount": "Eliminar cuenta"
+    },
+    "TECHNICAL_INFO":{
+        "Title": "Información técnica",
+        "SkillType": "Habilidad técnica",
+        "Skill": "Habilidad",
+        "BackButton": "Regresar"
     }
 }
