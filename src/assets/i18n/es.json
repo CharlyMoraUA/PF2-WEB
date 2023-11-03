@@ -52,5 +52,11 @@
         "TeamNameHeader": "Nombre",
         "TeamDescHeader": "Descripción",
         "CreateProject": "Crear Proyecto"
+    },
+    "MY_PROJECTS":{
+        "Title": "Mis proyectos",
+        "TableTitle": "Título",
+        "TableStartDate": "Fecha inicio",
+        "TableEndDate": "Fecha fin"
     }
 }

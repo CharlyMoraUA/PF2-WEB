@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -18,8 +18,10 @@ export class GestionEmpresaComponent implements OnInit {
   }
 
   selectedIndex =0
+  pantallaProyectos = "mis-proyectos"
   ngOnInit(): void {
-  }
+    this.pantallaProyectos = sessionStorage.getItem("pantalla_proyectos")
+  }  
 
   setMyStyles(indx) {
     let styles
@@ -39,6 +41,9 @@ export class GestionEmpresaComponent implements OnInit {
 
   onClickOption(index){
     this.selectedIndex = index
+    if(index==0){
+      this.pantallaProyectos = "mis-proyectos"
+    }
   }
 
   //Switch language

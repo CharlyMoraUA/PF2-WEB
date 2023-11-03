@@ -28,7 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { MisProyectosComponent } from 'app/empresa/gestion-empresa/mis-proyectos/mis-proyectos.component';
 
 
 // Factory function required during AOT compilation
@@ -58,8 +58,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         useFactory: httpTranslateLoaderFactory,
         deps: [HttpClient]
       }
-    }),
-    BrowserModule
+    })
   ],
   declarations: [
     UserProfileComponent,
@@ -73,6 +72,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
     CrearProyectoComponent,
+    MisProyectosComponent
   ],
   providers: [
     EquiposDataSource,

@@ -86,6 +86,23 @@ export class CrearProyectoComponent implements OnInit {
         this.equiposDataSource.equipos$.value.forEach(row => this.selection.select(row));
   }
 
+  goBack(){
+    sessionStorage.setItem("pantalla_proyectos", "mis-proyectos")
+    this._router.navigate(["gestion-empresa"])
+    this.reloadComponent(true)
+  }
+
+  reloadComponent(self:boolean,urlToNavigateTo ?:string){
+    //skipLocationChange:true means dont update the url to / when navigating
+   console.log("Current route I am on:",this._router.url);
+   const url=self ? this._router.url :urlToNavigateTo;
+   this._router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
+     this._router.navigate([`/${url}`]).then(()=>{
+       console.log(`After navigation I am on:${this._router.url}`)
+     })
+   })
+  }
+
   //Switch language
   translateLanguageTo(lang: string) {
     this.translate.use(lang);

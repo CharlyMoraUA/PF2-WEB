@@ -34,7 +34,10 @@
                         </div>       
                     </div>
                     <div class="card-body">
-                        <div *ngIf="selectedIndex==0">
+                        <div *ngIf="selectedIndex==0 && pantallaProyectos=='mis-proyectos'">
+                            <app-mis-proyectos></app-mis-proyectos>
+                        </div>
+                        <div *ngIf="selectedIndex==0  && pantallaProyectos=='crear-proyecto'">
                             <app-crear-proyecto></app-crear-proyecto>
                         </div>
                         <div *ngIf="selectedIndex==1">
