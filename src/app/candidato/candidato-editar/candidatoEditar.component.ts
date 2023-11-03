@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CandidatoInfoService } from '../candidatoInfo.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-candidatoEditar',
@@ -11,8 +12,14 @@ export class CandidatoEditarComponent implements OnInit {
 
   constructor(
     private candidatoInfoService: CandidatoInfoService,
-    private _router: Router
-  ) { }
+    private _router: Router,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+   }
 
   lista:any = {};
 
@@ -28,6 +35,11 @@ export class CandidatoEditarComponent implements OnInit {
 
   goToInfoTecnica(){
     this._router.navigate(["infoTecnica"])
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }

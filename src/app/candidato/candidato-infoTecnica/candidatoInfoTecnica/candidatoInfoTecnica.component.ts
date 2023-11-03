@@ -9,6 +9,7 @@ import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
 import { MatSelectModule } from '@angular/material/select';
 import { infoTecnica } from 'app/candidato/representaciones/infoTecnica';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface DialogData {
   tipo: string;
@@ -32,8 +33,14 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
     private candidatoInfoService: CandidatoInfoService,
     private _router: Router,
     public dialog: MatDialog,
-    private toastr: ToastrService
-  ) { }
+    private toastr: ToastrService,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+   }
 
   lista:any = {};
 
@@ -85,6 +92,11 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
     })
   }
 
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
+
 }
 
 @Component({
@@ -92,15 +104,18 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
   templateUrl: 'dialog-overview-example-dialog.html',
   standalone: true,
   imports: [MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatSelectModule],
+
+  providers:[TranslateService]
 })
 
 export class DialogOverviewExampleDialog {
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+  
 }
