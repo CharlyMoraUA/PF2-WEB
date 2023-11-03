@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-md-1" style="text-align: left;">
+    <mat-icon matSufix [ngStyle]="{'color':'gray'}" (click)="goBack()">arrow_back</mat-icon>
+  </div>
+  <div class="col-md-5">
+    <div class="card-title text-left">
+      <h4>{{'EDIT_PROJECT.Title' | translate}}</h4>
+    </div>
+  </div>
+  <div class="col-md-6" style="text-align: right;">
+    <mat-icon matSufix [ngStyle]="{'color':'gray'}">note</mat-icon>
+    <mat-icon matSufix [ngStyle]="{'color':'gray'}">note_add</mat-icon>
+  </div>
+</div>
+<div class="card-body">
+    <form
+    [formGroup]="editarProyectoForm"
+    (ngSubmit)="!editarProyectoForm.invalid && actualizarProyecto(editarProyectoForm.value)"
+    >
+        <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width text-center">
+                <input novalidate matInput placeholder="{{'EDIT_PROJECT.ProjectTitle' | translate}}" type="text" formControlName="titulo" ngDefaultControl i18n-placeholder="Project title@@projectTitleLabel">
+                <div class="alert alert-danger alert-dismissible fade show"
+                *ngIf=" editarProyectoForm.get('titulo')!.hasError('maxlength') && editarProyectoForm.get('titulo')!.touched" i18n="Max length project title error@@projectTitleError">
+                {{'EDIT_PROJECT.Enter100Chars' | translate}}
+              </div>
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <input novalidate matInput placeholder="{{'EDIT_PROJECT.ProjectStartDate' | translate}}" type="date" formControlName="fecha_inicio" ngDefaultControl i18n-placeholder="Start project date@@startProjectDateLabel">
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf=" editarProyectoForm.get('fecha_inicio')!.hasError('pattern') && editarProyectoForm.get('fecha_inicio')!.touched">
+                  {{'EDIT_PROJECT.EnterDateFormat' | translate}}
+                </div>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <input novalidate matInput placeholder="{{'EDIT_PROJECT.ProjectEndDate' | translate}}" type="date" formControlName="fecha_fin" ngDefaultControl i18n-placeholder="End project date@@endProjectDateLabel">
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf=" editarProyectoForm.get('fecha_fin')!.hasError('pattern') && editarProyectoForm.get('fecha_fin')!.touched">
+                  {{'EDIT_PROJECT.EnterDateFormat' | translate}}
+                </div>
+              </mat-form-field>
+            </div>
+        </div>
+        <h5 class="card-title text-left" i18n="Teams title@@teamsTitle">{{'EDIT_PROJECT.Teams' | translate}}</h5>
+        <div>
+          <table mat-table class="tabla-equipos" [dataSource]="equiposDataSource">
+            <ng-container matColumnDef="nombre" style="width:45%">
+              <th mat-header-cell *matHeaderCellDef class="celda-tabla-equipos" i18n="Teams table name header@@teamsTableNameHeaderLabel">
+                {{'EDIT_PROJECT.TeamNameHeader' | translate}}
+              </th>
+              <td mat-cell *matCellDef="let element" class="celda-tabla-equipos">
+                {{ element.nombre }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="descripcion" style="width:45%">
+              <th mat-header-cell *matHeaderCellDef class="celda-tabla-equipos" i18n="Teams table desc header@@teamsTableDescHeaderLabel">
+                {{'EDIT_PROJECT.TeamDescHeader' | translate}}
+              </th>
+              <td mat-cell *matCellDef="let element" class="celda-tabla-equipos">
+                {{ element.descripcion }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="seleccionar" style="width:10%; text-align: right;">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()" #generalCheckbox>
+                </mat-checkbox>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </div>
+        <br><br><br>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 ml-auto mr-auto">
+            <button 
+              mat-raised-button class="btn btn-danger btn-block" 
+              type="submit" 
+              [disabled]="!editarProyectoForm.valid" i18n="Create project button@@createProjectButton">{{'EDIT_PROJECT.Save' | translate}}
+            </button>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>
+<div class="copyright pull-right" style="margin-right: 5%;">
+  <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+      <mat-icon>translate</mat-icon> 
+      <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" #selLang (change)="translateLanguageTo(selLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+      </select>
+  </div>
+</div>

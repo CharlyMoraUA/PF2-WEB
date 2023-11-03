@@ -29,6 +29,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { MisProyectosComponent } from 'app/empresa/gestion-empresa/mis-proyectos/mis-proyectos.component';
+import { EditarProyectoComponent } from 'app/empresa/gestion-empresa/editar-proyecto/editar-proyecto.component';
 
 
 // Factory function required during AOT compilation
@@ -72,7 +73,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
     CrearProyectoComponent,
-    MisProyectosComponent
+    MisProyectosComponent,
+    EditarProyectoComponent
   ],
   providers: [
     EquiposDataSource,

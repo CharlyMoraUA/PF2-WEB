@@ -41,6 +41,12 @@ export class MisProyectosComponent implements OnInit {
     this.reloadComponent(true)
   }
 
+  navigateToEditProject(proyecto:any){
+    sessionStorage.setItem("pantalla_proyectos", "editar-proyecto")
+    sessionStorage.setItem("proyecto_editar", JSON.stringify(proyecto))
+    this.reloadComponent(true)
+  }
+
   reloadComponent(self:boolean,urlToNavigateTo ?:string){
     //skipLocationChange:true means dont update the url to / when navigating
    console.log("Current route I am on:",this._router.url);

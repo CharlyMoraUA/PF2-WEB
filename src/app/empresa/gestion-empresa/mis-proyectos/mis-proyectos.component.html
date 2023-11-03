@@ -37,7 +37,8 @@
                     {{proyecto["fecha_inicio"]}}
                 </td>
                   <td style="width:25%">
-                      <img style="width:8%;height:8%" src="/assets/img/editar_gris.png"/>
+                    <mat-icon matSufix [ngStyle]="{'color':'gray'}" (click)="navigateToEditProject(proyecto)">edit</mat-icon>
+                    <!--<img style="width:8%;height:8%" src="/assets/img/editar_gris.png" (click)="navigateToAddProject(proyecto['id'])"/>-->
                   </td>
               </tr>
           </tbody>

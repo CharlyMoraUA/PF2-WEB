@@ -58,5 +58,17 @@
         "TableTitle": "Title",
         "TableStartDate": "Start Date",
         "TableEndDate": "End Date"
+    },
+    "EDIT_PROJECT":{
+        "Title": "Edit Project",
+        "ProjectTitle": "Project Title",   
+        "Enter100Chars": "Please enter max 100 characters",
+        "ProjectStartDate": "Project Start Date",
+        "EnterDateFormat": "Please enter a date with format DD-MM-YYYY",
+        "ProjectEndDate": "Project End Date",
+        "Teams": "Teams",
+        "TeamNameHeader": "Name",
+        "TeamDescHeader": "Description",
+        "Save": "Save changes"
     }
 }
