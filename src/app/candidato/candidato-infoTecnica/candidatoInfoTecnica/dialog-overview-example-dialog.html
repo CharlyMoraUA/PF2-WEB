@@ -8,10 +8,14 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 text-center">
                 <mat-form-field>
-                  <mat-label>Type of technical skill</mat-label>
-                  <input matInput [(ngModel)]="data.tipo">
+                    <mat-select [(value)]="data.tipo">
+                        <!-- <mat-label>Seleccione un tipo de habilidad técnica</mat-label> -->
+                        <mat-option value="Rol">Rol</mat-option>
+                        <mat-option value="Tecnologia">Tecnologia</mat-option>
+                        <mat-option value="Lenguaje">Lenguaje</mat-option>
+                    </mat-select>
                 </mat-form-field>
               </div>
               <div class="col-md-12">

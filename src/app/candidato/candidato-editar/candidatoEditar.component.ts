@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
 import { Router } from '@angular/router';
+import { CandidatoInfoService } from '../candidatoInfo.service';
 
 @Component({
   selector: 'app-candidatoEditar',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class CandidatoEditarComponent implements OnInit {
 
   constructor(
-    private candidatoService: CandidatoCrearService,
+    private candidatoInfoService: CandidatoInfoService,
     private _router: Router
   ) { }
 
@@ -21,7 +21,7 @@ export class CandidatoEditarComponent implements OnInit {
   }
 
   consultarInfo(id_candidato){
-    this.candidatoService.obtenerInfoCandidato(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
+    this.candidatoInfoService.obtenerInfoCandidato(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }

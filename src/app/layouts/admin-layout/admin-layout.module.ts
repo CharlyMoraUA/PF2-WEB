@@ -22,6 +22,10 @@ import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-e
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
 import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
 import { MatIconModule } from '@angular/material/icon';
+import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
+import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -35,7 +39,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    MatDialogModule
   ],
   declarations: [
     DashboardComponent,
@@ -50,6 +56,10 @@ import { MatIconModule } from '@angular/material/icon';
     HistorialEntrevistasComponent,
     CandidatoEditarComponent,
     CandidatoInfoTecnicaComponent
+  ],
+  providers:[
+    CandidatoCrearService,
+    CandidatoInfoService
   ]
 })
 

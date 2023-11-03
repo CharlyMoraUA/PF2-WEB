@@ -1,11 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
 import { Router } from '@angular/router';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
+import { MatSelectModule } from '@angular/material/select';
+import { infoTecnica } from 'app/candidato/representaciones/infoTecnica';
 
 export interface DialogData {
   tipo: string;
@@ -17,15 +19,17 @@ export interface DialogData {
   templateUrl: './candidatoInfoTecnica.component.html',
   styleUrls: ['./candidatoInfoTecnica.component.scss']
 })
+
 export class CandidatoInfoTecnicaComponent implements OnInit {
 
   tipo: string;
   valor: string;
+  tipoHabilidad: string[] = ['ROL', 'TECNOLOGIA', 'LENGUAJE']
 
   constructor(
-    private candidatoService: CandidatoCrearService,
+    private candidatoInfoService: CandidatoInfoService,
     private _router: Router,
-    //public dialog: MatDialog,
+    public dialog: MatDialog,
   ) { }
 
   lista:any = {};
@@ -35,7 +39,7 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
   }
 
   consultarInfoTecnica(id_candidato){
-    this.candidatoService.obtenerInfoTecnica(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
+    this.candidatoInfoService.obtenerInfoTecnica(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }
@@ -45,8 +49,8 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
   }
 
   openDialog(): void {
-    /*const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      data: {tipo: this.tipo, valor: this.valor},
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      data: {tipoHabilidad: this.tipoHabilidad, valor: this.valor},
       height: '400px',
       width: '600px',
     });
@@ -57,8 +61,17 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
       this.valor = result.valor
       console.log("tipo: ", this.tipo)
       console.log("valor: ", this.valor)
-      //this.guardarInfoTecnica()
-    });*/
+      this.guardarInfoTecnica()
+    });
+  }
+
+  guardarInfoTecnica(){
+    let id_candidato: number = + localStorage.getItem("id_candidato")
+    console.log("El id del candidato es: ", id_candidato)
+    let infotecnica = new infoTecnica(1, this.tipo, this.valor, id_candidato)
+    this.candidatoInfoService.agregarInfoTecnica(infotecnica, localStorage.getItem("candidato-token")).subscribe(infotecnica=>{
+      console.info("Información técnica guardada correctamente: ", infotecnica)
+    })
   }
 
 }
@@ -67,7 +80,7 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
   selector: 'dialog-overview-example-dialog',
   templateUrl: 'dialog-overview-example-dialog.html',
   standalone: true,
-  imports: [MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule],
+  imports: [MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatSelectModule],
 })
 
 export class DialogOverviewExampleDialog {
