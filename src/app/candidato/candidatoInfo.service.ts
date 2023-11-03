@@ -33,11 +33,11 @@ obtenerInfoTecnica(id_candidato, token: string): Observable<any> {
   return this.http.get<any>(this.apiUrl+"infoTecnica?id_candidato="+id_candidato, { headers: headers})
 }
 
-agregarInfoTecnica(infotecnica: infoTecnica, token: string): Observable<infoTecnica> {
+agregarInfoTecnica(infotecnica: infoTecnica, token: string): Observable<any> {
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`
   })
-  return this.http.post<infoTecnica>(this.apiUrl+"infoTecnica", infotecnica, { headers: headers });
+  return this.http.post<any>(this.apiUrl+"infoTecnica", infotecnica, { headers: headers });
 }
 
 }

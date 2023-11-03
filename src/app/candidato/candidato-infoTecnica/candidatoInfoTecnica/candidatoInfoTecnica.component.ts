@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
 import { MatSelectModule } from '@angular/material/select';
 import { infoTecnica } from 'app/candidato/representaciones/infoTecnica';
+import { ToastrService } from 'ngx-toastr';
 
 export interface DialogData {
   tipo: string;
@@ -22,14 +23,16 @@ export interface DialogData {
 
 export class CandidatoInfoTecnicaComponent implements OnInit {
 
-  tipo: string;
-  valor: string;
+  tipo: string = "";
+  valor: string = "";
   tipoHabilidad: string[] = ['ROL', 'TECNOLOGIA', 'LENGUAJE']
+  error: boolean = false
 
   constructor(
     private candidatoInfoService: CandidatoInfoService,
     private _router: Router,
     public dialog: MatDialog,
+    private toastr: ToastrService
   ) { }
 
   lista:any = {};
@@ -56,12 +59,14 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.tipo = result.tipo,
+      this.tipo = result.tipo
       this.valor = result.valor
-      console.log("tipo: ", this.tipo)
-      console.log("valor: ", this.valor)
-      this.guardarInfoTecnica()
+      console.log("tipo: ", result.tipo)
+      console.log("valor: ", result.valor)
+      if (this.tipo && this.valor) {
+        this.guardarInfoTecnica()
+      }
+      
     });
   }
 
@@ -69,8 +74,14 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
     let id_candidato: number = + localStorage.getItem("id_candidato")
     console.log("El id del candidato es: ", id_candidato)
     let infotecnica = new infoTecnica(1, this.tipo, this.valor, id_candidato)
-    this.candidatoInfoService.agregarInfoTecnica(infotecnica, localStorage.getItem("candidato-token")).subscribe(infotecnica=>{
-      console.info("Información técnica guardada correctamente: ", infotecnica)
+    this.candidatoInfoService.agregarInfoTecnica(infotecnica, localStorage.getItem("candidato-token")).subscribe(res => {
+      if (res.status_code == "201"){
+        this.toastr.success("Información técnica guardada correctamente")
+        console.info("Información técnica guardada correctamente: ", res)
+      }else{
+        this.error = true
+        this.toastr.error("Error", res.message)
+      }
     })
   }
 
