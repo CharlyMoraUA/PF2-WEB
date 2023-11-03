@@ -494,6 +494,78 @@
         </context-group>
         <note priority="1" from="description">Company signup button</note>
       </trans-unit>
+      <trans-unit id="newProjectTitle" datatype="html">
+        <source>New project</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">New project title</note>
+      </trans-unit>
+      <trans-unit id="projectTitleLabel" datatype="html">
+        <source>Project title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Project title</note>
+      </trans-unit>
+      <trans-unit id="projectTitleError" datatype="html">
+        <source> Please enter max 100 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <note priority="1" from="description">Max length project title error</note>
+      </trans-unit>
+      <trans-unit id="startProjectDateLabel" datatype="html">
+        <source>Project start date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Start project date</note>
+      </trans-unit>
+      <trans-unit id="endProjectDateLabel" datatype="html">
+        <source>Project end date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">End project date</note>
+      </trans-unit>
+      <trans-unit id="teamsTitle" datatype="html">
+        <source>Teams</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Teams title</note>
+      </trans-unit>
+      <trans-unit id="teamsTableNameHeaderLabel" datatype="html">
+        <source> Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">42,44</context>
+        </context-group>
+        <note priority="1" from="description">Teams table name header</note>
+      </trans-unit>
+      <trans-unit id="teamsTableDescHeaderLabel" datatype="html">
+        <source> Description </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">45,47</context>
+        </context-group>
+        <note priority="1" from="description">Teams table desc header</note>
+      </trans-unit>
+      <trans-unit id="createProjectButton" datatype="html">
+        <source>Create project </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+        <note priority="1" from="description">Create project button</note>
+      </trans-unit>
       <trans-unit id="CandidateLoginTitle" datatype="html">
         <source>Candidate LogIn</source>
         <context-group purpose="location">

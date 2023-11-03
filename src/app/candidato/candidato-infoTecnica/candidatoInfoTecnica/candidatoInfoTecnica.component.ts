@@ -38,11 +38,11 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
   lista:any = {};
 
   ngOnInit(): void {
-    this.consultarInfoTecnica(localStorage.getItem("id_candidato"))
+    this.consultarInfoTecnica(sessionStorage.getItem("id_candidato"))
   }
 
   consultarInfoTecnica(id_candidato){
-    this.candidatoInfoService.obtenerInfoTecnica(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
+    this.candidatoInfoService.obtenerInfoTecnica(id_candidato, sessionStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }
@@ -71,10 +71,10 @@ export class CandidatoInfoTecnicaComponent implements OnInit {
   }
 
   guardarInfoTecnica(){
-    let id_candidato: number = + localStorage.getItem("id_candidato")
+    let id_candidato: number = + sessionStorage.getItem("id_candidato")
     console.log("El id del candidato es: ", id_candidato)
     let infotecnica = new infoTecnica(1, this.tipo, this.valor, id_candidato)
-    this.candidatoInfoService.agregarInfoTecnica(infotecnica, localStorage.getItem("candidato-token")).subscribe(res => {
+    this.candidatoInfoService.agregarInfoTecnica(infotecnica, sessionStorage.getItem("candidato-token")).subscribe(res => {
       if (res.status_code == "201"){
         this.toastr.success("Información técnica guardada correctamente")
         console.info("Información técnica guardada correctamente: ", res)

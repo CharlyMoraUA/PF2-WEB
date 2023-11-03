@@ -4,6 +4,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as $ from "jquery";
 import { filter, Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-admin-layout',
@@ -15,7 +16,12 @@ export class AdminLayoutComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor( public location: Location, private router: Router) {}
+  constructor( public location: Location, private router: Router, public translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit() {
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
@@ -153,5 +159,8 @@ export class AdminLayoutComponent implements OnInit {
       }
       return bool;
   }
-
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 }

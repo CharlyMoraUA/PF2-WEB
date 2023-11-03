@@ -3,12 +3,9 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,6 +23,21 @@ import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
 import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
+import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
+import { MatTableModule } from '@angular/material/table';
+import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
+import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
+
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   imports: [
@@ -41,26 +53,37 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     MatIconModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatCheckboxModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   declarations: [
-    DashboardComponent,
     UserProfileComponent,
-    TableListComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
     GestionCandidatoComponent,
     HistorialEntrevistasComponent,
     CandidatoEditarComponent,
-    CandidatoInfoTecnicaComponent
+    CandidatoInfoTecnicaComponent,
+    GestionEmpresaComponent,
+    CrearProyectoComponent
   ],
   providers:[
     CandidatoCrearService,
-    CandidatoInfoService
-  ]
+    CandidatoInfoService,
+    EquiposDataSource,
+    ConsultarFichasService
+  ],
+
 })
 
 export class AdminLayoutModule {}

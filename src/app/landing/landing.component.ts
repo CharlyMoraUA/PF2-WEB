@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing',
@@ -9,8 +10,14 @@ import { Router } from '@angular/router';
 export class LandingComponent implements OnInit {
 
   constructor(
-    private _router: Router
-  ) { }
+    private _router: Router,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit(): void {
   }
@@ -31,4 +38,8 @@ export class LandingComponent implements OnInit {
     this._router.navigate(["login-candidato"])
   }
 
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 }

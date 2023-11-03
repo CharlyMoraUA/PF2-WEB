@@ -17,11 +17,11 @@ export class CandidatoEditarComponent implements OnInit {
   lista:any = {};
 
   ngOnInit(): void {
-    this.consultarInfo(localStorage.getItem("id_candidato"))
+    this.consultarInfo(sessionStorage.getItem("id_candidato"))
   }
 
   consultarInfo(id_candidato){
-    this.candidatoInfoService.obtenerInfoCandidato(id_candidato, localStorage.getItem("candidato-token")).subscribe(candidato=>{
+    this.candidatoInfoService.obtenerInfoCandidato(id_candidato, sessionStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }
