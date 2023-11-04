@@ -27,7 +27,7 @@ export class ConsultarFichasService {
     return this.http.get<EquipoElement[]>(`${this.apiUrl}equipos/consultar?id_empresa=${idEmpresa}`, { headers: headers });
   }
 
-  actualizarCandidato(id_rol:number, titulo: string, descripcion: string, blandas:any[], tecnicas:any[], token: string): Observable<EquipoElement[]> {
+  actualizarRol(id_rol:number, titulo: string, descripcion: string, blandas:any[], tecnicas:any[], token: string): Observable<EquipoElement[]> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })

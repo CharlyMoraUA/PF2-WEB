@@ -37,7 +37,7 @@ export class DetallarRolComponent implements OnInit {
   }
 
   actualizarRol(rol: RolInput){
-    this.fichaService.actualizarCandidato(this.data.id_rol,rol.titulo,rol.descripcion,rol.blandas,rol.tecnicas,sessionStorage.getItem("empresa-token")).subscribe(rol=>{
+    this.fichaService.actualizarRol(this.data.id_rol,rol.titulo,rol.descripcion,rol.blandas,rol.tecnicas,sessionStorage.getItem("empresa-token")).subscribe(rol=>{
       this.toastr.success("Confirmación", "rol detallado")
       this.dialogRef.close();
     })

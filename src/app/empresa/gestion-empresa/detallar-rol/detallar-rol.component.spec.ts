@@ -1,14 +1,31 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetallarRolComponent } from './detallar-rol.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import faker from '@faker-js/faker';
+import { TranslateModule } from '@ngx-translate/core';
+import { ToastrModule } from 'ngx-toastr';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
-describe('DetallarRolComponent', () => {
+fdescribe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
   let fixture: ComponentFixture<DetallarRolComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetallarRolComponent ]
+      imports: [HttpClientTestingModule, 
+      ReactiveFormsModule, 
+      FormsModule,
+      MatDialogModule,
+      ToastrModule.forRoot(),
+      TranslateModule.forRoot()
+    ],
+      declarations: [ DetallarRolComponent ],
+      providers: [
+          {provide: MatDialogRef, useValue: {}},
+          {provide: MAT_DIALOG_DATA, useValue: []},
+      ]
     })
     .compileComponents();
 
@@ -20,4 +37,16 @@ describe('DetallarRolComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+
+  it('should create form with 4 controls', () => {
+    expect(component.detallarRolForm.contains('titulo')).toBeTruthy();
+    expect(component.detallarRolForm.contains('descripcion')).toBeTruthy();
+    expect(component.detallarRolForm.contains('blandas')).toBeTruthy();
+    expect(component.detallarRolForm.contains('tecnicas')).toBeTruthy();
+  });
+
+  it('should be true when invalid form', () => {
+    component.detallarRolForm.controls['titulo'].setValue(faker.datatype.string());
+    expect(component.detallarRolForm.invalid).toBeTruthy();
+  });
+}); 
