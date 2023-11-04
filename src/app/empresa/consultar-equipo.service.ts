@@ -9,7 +9,7 @@ import { Empresa } from './representaciones/empresa';
   providedIn: 'root'
 })
 export class ConsultarEquipoService {
-  private apiUrl = environment.urlBaseEmpresa
+  private apiUrl = environment.urlBaseEquipos
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +23,7 @@ export class ConsultarEquipoService {
   obtenerEquipos(id_empresa: Empresa): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}equipos/consultar?id_empresa=${id_empresa}`, this.httpOptions);
   }
-  obtenerRoles(id_equipo: Empresa): Observable<any> {
+  obtenerRoles(id_equipo: any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}equipos/rol?equipo_id=${id_equipo}`, this.httpOptions);
   }
 
