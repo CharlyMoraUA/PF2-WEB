@@ -21,10 +21,10 @@ export class ConsultarEquipoService {
   }; 
 
   obtenerEquipos(id_empresa: Empresa): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/equipos/consultar?id_empresa=${id_empresa}`, this.httpOptions);
+    return this.http.get<any>(`${this.apiUrl}equipos/consultar?id_empresa=${id_empresa}`, this.httpOptions);
   }
   obtenerRoles(id_equipo: Empresa): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/equipos/rol?equipo_id=${id_equipo}`, this.httpOptions);
+    return this.http.get<any>(`${this.apiUrl}equipos/rol?equipo_id=${id_equipo}`, this.httpOptions);
   }
 
 }
