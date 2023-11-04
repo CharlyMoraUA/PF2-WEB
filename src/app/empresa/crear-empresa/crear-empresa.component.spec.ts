@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './crear-empresa.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { By } from '@angular/platform-browser';
 
 
 describe('CrearEmpresaComponent', () => {
@@ -83,6 +84,36 @@ describe('CrearEmpresaComponent', () => {
     component.crearEmpresaForm.controls['representante_usuario'].setValue(faker.internet.userName());
     component.crearEmpresaForm.controls['representante_clave'].setValue(faker.internet.password());
     expect(component.crearEmpresaForm.valid).toBeTruthy();
+  });
+
+  it('click create compay', ()  => {
+    component.crearEmpresaForm.controls['empresa_nombre'].setValue(faker.company.companyName());
+    component.crearEmpresaForm.controls['empresa_tipo_doc'].setValue('NIT');
+    component.crearEmpresaForm.controls['empresa_num_doc'].setValue(faker.random.numeric(10));
+    component.crearEmpresaForm.controls['empresa_telefono'].setValue(faker.phone.phoneNumber("333333333"));
+    component.crearEmpresaForm.controls['empresa_email'].setValue(faker.internet.email());
+    component.crearEmpresaForm.controls['representante_tipo_doc'].setValue('CC');
+    component.crearEmpresaForm.controls['representante_num_doc'].setValue(faker.random.numeric(10));
+    component.crearEmpresaForm.controls['representante_nombre'].setValue(faker.name.firstName()+" "+faker.name.lastName());
+    component.crearEmpresaForm.controls['representante_telefono'].setValue(faker.phone.phoneNumber("333333333"));
+    component.crearEmpresaForm.controls['representante_email'].setValue(faker.internet.email());
+    component.crearEmpresaForm.controls['representante_usuario'].setValue(faker.internet.userName());
+    component.crearEmpresaForm.controls['representante_clave'].setValue(faker.internet.password());
+
+    const spyCrearEmpresa= spyOn(component, 'crearEmpresa');
+    fixture.detectChanges();
+    let button = fixture.debugElement.query(By.css('.btn-crear-empresa')).nativeElement;
+    button.click();
+    fixture.detectChanges();
+    expect(spyCrearEmpresa).toHaveBeenCalled();
+  });
+
+  it('change language', ()  => {
+    fixture.detectChanges();
+    const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
+    select.value = select.options[1].value;  // <-- select a new value
+    select.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
   });
 
 });

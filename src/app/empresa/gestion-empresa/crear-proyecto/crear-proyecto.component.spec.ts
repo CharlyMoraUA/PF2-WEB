@@ -6,6 +6,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CrearProyectoComponent } from './crear-proyecto.component';
 import { faker } from '@faker-js/faker';
 import { TranslateModule } from '@ngx-translate/core';
+import { By } from '@angular/platform-browser';
 
 describe('CrearProyectoComponent', () => {
   let component: CrearProyectoComponent;
@@ -49,6 +50,14 @@ describe('CrearProyectoComponent', () => {
     component.crearProyectoForm.controls['titulo'].setValue(faker.datatype.string());
     component.crearProyectoForm.controls['fecha_inicio'].setValue('2021-01-01');
     expect(component.crearProyectoForm.valid).toBeTruthy();
+  });
+
+  it('change language', ()  => {
+    fixture.detectChanges();
+    const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
+    select.value = select.options[1].value;  // <-- select a new value
+    select.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
   });
 
 });

@@ -67,7 +67,7 @@ export class CrearProyectoComponent implements OnInit {
       })
     }
   }
-
+  
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.equiposDataSource.equipos$.value.length;
@@ -87,8 +87,6 @@ export class CrearProyectoComponent implements OnInit {
   }
 
   reloadComponent(self:boolean,urlToNavigateTo ?:string){
-    //skipLocationChange:true means dont update the url to / when navigating
-   console.log("Current route I am on:",this._router.url);
    const url=self ? this._router.url :urlToNavigateTo;
    this._router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
      this._router.navigate([`/${url}`]).then(()=>{
