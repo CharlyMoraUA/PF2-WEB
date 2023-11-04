@@ -47,4 +47,5 @@ export class ConsultarFichasService {
     return this.http.get<any>(`${this.apiUrl}equipos/habilidad`, { headers: headers });
   }
 
+  
 }
