@@ -24,7 +24,7 @@ export class ConsultarFichasService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
-    return this.http.get<EquipoElement[]>(`${this.apiUrl}/equipos/consultar?id_empresa=${idEmpresa}`, { headers: headers });
+    return this.http.get<EquipoElement[]>(`${this.apiUrl}equipos/consultar?id_empresa=${idEmpresa}`, { headers: headers });
   }
 
 }

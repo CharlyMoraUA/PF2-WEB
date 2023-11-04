@@ -14,6 +14,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
@@ -28,10 +29,10 @@ import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyec
 import { MatTableModule } from '@angular/material/table';
 import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
 import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
+import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 
 
 // Factory function required during AOT compilation
@@ -75,7 +76,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidatoEditarComponent,
     CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
-    CrearProyectoComponent
+    CrearProyectoComponent,
+    ConsultarEquipoComponent
   ],
   providers:[
     CandidatoCrearService,
