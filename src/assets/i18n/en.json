@@ -70,5 +70,27 @@
         "TeamNameHeader": "Name",
         "TeamDescHeader": "Description",
         "Save": "Save changes"
+    },
+    "NEW_WORKSHEET":{
+        "Title": "New Worksheet",
+        "WorkName": "Work Name",   
+        "Enter100Chars": "Please enter max 100 characters",
+        "Enter5000Chars": "Please enter max 5000 characters",
+        "IdealCandidateDesc": "Ideal Candidate Description",
+        "Candidates": "Candidates",
+        "CandidateNameHeader": "Name",
+        "CandidateEvaluationDateHeader": "Evaluation Date",
+        "CandidateEvaluationsHeader": "Evaluations",
+        "Save": "Save Changes"
+    },
+    "SEARCH_CANDIDATES":{
+        "Title": "Select filters to search candidates",
+        "Technologies": "Tecnologies",
+        "Education": "Education",
+        "Cancel": "Cancel",
+        "Filter": "Filter",
+        "University": "University",
+        "Technological": "Technological",
+        "Technical": "Technical"
     }
 }

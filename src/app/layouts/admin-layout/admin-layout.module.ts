@@ -14,6 +14,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule} from '@angular/material/dialog';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
@@ -30,6 +31,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { MisProyectosComponent } from 'app/empresa/gestion-empresa/mis-proyectos/mis-proyectos.component';
 import { EditarProyectoComponent } from 'app/empresa/gestion-empresa/editar-proyecto/editar-proyecto.component';
+import { CrearHojaTrabajoComponent, DialogBuscarCandidatosDialog } from 'app/empresa/gestion-empresa/crear-hoja-trabajo/crear-hoja-trabajo.component';
 
 
 // Factory function required during AOT compilation
@@ -59,7 +61,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         useFactory: httpTranslateLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    MatDialogModule,
+    MatCheckboxModule
   ],
   declarations: [
     UserProfileComponent,
@@ -74,7 +78,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     GestionEmpresaComponent,
     CrearProyectoComponent,
     MisProyectosComponent,
-    EditarProyectoComponent
+    EditarProyectoComponent,
+    CrearHojaTrabajoComponent,
   ],
   providers: [
     EquiposDataSource,

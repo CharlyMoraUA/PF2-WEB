@@ -48,7 +48,12 @@ describe('CandidatoComponent', () => {
         faker.datatype.string(),
         faker.datatype.number(),
         faker.datatype.datetime(),
-        faker.datatype.string()
+        faker.datatype.string(),
+        faker.datatype.datetime(),
+        faker.datatype.number(),
+        "DISPONIBLE",
+        [],
+        [],
       ),
     ];
     fixture.detectChanges();

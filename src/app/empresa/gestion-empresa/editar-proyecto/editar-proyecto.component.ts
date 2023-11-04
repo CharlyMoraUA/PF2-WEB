@@ -81,6 +81,12 @@ export class EditarProyectoComponent implements OnInit {
     this.reloadComponent(true)
   }
 
+  goToNewWorksheet(){
+    sessionStorage.setItem("pantalla_proyectos", "crear-hoja-trabajo")
+    this._router.navigate(["gestion-empresa"])
+    this.reloadComponent(true)
+  }
+
   reloadComponent(self:boolean,urlToNavigateTo ?:string){
     //skipLocationChange:true means dont update the url to / when navigating
    console.log("Current route I am on:",this._router.url);

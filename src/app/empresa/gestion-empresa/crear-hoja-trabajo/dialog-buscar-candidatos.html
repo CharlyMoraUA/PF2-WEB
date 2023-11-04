@@ -1,0 +1,48 @@
+<mat-dialog-content style="padding: 0%;">
+<div class="main-content">
+    <div class="container" style="padding-top:10%">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger text-center" >
+                        <h4 class="card-title">ABC Jobs</h4>
+                        <p class="card-category">{{'SEARCH_CANDIDATES.Title' | translate}}</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="padding-top:5%" class="sidebar-wrapper">
+                            <div class="col-md-12 d-flex justify-content-left" >
+                                <h5 class="card-title text-left">{{'SEARCH_CANDIDATES.Technologies' | translate}}</h5>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row" style="padding-top:5%" class="sidebar-wrapper">
+                            <mat-checkbox class="example-margin" [(ngModel)]="tec_python">Python</mat-checkbox><br>
+                            <mat-checkbox class="example-margin" [(ngModel)]="tec_java">Java</mat-checkbox><br>
+                            <mat-checkbox class="example-margin" [(ngModel)]="tec_scrum">Scrum</mat-checkbox>
+                        </div>
+                        <div class="row" style="padding-top:5%"  class="sidebar-wrapper">
+                            <div class="col-md-12 d-flex justify-content-left" >
+                                <h5 class="card-title text-left">{{'SEARCH_CANDIDATES.Education' | translate}}</h5>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row" style="padding-top:5%" class="sidebar-wrapper">
+                            <mat-checkbox class="example-margin" [(ngModel)]="edu_universitaria">{{'SEARCH_CANDIDATES.University' | translate}}</mat-checkbox><br>
+                            <mat-checkbox class="example-margin" [(ngModel)]="edu_tecnologica">{{'SEARCH_CANDIDATES.Technological' | translate}}</mat-checkbox><br>
+                            <mat-checkbox class="example-margin" [(ngModel)]="edu_tecnica">{{'SEARCH_CANDIDATES.Technical' | translate}}</mat-checkbox>
+                        </div>
+                        <div class="row" style="padding-bottom:5%; padding-top:2%">
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <button mat-raised-button class="btn btn-danger btn-block" style="width:80%" mat-dialog-close (click)="limpiarFiltros()" [mat-dialog-close]="data">{{'SEARCH_CANDIDATES.Cancel' | translate}}</button>
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <button mat-raised-button class="btn btn-danger btn-block" style="width:80%" (click)="filtrarCandidatos()" [mat-dialog-close]="data" cdkFocusInitial>{{'SEARCH_CANDIDATES.Filter' | translate}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</mat-dialog-content>

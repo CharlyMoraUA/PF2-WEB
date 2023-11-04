@@ -12,6 +12,11 @@ export class Candidato{
     aspiracion_salarial : number;
     fecha_nacimiento : Date;
     idiomas : string;
+    fecha_ultima_evaluacion: Date;
+    promedio_evaluaciones: number;
+    estado: string;
+    habilidades_tecnicas: Array<object>;
+    info_academica: Array<object>;
 
     constructor(
         id : number,
@@ -27,6 +32,11 @@ export class Candidato{
         aspiracion_salarial : number,
         fecha_nacimiento : Date,
         idiomas : string,
+        fecha_ultima_evaluacion: Date,
+        promedio_evaluaciones: number,
+        estado: string,
+        habilidades_tecnicas: Array<object>,
+        info_academica: Array<object>,
     ){
         this.id = id;
         this.tipo_doc = tipo_doc;
@@ -41,6 +51,11 @@ export class Candidato{
         this.aspiracion_salarial = aspiracion_salarial;
         this.fecha_nacimiento = fecha_nacimiento;
         this.idiomas = idiomas;
+        this.fecha_ultima_evaluacion = fecha_ultima_evaluacion;
+        this.promedio_evaluaciones = promedio_evaluaciones;
+        this.estado = estado;
+        this.habilidades_tecnicas = habilidades_tecnicas;
+        this.info_academica = info_academica;
 
     }
 }
