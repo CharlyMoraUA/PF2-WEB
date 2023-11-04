@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 describe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
@@ -20,6 +21,7 @@ describe('DetallarRolComponent', () => {
       MatFormFieldModule ,
       ReactiveFormsModule, 
       MatInputModule,
+      MatSelectModule,
       FormsModule,
       ToastrModule.forRoot(),
       TranslateModule.forRoot()
