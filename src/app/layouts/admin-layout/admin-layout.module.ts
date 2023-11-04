@@ -29,9 +29,9 @@ import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyec
 import { MatTableModule } from '@angular/material/table';
 import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
 import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
+import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
 import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 
 
