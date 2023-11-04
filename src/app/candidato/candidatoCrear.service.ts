@@ -10,7 +10,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class CandidatoCrearService {
 
-  private apiUrl = environment.urlBaseCandidatos + 'candidato/';
+  private apiUrl = environment.baseUrl + 'candidato/';
 
 constructor(private http: HttpClient) { }
 
