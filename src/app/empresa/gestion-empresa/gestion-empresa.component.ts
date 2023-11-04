@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-gestion-empresa',
   templateUrl: './gestion-empresa.component.html',
-  styleUrls: ['./gestion-empresa.component.scss']
+  styleUrls: ['./gestion-empresa.component.css']
 })
 export class GestionEmpresaComponent implements OnInit {
 
   constructor() { }
 
-  selectedIndex =0
+  selectedIndex =1
   ngOnInit(): void {
   }
 

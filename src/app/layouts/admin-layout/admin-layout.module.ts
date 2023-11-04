@@ -14,10 +14,12 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
+import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
@@ -32,7 +34,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   declarations: [
     UserProfileComponent,
@@ -43,7 +46,9 @@ import { MatIconModule } from '@angular/material/icon';
     GestionCandidatoComponent,
     HistorialEntrevistasComponent,
     GestionEmpresaComponent,
-    CrearProyectoComponent
+    CrearProyectoComponent,
+    ConsultarEquipoComponent
+    
   ]
 })
 

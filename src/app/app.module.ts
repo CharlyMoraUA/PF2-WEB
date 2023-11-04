@@ -20,6 +20,7 @@ import { CandidatoComponent } from 'app/candidato/candidato-crear/candidato.comp
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
 import { MatIconModule } from '@angular/material/icon';
+// import { ConsultarEquipoComponent } from './empresa/consultar-equipo/consultar-equipo.component';
 
 @NgModule({
   imports: [

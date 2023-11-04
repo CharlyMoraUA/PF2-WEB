@@ -1,0 +1,75 @@
+<div *ngIf="verEquipos">
+    <h3>Mis equipos</h3>
+    <table class="table tabla_historial_entrevista">
+        <thead class=" text-primary">
+            <th style="color:black">
+                Titulo
+            </th>
+            <th style="color:black">
+                Descripcion
+            </th>
+            <th style="color:black">
+                Miembros
+            </th>
+            <th>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let equipo of listaEquipos">
+                <td style="width:20%">
+                    {{equipo["nombre"]}}
+                </td>
+                <td style="width:20%">
+                    {{equipo["descripcion"]}}
+                </td>
+                <td style="width:20%">
+                    {{equipo["miembros"]}}
+                </td>
+                <td style="width:20%">
+                    <button mat-button (click)="showEditarRoles(equipo['id'])">
+                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
+                    </button>
+                    <button mat-button>
+                        <img style="width:auto;height:40px" src="/assets/img/eliminar_gris.png" alt="eliminar"/>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="!verEquipos">
+    <div>
+        <button mat-button (click)="backToEquipos()">
+            <img style="width:auto;height:50px" src="/assets/img/gris_atras.png" alt="editar"/>
+        </button>
+    </div>
+    <h3>Roles</h3>
+    <table class="table tabla_historial_entrevista">
+        <thead class=" text-primary">
+            <th style="color:black">
+                Nombre
+            </th>
+            <th style="color:black">
+                Descripcion
+            </th>
+            <th>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rol of listaRoles">
+                <td style="width:20%">
+                    {{rol["nombre"]}}
+                </td>
+                <td style="width:20%">
+                    {{rol["descripcion"]}}
+                </td>
+                <td style="width:20%">
+                    <mat-checkbox></mat-checkbox>
+                    <button mat-button >
+                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
