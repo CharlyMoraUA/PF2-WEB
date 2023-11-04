@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm run test:prod
       # - name: SonarCloud Scan
       #   uses: SonarSource/sonarcloud-github-action@master
