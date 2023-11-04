@@ -92,5 +92,47 @@
         "University": "University",
         "Technological": "Technological",
         "Technical": "Technical"
+    },
+    "CREATE_CANDIDATE":{
+        "Title": "Registration as a candidate",
+        "DocumentType": "Document type",
+        "IdentificationCard": "Identification Card",
+        "ForeignerCardId": "Foreigner Card ID",
+        "Passport": "Passport",
+        "DocumentNumber": "Document Number",
+        "Name": "Name",
+        "Email": "Email",
+        "TelephoneNumber": "Telephone Number",
+        "Country": "Country",
+        "City": "City",
+        "WageAspiration": "Wage Aspiration",
+        "BirthDate": "Birth Date",
+        "User": "User",
+        "Password": "Password",
+        "Languages": "Languages",
+        "BackButton": "Back",
+        "RegisterButton": "Register"
+    },
+    "INFO_CANDIDATE":{
+        "Title":"Technical information",
+        "DocumentType": "Document type",
+        "DocumentNumber": "Document number",
+        "Name": "Name",
+        "Email": "Email",
+        "Telephone": "Telephone",
+        "Country": "Country",
+        "City": "City",
+        "WageAspiration": "Wage aspiration",
+        "BirthDate": "Birth date",
+        "AcademicInformation": "Academic information",
+        "TechnicalInformation": "Technical information",
+        "WorkingInformation": "Working information",
+        "DeleteAccount": "Delete account"
+    },
+    "TECHNICAL_INFO":{
+        "Title": "Technical information",
+        "SkillType": "Technical skill",
+        "Skill": "Skill",
+        "BackButton": "Back"
     }
 }

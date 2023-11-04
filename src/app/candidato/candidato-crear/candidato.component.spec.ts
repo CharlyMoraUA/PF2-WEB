@@ -8,19 +8,20 @@ import { CandidatoComponent } from './candidato.component';
 import { Candidato } from '../representaciones/candidato';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('CandidatoComponent', () => {
   let component: CandidatoComponent;
   let fixture: ComponentFixture<CandidatoComponent>;
   let debug: DebugElement;
-  let h4: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, 
         ReactiveFormsModule, 
         FormsModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        TranslateModule.forRoot()
       ],
       declarations: [ CandidatoComponent ],
       providers: [

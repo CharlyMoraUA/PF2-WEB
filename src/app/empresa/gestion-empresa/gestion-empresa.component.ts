@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-gestion-empresa',
   templateUrl: './gestion-empresa.component.html',
-  styleUrls: ['./gestion-empresa.component.scss']
+  styleUrls: ['./gestion-empresa.component.css']
 })
 export class GestionEmpresaComponent implements OnInit {
 
@@ -17,8 +17,9 @@ export class GestionEmpresaComponent implements OnInit {
     translate.setDefaultLang('es');
   }
 
-  selectedIndex =0
+  selectedIndex =1
   pantallaProyectos = "mis-proyectos"
+  
   ngOnInit(): void {
     this.pantallaProyectos = sessionStorage.getItem("pantalla_proyectos")
   }  

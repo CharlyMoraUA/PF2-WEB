@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
 import { Router } from '@angular/router';
+import { CandidatoInfoService } from '../candidatoInfo.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-candidatoEditar',
@@ -10,24 +11,35 @@ import { Router } from '@angular/router';
 export class CandidatoEditarComponent implements OnInit {
 
   constructor(
-    private candidatoService: CandidatoCrearService,
-    private _router: Router
-  ) { }
+    private candidatoInfoService: CandidatoInfoService,
+    private _router: Router,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+   }
 
-  lista:any;
+  lista:any = {};
 
   ngOnInit(): void {
-    this.consultarInfo(localStorage.getItem("id_candidato"))
+    this.consultarInfo(sessionStorage.getItem("id_candidato"))
   }
 
   consultarInfo(id_candidato){
-    this.candidatoService.obtenerInfoCandidato(id_candidato).subscribe(candidato=>{
+    this.candidatoInfoService.obtenerInfoCandidato(id_candidato, sessionStorage.getItem("candidato-token")).subscribe(candidato=>{
       this.lista = candidato.response
     })
   }
 
   goToInfoTecnica(){
     this._router.navigate(["infoTecnica"])
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }

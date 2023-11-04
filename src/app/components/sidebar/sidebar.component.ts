@@ -48,6 +48,7 @@ export function getRoutes() : RouteInfo[]{
   if(usertype == 'candidato'){
     return [
       { path: '/gestionCandidatos', title: 'Gestion de Candidatos',  icon: '', class: '' },
+      { path: '/editarCandidatos', title: 'Editar mi Información',  icon: '', class: '' },
     ];
   }
   else{
