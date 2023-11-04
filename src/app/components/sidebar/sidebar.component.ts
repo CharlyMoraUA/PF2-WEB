@@ -45,8 +45,6 @@ export class SidebarComponent implements OnInit {
 
 export function getRoutes() : RouteInfo[]{
   let usertype = sessionStorage.getItem("usertype")
-  console.log('usertype')
-  console.log(usertype)
   if(usertype == 'candidato'){
     return [
       { path: '/gestionCandidatos', title: 'Gestion de Candidatos',  icon: '', class: '' },

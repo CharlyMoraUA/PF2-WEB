@@ -53,6 +53,46 @@
         "TeamDescHeader": "Description",
         "CreateProject": "Create Project"
     },
+    "MY_PROJECTS":{
+        "Title": "My projects",
+        "TableTitle": "Title",
+        "TableStartDate": "Start Date",
+        "TableEndDate": "End Date"
+    },
+    "EDIT_PROJECT":{
+        "Title": "Edit Project",
+        "ProjectTitle": "Project Title",   
+        "Enter100Chars": "Please enter max 100 characters",
+        "ProjectStartDate": "Project Start Date",
+        "EnterDateFormat": "Please enter a date with format DD-MM-YYYY",
+        "ProjectEndDate": "Project End Date",
+        "Teams": "Teams",
+        "TeamNameHeader": "Name",
+        "TeamDescHeader": "Description",
+        "Save": "Save changes"
+    },
+    "NEW_WORKSHEET":{
+        "Title": "New Worksheet",
+        "WorkName": "Work Name",   
+        "Enter100Chars": "Please enter max 100 characters",
+        "Enter5000Chars": "Please enter max 5000 characters",
+        "IdealCandidateDesc": "Ideal Candidate Description",
+        "Candidates": "Candidates",
+        "CandidateNameHeader": "Name",
+        "CandidateEvaluationDateHeader": "Evaluation Date",
+        "CandidateEvaluationsHeader": "Evaluations",
+        "Save": "Save Changes"
+    },
+    "SEARCH_CANDIDATES":{
+        "Title": "Select filters to search candidates",
+        "Technologies": "Tecnologies",
+        "Education": "Education",
+        "Cancel": "Cancel",
+        "Filter": "Filter",
+        "University": "University",
+        "Technological": "Technological",
+        "Technical": "Technical"
+    },
     "CREATE_CANDIDATE":{
         "Title": "Registration as a candidate",
         "DocumentType": "Document type",

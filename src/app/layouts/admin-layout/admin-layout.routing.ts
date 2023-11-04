@@ -10,6 +10,7 @@ import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.compone
 import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
 import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
+import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'gestionCandidatos',      component: GestionCandidatoComponent },
@@ -73,4 +74,5 @@ export const AdminLayoutRoutes: Routes = [
     //{ path: 'maps',                   component: MapsComponent },
     { path: 'notifications',          component: NotificationsComponent },
     { path: 'upgrade',                component: UpgradeComponent },
+    { path: 'crear-proyecto',        component: CrearProyectoComponent },
 ];

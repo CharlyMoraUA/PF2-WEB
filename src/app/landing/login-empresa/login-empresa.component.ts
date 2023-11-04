@@ -47,7 +47,7 @@ export class LoginEmpresaComponent implements OnInit {
         sessionStorage.setItem('usuario_representante', res.info_representante.usuario);
         sessionStorage.setItem('nombre_empresa', res.info_empresa.nombre);
         sessionStorage.setItem('usertype', 'empresa');
-
+        sessionStorage.setItem("pantalla_proyectos", "mis-proyectos")
         this._router.navigate(["gestion-empresa"])
       },
         error => {

@@ -53,6 +53,46 @@
         "TeamDescHeader": "Descripción",
         "CreateProject": "Crear Proyecto"
     },
+    "MY_PROJECTS":{
+        "Title": "Mis proyectos",
+        "TableTitle": "Título",
+        "TableStartDate": "Fecha inicio",
+        "TableEndDate": "Fecha fin"
+    },
+    "EDIT_PROJECT":{
+        "Title": "Editar Proyecto",
+        "ProjectTitle": "Título del proyecto",   
+        "Enter100Chars": "Por favor ingrese máximo 100 caracteres",
+        "ProjectStartDate": "Fecha de inicio de proyecto",
+        "EnterDateFormat": "Por favor ingrese una fecha con formato DD-MM-YYYY",
+        "ProjectEndDate": "Fecha de fin de proyecto",
+        "Teams": "Equipos",
+        "TeamNameHeader": "Nombre",
+        "TeamDescHeader": "Descripción",
+        "Save": "Guardar cambios"
+    },
+    "NEW_WORKSHEET":{
+        "Title": "Crear Hoja de Trabajo",
+        "WorkName": "Nombre del trabajo",   
+        "Enter100Chars": "Por favor ingrese máximo 100 caracteres",
+        "Enter5000Chars": "Por favor ingrese máximo 5000 caracteres",
+        "IdealCandidateDesc": "Descripción del candidato ideal",
+        "Candidates": "Candidatos",
+        "CandidateNameHeader": "Nombre",
+        "CandidateEvaluationDateHeader": "Fecha Evaluación",
+        "CandidateEvaluationsHeader": "Evaluaciones",
+        "Save": "Guardar Cambios"
+    },
+    "SEARCH_CANDIDATES":{
+        "Title": "Selecciona Filtros para los Candidatos",
+        "Technologies": "Tecnologías",
+        "Education": "Educación",
+        "Cancel": "Cancelar",
+        "Filter": "Filtrar",
+        "University": "Universitaria",
+        "Technological": "Tecnológica",
+        "Technical": "Técnica"
+    },
     "CREATE_CANDIDATE":{
         "Title": "Registrarse como candidato",
         "DocumentType": "Tipo de documento",

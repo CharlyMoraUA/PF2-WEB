@@ -14,6 +14,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
@@ -23,15 +24,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
 import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule } from '@angular/material/dialog';
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
 import { MatTableModule } from '@angular/material/table';
 import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
 import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
-import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { MisProyectosComponent } from 'app/empresa/gestion-empresa/mis-proyectos/mis-proyectos.component';
+import { EditarProyectoComponent } from 'app/empresa/gestion-empresa/editar-proyecto/editar-proyecto.component';
+import { CrearHojaTrabajoComponent, DialogBuscarCandidatosDialog } from 'app/empresa/gestion-empresa/crear-hoja-trabajo/crear-hoja-trabajo.component';
 import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 
 
@@ -64,6 +67,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    MatDialogModule,
   ],
   declarations: [
     UserProfileComponent,
@@ -77,7 +81,10 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
     CrearProyectoComponent,
-    ConsultarEquipoComponent
+    MisProyectosComponent,
+    EditarProyectoComponent,
+    CrearHojaTrabajoComponent,
+    ConsultarEquipoComponent,
   ],
   providers:[
     CandidatoCrearService,
