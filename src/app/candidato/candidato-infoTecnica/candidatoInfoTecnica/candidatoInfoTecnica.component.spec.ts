@@ -7,6 +7,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { CandidatoInfoTecnicaComponent } from './candidatoInfoTecnica.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
 
 describe('CandidatoInfoTecnicaComponent', () => {
   let component: CandidatoInfoTecnicaComponent;
@@ -17,6 +20,9 @@ describe('CandidatoInfoTecnicaComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, 
         MatDialogModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
         ToastrModule.forRoot(),
         TranslateModule.forRoot()
       ],

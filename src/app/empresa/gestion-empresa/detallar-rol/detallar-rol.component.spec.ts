@@ -11,11 +11,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
   let fixture: ComponentFixture<DetallarRolComponent>;
-
+  let debug: DebugElement;
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, 
@@ -55,5 +58,9 @@ describe('DetallarRolComponent', () => {
   it('should be true when invalid form', () => {
     component.detallarRolForm.controls['titulo'].setValue(faker.datatype.string());
     expect(component.detallarRolForm.invalid).toBeTruthy();
+  });
+
+  it('should have a dashboard element ', () => {
+    expect(debug.query(By.css('h4')).attributes["class"]).toEqual("card-title");
   });
 }); 
