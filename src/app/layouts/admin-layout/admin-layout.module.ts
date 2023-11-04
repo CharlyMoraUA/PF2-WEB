@@ -17,10 +17,28 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { GestionCandidatoComponent } from 'app/candidato/gestion/gestion.component';
 import { HistorialEntrevistasComponent } from 'app/candidato/gestion/historial-entrevistas/historial-entrevistas.component';
+import { CandidatoEditarComponent } from 'app/candidato/candidato-editar/candidatoEditar.component';
+import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
+import { MatIconModule } from '@angular/material/icon';
+import { CandidatoCrearService } from 'app/candidato/candidatoCrear.service';
+import { CandidatoInfoService } from 'app/candidato/candidatoInfo.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
+import { MatTableModule } from '@angular/material/table';
+import { EquiposDataSource } from 'app/empresa/datasources/EquiposDataSource';
+import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
 import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
-import { MatIconModule } from '@angular/material/icon';
+
+
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   imports: [
@@ -35,7 +53,17 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatTooltipModule,
     MatIconModule,
-    MatCheckboxModule
+    HttpClientModule,
+    MatDialogModule,
+    MatTableModule,
+    MatCheckboxModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   declarations: [
     UserProfileComponent,
@@ -45,11 +73,19 @@ import { MatIconModule } from '@angular/material/icon';
     UpgradeComponent,
     GestionCandidatoComponent,
     HistorialEntrevistasComponent,
+    CandidatoEditarComponent,
+    CandidatoInfoTecnicaComponent,
     GestionEmpresaComponent,
     CrearProyectoComponent,
     ConsultarEquipoComponent
-    
-  ]
+  ],
+  providers:[
+    CandidatoCrearService,
+    CandidatoInfoService,
+    EquiposDataSource,
+    ConsultarFichasService
+  ],
+
 })
 
 export class AdminLayoutModule {}

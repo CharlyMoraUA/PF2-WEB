@@ -1,0 +1,98 @@
+{
+    "TITLE": "Welcome, your profile details are",
+    "LANDING":{
+        "Title": "Select Authentication Method",
+        "LoginCompany": "Login as Company",
+        "LoginCandidate": "Login as Candidate",
+        "SignUpCompany": "Sign Up as Company",
+        "SignUpCandidate": "Sign Up as Candidate"
+    },
+    "LOGIN_CANDIDATE":{
+        "Title": "Candidate LogIn",
+        "User": "User Name",
+        "Password": "Password",
+        "Back": "Back",
+        "LogIn": "Log In"
+    },
+    "CREATE_COMPANY":{
+        "Title": "Company Sign Up",
+        "CompanyInformation": "Company Information",
+        "CompanyDocumentType": "Company Document Type",
+        "CompanyDocumentID": "Company Document ID", 
+        "CompanyName": "Company Name",
+        "AtLeastFiveChars": "Please enter at least 5 characters",
+        "CompanyEmail": "Company Email",
+        "EnterValidEmail": "Please enter a valid email address",
+        "CompanyPhoneNumber": "Company Phone Number",
+        "AtLeastSevenChars": "Please enter a phone number with at least 7 characters",
+        "LettersNotAllowed": "Letters are not allowed",
+        "RepresentativeInformation": "Representative Information",
+        "RepresentativeDocumentType": "Representative Document Type",
+        "RepresentativeDocumentID": "Representative Document ID",
+        "RepresentativeName": "Representative Name",
+        "RepresentativeEmail": "Representative Email",
+        "RepresentativePhoneNumber": "Representative Phone Number",
+        "RepresentativeUser": "Representative User Name",
+        "RepresentativePassword": "Representative Password",
+        "Back": "Back",
+        "SignUp": "Sign Up as Company"
+    },
+    "LANDING_COMPANY":{
+        "MenuProjects": "Projects",
+        "MenuTeams": "Teams"
+    },
+    "NEW_PROJECT":{
+        "Title": "New Project",
+        "ProjectTitle": "Project Title",   
+        "Enter100Chars": "Please enter max 100 characters",
+        "ProjectStartDate": "Project Start Date",
+        "EnterDateFormat": "Please enter a date with format DD-MM-YYYY",
+        "ProjectEndDate": "Project End Date",
+        "Teams": "Teams",
+        "TeamNameHeader": "Name",
+        "TeamDescHeader": "Description",
+        "CreateProject": "Create Project"
+    },
+    "CREATE_CANDIDATE":{
+        "Title": "Registration as a candidate",
+        "DocumentType": "Document type",
+        "IdentificationCard": "Identification Card",
+        "ForeignerCardId": "Foreigner Card ID",
+        "Passport": "Passport",
+        "DocumentNumber": "Document Number",
+        "Name": "Name",
+        "Email": "Email",
+        "TelephoneNumber": "Telephone Number",
+        "Country": "Country",
+        "City": "City",
+        "WageAspiration": "Wage Aspiration",
+        "BirthDate": "Birth Date",
+        "User": "User",
+        "Password": "Password",
+        "Languages": "Languages",
+        "BackButton": "Back",
+        "RegisterButton": "Register"
+    },
+    "INFO_CANDIDATE":{
+        "Title":"Technical information",
+        "DocumentType": "Document type",
+        "DocumentNumber": "Document number",
+        "Name": "Name",
+        "Email": "Email",
+        "Telephone": "Telephone",
+        "Country": "Country",
+        "City": "City",
+        "WageAspiration": "Wage aspiration",
+        "BirthDate": "Birth date",
+        "AcademicInformation": "Academic information",
+        "TechnicalInformation": "Technical information",
+        "WorkingInformation": "Working information",
+        "DeleteAccount": "Delete account"
+    },
+    "TECHNICAL_INFO":{
+        "Title": "Technical information",
+        "SkillType": "Technical skill",
+        "Skill": "Skill",
+        "BackButton": "Back"
+    }
+}

@@ -12,7 +12,8 @@
     "start:es": "ng serve --configuration=es",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o",
     "build:prod": "ng build --prod",
-    "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage"
+    "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
+    "postinstall": "ngcc"
   },
   "engines": {
     "node": "6.11.1",
@@ -33,6 +34,8 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@auth0/angular-jwt": "^5.1.2",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "ajv": "8.11.0",
     "arrive": "2.4.1",
     "bootstrap": "4.6.1",
@@ -47,6 +50,7 @@
     "jquery": "3.6.0",
     "moment": "2.29.1",
     "ngx-toastr": "^14.3.0",
+    "ngx-translate": "^0.0.1-security",
     "perfect-scrollbar": "1.5.5",
     "popper.js": "1.16.1",
     "rxjs": "~7.5.0",

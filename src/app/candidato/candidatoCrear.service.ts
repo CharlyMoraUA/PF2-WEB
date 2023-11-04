@@ -11,7 +11,6 @@ import { HttpHeaders } from '@angular/common/http';
 export class CandidatoCrearService {
 
   private apiUrl = environment.baseUrl + 'candidato/';
-  //private apiUrl = '/api/candidato/create';
 
 constructor(private http: HttpClient) { }
 

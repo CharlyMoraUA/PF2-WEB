@@ -2,12 +2,265 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="6253617594708746884" datatype="html">
-        <source>Company management</source>
+      <trans-unit id="CandidateRegisterTitle" datatype="html">
+        <source>registration as a candidate</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/sidebar/sidebar.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
+        <note priority="1" from="description">Candidate Register Title</note>
+      </trans-unit>
+      <trans-unit id="DocumentTypeSelect" datatype="html">
+        <source>Document type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Document type select</note>
+      </trans-unit>
+      <trans-unit id="Identification Card Option" datatype="html">
+        <source>Identification Card</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Identification card option</note>
+      </trans-unit>
+      <trans-unit id="ForeignerCardOption" datatype="html">
+        <source>Foreigner Card ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">Foreigner card option</note>
+      </trans-unit>
+      <trans-unit id="PassportOption" datatype="html">
+        <source>Passport</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Passport option</note>
+      </trans-unit>
+      <trans-unit id="DocumentNumberPlaceholder" datatype="html">
+        <source>Document number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">Document number placeholder</note>
+      </trans-unit>
+      <trans-unit id="NamePlaceholder" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">Name placeholder</note>
+      </trans-unit>
+      <trans-unit id="EmailPlaceholder" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">Email placeholder</note>
+      </trans-unit>
+      <trans-unit id="TelephonePlaceholder" datatype="html">
+        <source>Telephone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">Telephone placeholder</note>
+      </trans-unit>
+      <trans-unit id="CountryPlaceholder" datatype="html">
+        <source>Country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">Country placeholder</note>
+      </trans-unit>
+      <trans-unit id="CityPlaceholder" datatype="html">
+        <source>City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <note priority="1" from="description">City placeholder</note>
+      </trans-unit>
+      <trans-unit id="WageAspirationPlaceholder" datatype="html">
+        <source>Wage aspiration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <note priority="1" from="description">Wage aspiration placeholder</note>
+      </trans-unit>
+      <trans-unit id="BirthdatePlaceholder" datatype="html">
+        <source>Birthdate</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <note priority="1" from="description">Birthdate placeholder</note>
+      </trans-unit>
+      <trans-unit id="UserPlaceholder" datatype="html">
+        <source>User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <note priority="1" from="description">User placeholder</note>
+      </trans-unit>
+      <trans-unit id="PasswordPlaceholder" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+        <note priority="1" from="description">Password placeholder</note>
+      </trans-unit>
+      <trans-unit id="LanguagesPlaceholder" datatype="html">
+        <source>Languages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+        <note priority="1" from="description">Languages placeholder</note>
+      </trans-unit>
+      <trans-unit id="BackButton" datatype="html">
+        <source>Back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">Back button label</note>
+      </trans-unit>
+      <trans-unit id="RegisterButton" datatype="html">
+        <source>Register </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-crear/candidato.component.html</context>
+          <context context-type="linenumber">148,149</context>
+        </context-group>
+        <note priority="1" from="description">Register button label</note>
+      </trans-unit>
+      <trans-unit id="CandidateInformationTitle" datatype="html">
+        <source> Candidate information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Candidate information title</note>
+      </trans-unit>
+      <trans-unit id="DocTypeLabel" datatype="html">
+        <source>Document type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Doc type label</note>
+      </trans-unit>
+      <trans-unit id="DocumentNumberLabel" datatype="html">
+        <source>Document number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Document number label</note>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">Name label@NameLabel</note>
+      </trans-unit>
+      <trans-unit id="EmailLabel" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Email label</note>
+      </trans-unit>
+      <trans-unit id="TelephoneLabel" datatype="html">
+        <source>Telephone</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">Telephone label</note>
+      </trans-unit>
+      <trans-unit id="CountryLabel" datatype="html">
+        <source>Country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">Country label</note>
+      </trans-unit>
+      <trans-unit id="CityLabel" datatype="html">
+        <source>City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">City label</note>
+      </trans-unit>
+      <trans-unit id="WageAspirationLabel" datatype="html">
+        <source>Wage aspiration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">Wage aspiration label</note>
+      </trans-unit>
+      <trans-unit id="BirthdateLabel" datatype="html">
+        <source>Birthdate</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">Birthdate label</note>
+      </trans-unit>
+      <trans-unit id="AcademicInformationButton" datatype="html">
+        <source>Academic information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <note priority="1" from="description">Academic information button</note>
+      </trans-unit>
+      <trans-unit id="TechnicalInformationButton" datatype="html">
+        <source>Technical Information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <note priority="1" from="description">Technical Information button</note>
+      </trans-unit>
+      <trans-unit id="WorkingInformationButton" datatype="html">
+        <source>Working Information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <note priority="1" from="description">Working information button</note>
+      </trans-unit>
+      <trans-unit id="DeleteAccountButton" datatype="html">
+        <source>Delete Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/candidato/candidato-editar/candidatoEditar.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <note priority="1" from="description">Delete account button</note>
       </trans-unit>
       <trans-unit id="CompanySignUpTitle" datatype="html">
         <source>Company Sign Up</source>
@@ -289,21 +542,29 @@
         </context-group>
         <note priority="1" from="description">Teams title</note>
       </trans-unit>
+      <trans-unit id="teamsTableNameHeaderLabel" datatype="html">
+        <source> Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">42,44</context>
+        </context-group>
+        <note priority="1" from="description">Teams table name header</note>
+      </trans-unit>
+      <trans-unit id="teamsTableDescHeaderLabel" datatype="html">
+        <source> Description </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
+          <context context-type="linenumber">45,47</context>
+        </context-group>
+        <note priority="1" from="description">Teams table desc header</note>
+      </trans-unit>
       <trans-unit id="createProjectButton" datatype="html">
         <source>Create project </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component.html</context>
-          <context context-type="linenumber">44,45</context>
+          <context context-type="linenumber">69,70</context>
         </context-group>
         <note priority="1" from="description">Create project button</note>
-      </trans-unit>
-      <trans-unit id="projectsTitle" datatype="html">
-        <source> Projects </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/empresa/gestion-empresa/gestion-empresa.component.html</context>
-          <context context-type="linenumber">16,18</context>
-        </context-group>
-        <note priority="1" from="description">Projects title</note>
       </trans-unit>
       <trans-unit id="CandidateLoginTitle" datatype="html">
         <source>Candidate LogIn</source>
@@ -328,14 +589,6 @@
           <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">Password input placeholder</note>
-      </trans-unit>
-      <trans-unit id="BackButton" datatype="html">
-        <source>Back</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/landing/login-candidato/login-candidato.component.html</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-        <note priority="1" from="description">Back button label</note>
       </trans-unit>
       <trans-unit id="LogInButton" datatype="html">
         <source>LogIn</source>
