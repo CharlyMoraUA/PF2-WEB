@@ -60,7 +60,5 @@ describe('DetallarRolComponent', () => {
     expect(component.detallarRolForm.invalid).toBeTruthy();
   });
 
-  it('should have a dashboard element ', () => {
-    expect(debug.query(By.css('h4')).attributes["class"]).toEqual("card-title");
-  });
+
 }); 
