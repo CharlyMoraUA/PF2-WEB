@@ -10,6 +10,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
@@ -23,6 +24,7 @@ describe('DetallarRolComponent', () => {
       MatInputModule,
       MatSelectModule,
       FormsModule,
+      BrowserAnimationsModule,
       ToastrModule.forRoot(),
       TranslateModule.forRoot()
     ],
