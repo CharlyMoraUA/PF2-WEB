@@ -7,6 +7,7 @@ import faker from '@faker-js/faker';
 import { TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 describe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
@@ -15,6 +16,7 @@ describe('DetallarRolComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, 
+      MatFormFieldModule ,
       ReactiveFormsModule, 
       FormsModule,
       ToastrModule.forRoot(),
