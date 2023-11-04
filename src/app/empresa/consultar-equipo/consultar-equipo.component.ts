@@ -36,7 +36,7 @@ export class ConsultarEquipoComponent implements OnInit {
     })
   }
 
-  openDialog(id_rol): void {
+  openDialog(id_rol) {
     const dialogRef = this.dialog.open(DetallarRolComponent, {
       data: {
         id_rol: id_rol
@@ -51,6 +51,8 @@ export class ConsultarEquipoComponent implements OnInit {
         this.id_selected_equipo=0;
       })
     });
+
+    return true;
   }
 
   backToEquipos(){

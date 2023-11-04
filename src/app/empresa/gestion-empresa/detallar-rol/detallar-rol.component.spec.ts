@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetallarRolComponent } from './detallar-rol.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import faker from '@faker-js/faker';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,13 +11,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
+import { environment } from 'environments/environment'
+import { AutenticacionCandidatoService } from 'app/landing/autenticacion-candidato.service';
 
 describe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
   let fixture: ComponentFixture<DetallarRolComponent>;
-  let debug: DebugElement;
   
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -39,9 +39,12 @@ describe('DetallarRolComponent', () => {
     })
     .compileComponents();
 
+
     fixture = TestBed.createComponent(DetallarRolComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    
+
   });
 
   it('should create', () => {
@@ -61,4 +64,8 @@ describe('DetallarRolComponent', () => {
   });
 
 
+
+
 }); 
+
+
