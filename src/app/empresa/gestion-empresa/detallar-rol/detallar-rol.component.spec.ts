@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
-fdescribe('DetallarRolComponent', () => {
+describe('DetallarRolComponent', () => {
   let component: DetallarRolComponent;
   let fixture: ComponentFixture<DetallarRolComponent>;
 
@@ -17,7 +17,6 @@ fdescribe('DetallarRolComponent', () => {
       imports: [HttpClientTestingModule, 
       ReactiveFormsModule, 
       FormsModule,
-      MatDialogModule,
       ToastrModule.forRoot(),
       TranslateModule.forRoot()
     ],
