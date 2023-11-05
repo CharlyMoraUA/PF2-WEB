@@ -56,7 +56,7 @@
             </th>
         </thead>
         <tbody>
-            <tr *ngFor="let rol of listaRoles">
+            <tr *ngFor="let rol of listaRolesAlterada">
                 <td style="width:20%">
                     {{rol["nombre"]}}
                 </td>
@@ -64,7 +64,9 @@
                     {{rol["descripcion"]}}
                 </td>
                 <td style="width:20%">
-                    <mat-checkbox></mat-checkbox>
+                    <mat-checkbox 
+                    [checked]='rol["is_included"]'
+                    (change)="setRol($event.checked, rol['id_rol'])"></mat-checkbox>
                     <button mat-button (click)="openDialog(rol.id_rol)" >
                         <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
                     </button>
@@ -72,4 +74,17 @@
             </tr>
         </tbody>
     </table>
+    <!-- <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()"
+        type="submit"  i18n="Create project button@@createProjectButton">{{'NEW_PROJECT.CreateProject' | translate}}
+    </button> -->
+    <div *ngIf="!guardando">
+        <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()">
+            Guardar cambios
+        </button>
+    </div>
+    <div *ngIf="guardando">
+        <button mat-raised-button class="btn btn-warning btn-block">
+            Guardando...
+        </button>
+    </div>
 </div>

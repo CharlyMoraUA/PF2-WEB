@@ -26,5 +26,11 @@ export class ConsultarEquipoService {
   obtenerRoles(id_equipo: any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}equipos/rol?equipo_id=${id_equipo}`, this.httpOptions);
   }
+  asociarRol(id_rol:number, id_equipo: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}equipos/rol/asociar`, { "id_rol": id_rol, "id_equipo": id_equipo } , this.httpOptions);
+  }
+  desAsociarRol(id_rol:number, id_equipo: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}equipos/rol/asociar?id_rol=${id_rol}&id_equipo=${id_equipo}`, this.httpOptions);
+  }
 
 }
