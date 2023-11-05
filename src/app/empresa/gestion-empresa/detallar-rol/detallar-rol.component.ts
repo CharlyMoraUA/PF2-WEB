@@ -1,10 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DialogData } from 'app/candidato/candidato-infoTecnica/candidatoInfoTecnica/candidatoInfoTecnica.component';
 import { ConsultarFichasService } from 'app/empresa/consultar-fichas.service';
 import { RolInput } from 'app/empresa/representaciones/rol_input';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detallar-rol',
@@ -23,7 +23,13 @@ export class DetallarRolComponent implements OnInit {
     private fichaService: ConsultarFichasService,
     private toastr: ToastrService,
     public dialogRef: MatDialogRef<DetallarRolComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public translate: TranslateService) {
+      // Register translation languages
+      translate.addLangs(['en', 'es']);
+      // Set default language
+      translate.setDefaultLang('es');
+    }
  
   ngOnInit(): void {
     this.detallarRolForm = this.formBuilder.group({
@@ -57,6 +63,11 @@ export class DetallarRolComponent implements OnInit {
       this.tecnicas = this.habilidadesGenerales.filter(habilidad => habilidad.tipo == "tecnica")
       this.blandas = this.habilidadesGenerales.filter(habilidad => habilidad.tipo == "blanda")
     })
+  }
+
+   //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }

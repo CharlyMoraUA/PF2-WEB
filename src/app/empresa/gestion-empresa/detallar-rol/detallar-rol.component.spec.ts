@@ -4,7 +4,7 @@ import { DetallarRolComponent } from './detallar-rol.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import faker from '@faker-js/faker';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,7 +29,12 @@ describe('DetallarRolComponent', () => {
       FormsModule,
       BrowserAnimationsModule,
       ToastrModule.forRoot(),
-      TranslateModule.forRoot()
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useClass: TranslateFakeLoader
+        }
+      })
     ],
       declarations: [ DetallarRolComponent ],
       providers: [

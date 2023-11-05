@@ -8,7 +8,6 @@ import { LoginCandidatoComponent } from './landing/login-candidato/login-candida
 import { LandingComponent } from './landing/landing.component';
 import { LoginEmpresaComponent } from './landing/login-empresa/login-empresa.component';
 import { CrearEmpresaComponent } from './empresa/crear-empresa/crear-empresa.component';
-import { CrearProyectoComponent } from './empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
 
 const routes: Routes = [
   {
@@ -58,7 +57,7 @@ const routes: Routes = [
     path: 'dashboard-empresa',
     redirectTo: 'gestion-empresa',
     pathMatch: 'full',
-  }, 
+  }
 ];
 
 @NgModule({

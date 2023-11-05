@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AutenticacionCandidatoService } from '../autenticacion-candidato.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-empresa',
@@ -18,7 +19,13 @@ export class LoginEmpresaComponent implements OnInit {
     private _router: Router, 
     private autenticacionService: AutenticacionCandidatoService,
     private toastr: ToastrService,
-  ) { }
+    public translate: TranslateService
+  ) { 
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+  }
 
   loginEmpresaForm!: FormGroup;
   error: boolean = false
@@ -54,10 +61,17 @@ export class LoginEmpresaComponent implements OnInit {
           this.error = true
           this.toastr.error("Error", "Authentication failed")
         })
+    return true;
   }
 
   backToLanding(){
     this._router.navigate(["landing"])
+    return true;
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }

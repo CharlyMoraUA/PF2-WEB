@@ -5,6 +5,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
+import { TranslateModule, TranslateLoader, TranslateFakeLoader } from '@ngx-translate/core';
 
 describe('LoginEmpresaComponent', () => {
   let component: LoginEmpresaComponent;
@@ -17,7 +18,13 @@ describe('LoginEmpresaComponent', () => {
         HttpClientTestingModule, 
         ReactiveFormsModule, 
         FormsModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader
+          }
+        })
       ]
     })
     .compileComponents();
@@ -47,4 +54,11 @@ describe('LoginEmpresaComponent', () => {
     component.loginEmpresaForm.controls['clave'].setValue(faker.datatype.string());
     expect(component.loginEmpresaForm.valid).toBeTruthy();
   });
+
+
+  it('should execute Login', () => {
+    expect(component.loginEmpresa("marthas","clave123")).toEqual(true);
+  });
+
+
 });

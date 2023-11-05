@@ -53,4 +53,9 @@ describe('LoginCandidatoComponent', () => {
     component.loginCandidatoForm.controls['clave'].setValue(faker.datatype.string());
     expect(component.loginCandidatoForm.valid).toBeTruthy();
   });
+
+  it('should execute Login', () => {
+    expect(component.loginCandidato("user","user")).toEqual(true);
+  });
+
 });

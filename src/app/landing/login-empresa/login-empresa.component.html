@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header card-header-danger text-center" >
                         <h4 class="card-title">ABC JOBS</h4>
-                        <p class="card-category">Autenticacion de representante</p>
+                        <p class="card-category">{{'LOGIN_EMPRESA.title' | translate}}</p>
                     </div>
                     <div class="card-body">
                         <form 
@@ -15,12 +15,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                      <input novalidate matInput placeholder="Usuario" formControlName="usuario" #usuario>                        
+                                      <input novalidate matInput placeholder="{{'LOGIN_EMPRESA.inputUser' | translate}}" formControlName="usuario" #usuario>                        
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                      <input novalidate matInput placeholder="Contraseña" type="text" formControlName="clave" #clave>
+                                      <input novalidate matInput placeholder="{{'LOGIN_EMPRESA.inputPassword' | translate}}" type="text" formControlName="clave" #clave>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -28,14 +28,14 @@
                               <div class="col-lg-6 col-md-10 ml-auto mr-auto">
                                 <div class="row">
                                   <div class="col-md-6">
-                                    <button mat-raised-button class="btn btn-danger btn-block" (click)="backToLanding()">Regresar</button>
+                                    <button mat-raised-button class="btn btn-danger btn-block" (click)="backToLanding()">{{'LOGIN_EMPRESA.BackButton' | translate}}</button>
                                   </div>
                                   <div class="col-md-6">
                                     <button 
                                       mat-raised-button class="btn btn-danger btn-block" 
                                       type="submit" 
                                       [disabled]="!loginEmpresaForm.valid"
-                                      >Iniciar Sesion
+                                      >{{'LOGIN_EMPRESA.loginButton' | translate}}
                                     </button>
                                   </div>
                                 </div>
@@ -49,4 +49,11 @@
         </div>
     </div>
   </div>
-  
+  <div class="copyright pull-right" style="margin-right: 5%;">
+    <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+        <mat-icon>translate</mat-icon> 
+        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" #selLang (change)="translateLanguageTo(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+        </select>
+    </div>
+  </div>

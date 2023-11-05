@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConsultarEquipoService } from '../consultar-equipo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetallarRolComponent } from '../gestion-empresa/detallar-rol/detallar-rol.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-consultar-equipo',
@@ -12,7 +13,14 @@ export class ConsultarEquipoComponent implements OnInit {
   verEquipos=true;
 
   constructor(private consultarEquipoService: ConsultarEquipoService,
-              public dialog: MatDialog,) { }
+              public dialog: MatDialog,
+              public translate: TranslateService) { 
+
+                      // Register translation languages
+                      translate.addLangs(['en', 'es']);
+                      // Set default language
+                      translate.setDefaultLang('es');
+              }
   listaEquipos:any;
   listaRoles:any;
   id_selected_equipo = 0;
@@ -58,4 +66,10 @@ export class ConsultarEquipoComponent implements OnInit {
   backToEquipos(){
     this.verEquipos=true
   }
+
+     //Switch language
+     translateLanguageTo(lang: string) {
+      this.translate.use(lang);
+    }
+  
 }
