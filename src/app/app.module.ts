@@ -26,7 +26,6 @@ import { ConsultarFichasService } from './empresa/consultar-fichas.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserModule } from '@angular/platform-browser';
-import { DetallarRolComponent } from './empresa/gestion-empresa/detallar-rol/detallar-rol.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 // Factory function required during AOT compilation
@@ -53,7 +52,6 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    
     ToastrModule.forRoot({
       positionClass :'toast-bottom-right'
     }),
@@ -75,7 +73,6 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     LoginEmpresaComponent,
     CandidatoComponent,
     CrearEmpresaComponent,
-    DetallarRolComponent,
   ],
   providers:[ToastrService,
     EquiposDataSource,

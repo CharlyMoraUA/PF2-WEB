@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ConsultarEquipoService } from '../consultar-equipo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetallarRolComponent } from '../gestion-empresa/detallar-rol/detallar-rol.component';
+import { TranslateService } from '@ngx-translate/core';
 import { forkJoin, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-consultar-equipo',
   templateUrl: './consultar-equipo.component.html',
@@ -16,7 +18,14 @@ export class ConsultarEquipoComponent implements OnInit {
 
   constructor(private consultarEquipoService: ConsultarEquipoService,
               public dialog: MatDialog,
-              private toastr: ToastrService,) { }
+              public translate: TranslateService,
+              private toastr: ToastrService) { 
+
+                      // Register translation languages
+                      translate.addLangs(['en', 'es']);
+                      // Set default language
+                      translate.setDefaultLang('es');
+              }
   listaEquipos:any;
   listaRoles:any;
   id_selected_equipo = 0;
@@ -139,4 +148,10 @@ export class ConsultarEquipoComponent implements OnInit {
 
 
   }
+
+     //Switch language
+     translateLanguageTo(lang: string) {
+      this.translate.use(lang);
+    }
+  
 }

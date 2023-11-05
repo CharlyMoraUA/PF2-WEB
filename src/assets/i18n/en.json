@@ -134,5 +134,25 @@
         "SkillType": "Technical skill",
         "Skill": "Skill",
         "BackButton": "Back"
+    },
+    "LOGIN_EMPRESA":{
+        "title": "Representative Authentication",
+        "inputUser": "User",
+        "inputPassword": "Password",
+        "BackButton": "Back",
+        "loginButton": "Log In"
+    },
+    "HISTORIAL_ENTREVISTAS":{
+        "title": "My Interviews",
+        "fecha": "Interview State",
+        "estado": "State",
+        "empresa": "Company"
+    },
+    "DETALLAR_ROL":{
+        "title": "Role Detail",
+        "rol_title": "Role Title",
+        "descripcion": "Role Description",
+        "blandas": "Soft Skills",
+        "tecnicas": "Technical Skills"
     }
 }

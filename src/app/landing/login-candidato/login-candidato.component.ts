@@ -50,6 +50,8 @@ export class LoginCandidatoComponent implements OnInit {
           this.error = true
           this.toastr.error("Error", "Authentication failed")
         })
+
+    return true;
   }
 
   backToLanding(){

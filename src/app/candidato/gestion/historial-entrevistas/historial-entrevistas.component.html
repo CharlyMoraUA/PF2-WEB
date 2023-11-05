@@ -1,18 +1,18 @@
 <div class="table-responsive">
     <div style="color: gray">
-        Mis Entrevistas
+        {{'HISTORIAL_ENTREVISTAS.title' | translate}}
     </div>
     <div>
         <table class="table tabla_historial_entrevista">
             <thead class=" text-primary">
                 <th style="color:black">
-                    Fecha Entrevista
+                    {{'HISTORIAL_ENTREVISTAS.fecha' | translate}}
                 </th>
                 <th style="color:black">
-                    Estado
+                    {{'HISTORIAL_ENTREVISTAS.estado' | translate}}
                 </th>
                 <th style="color:black">
-                    Empresa
+                    {{'HISTORIAL_ENTREVISTAS.empresa' | translate}}
                 </th>
                 <th>
                     
@@ -36,4 +36,12 @@
             </tbody>
         </table>
     </div>
+</div>
+<div class="copyright pull-right" style="margin-right: 5%;">
+  <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+      <mat-icon>translate</mat-icon> 
+      <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" #selLang (change)="translateLanguageTo(selLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+      </select>
+  </div>
 </div>

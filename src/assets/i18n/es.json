@@ -134,5 +134,25 @@
         "SkillType": "Habilidad técnica",
         "Skill": "Habilidad",
         "BackButton": "Regresar"
+    },
+    "LOGIN_EMPRESA":{
+        "title": "Autenticacion de representante",
+        "inputUser": "Usuario",
+        "inputPassword": "Contraseña",
+        "BackButton": "Regresar",
+        "loginButton": "Iniciar Sesion"
+    },
+    "HISTORIAL_ENTREVISTAS":{
+        "title": "Mis Entrevistas",
+        "fecha": "Fecha Entrevista",
+        "estado": "Estado",
+        "empresa": "Empresa"
+    },
+    "DETALLAR_ROL":{
+        "title": "Detallar Rol",
+        "rol_title": "Titulo del Rol",
+        "descripcion": "Descripcion",
+        "blandas": "Habilidades Blandas",
+        "tecnicas": "Habilidades Tecnicas"
     }
 }
