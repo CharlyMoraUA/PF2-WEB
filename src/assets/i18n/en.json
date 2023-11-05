@@ -154,5 +154,14 @@
         "descripcion": "Role Description",
         "blandas": "Soft Skills",
         "tecnicas": "Technical Skills"
+    },
+    "CONSULTAR_EQUIPO":{
+        "title":"My teams",
+        "team_title":"Title",
+        "description":"Description",
+        "members":"Members",
+        "name":"Name",
+        "savechanges":"Save Changes",
+        "saving":"Saving ..."
     }
 }

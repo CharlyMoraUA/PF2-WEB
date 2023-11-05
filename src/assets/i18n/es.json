@@ -154,5 +154,14 @@
         "descripcion": "Descripcion",
         "blandas": "Habilidades Blandas",
         "tecnicas": "Habilidades Tecnicas"
+    },
+    "CONSULTAR_EQUIPO":{
+        "title":"Mis equipos",
+        "team_title":"Titulo",
+        "description":"Descripcion",
+        "members":"Miembros",
+        "name":"Nombre",
+        "savechanges":"Guardar cambios",
+        "saving":"Guardando ..."
     }
 }

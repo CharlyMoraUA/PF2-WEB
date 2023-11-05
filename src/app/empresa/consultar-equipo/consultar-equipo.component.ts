@@ -17,17 +17,16 @@ export class ConsultarEquipoComponent implements OnInit {
   guardando = false;
 
   constructor(private consultarEquipoService: ConsultarEquipoService,
-              public dialog: MatDialog,
-              public translate: TranslateService,
-              private toastr: ToastrService) { 
-
-                      // Register translation languages
-                      translate.addLangs(['en', 'es']);
-                      // Set default language
-                      translate.setDefaultLang('es');
-              }
-  listaEquipos:any;
-  listaRoles:any;
+    public dialog: MatDialog,
+    public translate: TranslateService,
+    private toastr: ToastrService) {
+    // Register translation languages
+    translate.addLangs(['en', 'es']);
+    // Set default language
+    translate.setDefaultLang('es');
+  }
+  listaEquipos: any;
+  listaRoles: any;
   id_selected_equipo = 0;
   listaRolesOriginal: any[];
   listaRolesAlterada: any[];
@@ -55,15 +54,15 @@ export class ConsultarEquipoComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.consultarEquipoService.obtenerRoles(this.id_selected_equipo).subscribe(resp=>{
+      this.consultarEquipoService.obtenerRoles(this.id_selected_equipo).subscribe(resp => {
         this.listaRoles = resp.roles
-        this.id_selected_equipo=0;
+        this.id_selected_equipo = 0;
       })
     });
 
     return true;
   }
-  
+
   showEditarRoles(id_equipo) {
     console.log("equipo id")
     console.log(id_equipo)
@@ -76,7 +75,7 @@ export class ConsultarEquipoComponent implements OnInit {
       console.log(resp)
       this.listaRolesOriginal = JSON.parse(JSON.stringify(resp.roles));
       this.listaRolesAlterada = JSON.parse(JSON.stringify(resp.roles));
-      
+
 
     })
   }
@@ -149,9 +148,9 @@ export class ConsultarEquipoComponent implements OnInit {
 
   }
 
-     //Switch language
-     translateLanguageTo(lang: string) {
-      this.translate.use(lang);
-    }
-  
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
+
 }

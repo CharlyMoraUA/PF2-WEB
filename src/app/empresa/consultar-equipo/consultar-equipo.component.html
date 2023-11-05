@@ -1,15 +1,15 @@
 <div *ngIf="verEquipos">
-    <h3>Mis equipos</h3>
+    <h3>{{"CONSULTAR_EQUIPO.title" | translate}}</h3>
     <table class="table tabla_historial_entrevista">
         <thead class=" text-primary">
             <th style="color:black">
-                Titulo
+                {{"CONSULTAR_EQUIPO.team_title" | translate}}
             </th>
             <th style="color:black">
-                Descripcion
+                {{"CONSULTAR_EQUIPO.description" | translate}}
             </th>
             <th style="color:black">
-                Miembros
+                {{"CONSULTAR_EQUIPO.members" | translate}}
             </th>
             <th>
             </th>
@@ -47,10 +47,10 @@
     <table class="table tabla_historial_entrevista">
         <thead class=" text-primary">
             <th style="color:black">
-                Nombre
+                {{"CONSULTAR_EQUIPO.name" | translate}}
             </th>
             <th style="color:black">
-                Descripcion
+                {{"CONSULTAR_EQUIPO.description" | translate}}
             </th>
             <th>
             </th>
@@ -79,12 +79,20 @@
     </button> -->
     <div *ngIf="!guardando">
         <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()">
-            Guardar cambios
+            {{"CONSULTAR_EQUIPO.savechanges" | translate}}
         </button>
     </div>
     <div *ngIf="guardando">
         <button mat-raised-button class="btn btn-warning btn-block">
-            Guardando...
+            {{"CONSULTAR_EQUIPO.saving" | translate}}
         </button>
     </div>
 </div>
+<div class="copyright pull-right" style="margin-right: 5%;">
+    <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+        <mat-icon>translate</mat-icon> 
+        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" class="select-lang" id="sel-lang" #selLang (change)="translateLanguageTo(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+        </select>
+    </div>
+  </div>
