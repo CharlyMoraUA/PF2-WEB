@@ -3,17 +3,22 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ConsultarEquipoComponent } from './consultar-equipo.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { ConsultarEquipoService } from '../consultar-equipo.service';
 import { of, throwError } from 'rxjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ConsultarEquipoComponent', () => {
   let component: ConsultarEquipoComponent;
   let fixture: ComponentFixture<ConsultarEquipoComponent>;
   let compiledElement;
+  let consultarEquipoServiceSpy: jasmine.SpyObj<ConsultarEquipoService>;
+  let toastrServiceSpy: jasmine.SpyObj<ToastrService>;
+  const spyConsultarEquipoService = jasmine.createSpyObj('ConsultarEquipoService', ['obtenerEquipos', 'obtenerRoles', 'desAsociarRol', 'asociarRol']);
+  const spyToastrService = jasmine.createSpyObj('ToastrService', ['success', 'error']);
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({imports: [HttpClientTestingModule, 
       ReactiveFormsModule, 
@@ -28,25 +33,13 @@ describe('ConsultarEquipoComponent', () => {
         }
       })
     ],
-      declarations: [ ConsultarEquipoComponent ]
-    })
-    .compileComponents();
-
-  let consultarEquipoServiceSpy: jasmine.SpyObj<ConsultarEquipoService>;
-  let toastrServiceSpy: jasmine.SpyObj<ToastrService>;
-
-  beforeEach(() => {
-    const spyConsultarEquipoService = jasmine.createSpyObj('ConsultarEquipoService', ['obtenerEquipos', 'obtenerRoles', 'desAsociarRol', 'asociarRol']);
-    const spyToastrService = jasmine.createSpyObj('ToastrService', ['success', 'error']);
-
-    TestBed.configureTestingModule({
-      declarations: [ConsultarEquipoComponent],
-      imports: [MatDialogModule],
+      declarations: [ ConsultarEquipoComponent ],
       providers: [
         { provide: ConsultarEquipoService, useValue: spyConsultarEquipoService },
         { provide: ToastrService, useValue: spyToastrService }
       ]
-    });
+    })
+    .compileComponents();
 
     consultarEquipoServiceSpy = TestBed.inject(ConsultarEquipoService) as jasmine.SpyObj<ConsultarEquipoService>;
     toastrServiceSpy = TestBed.inject(ToastrService) as jasmine.SpyObj<ToastrService>;
