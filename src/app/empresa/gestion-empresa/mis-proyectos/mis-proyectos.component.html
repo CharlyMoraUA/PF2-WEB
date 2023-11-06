@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card-title text-left">
+      <h4>{{'MY_PROJECTS.Title' | translate}}</h4>
+    </div>
+  </div>
+  <div class="col-md-6" style="text-align: right;">
+    <mat-icon matSufix [ngStyle]="{'color':'gray'}" (click)="navigateToAddProject()">add</mat-icon>
+  </div>
+</div>
+<div class="table-responsive">
+  <div>
+      <table class="table tabla_proyectos">
+          <thead class=" text-primary">
+              <th style="color:black">
+                  {{'MY_PROJECTS.TableTitle' | translate}}
+              </th>
+              <th style="color:black">
+                {{'MY_PROJECTS.TableEndDate' | translate}}
+              </th>
+              <th style="color:black">
+                {{'MY_PROJECTS.TableStartDate' | translate}}
+              </th>
+              <th>
+                  
+              </th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let proyecto of listaProyectos">
+                  <td style="width:25%">
+                      {{proyecto["titulo"]}}
+                  </td>
+                  <td style="width:25%">
+                      {{proyecto["fecha_fin"]}}
+                  </td>
+                  <td style="width:25%">
+                    {{proyecto["fecha_inicio"]}}
+                </td>
+                  <td style="width:25%">
+                    <mat-icon matSufix [ngStyle]="{'color':'gray'}" (click)="navigateToEditProject(proyecto)">edit</mat-icon>
+                    <!--<img style="width:8%;height:8%" src="/assets/img/editar_gris.png" (click)="navigateToAddProject(proyecto['id'])"/>-->
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+<div class="copyright pull-right" style="margin-right: 5%;">
+  <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+      <mat-icon>translate</mat-icon> 
+      <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" #selLang (change)="translateLanguageTo(selLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+      </select>
+  </div>
+</div>

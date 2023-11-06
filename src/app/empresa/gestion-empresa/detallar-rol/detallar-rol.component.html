@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger text-center">
+                      <h4 class="card-title" i18n="Technical information title@@TechnicalInformationTitle">{{'DETALLAR_ROL.title' | translate}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <form
+                        [formGroup]="detallarRolForm"
+                        (ngSubmit)="!detallarRolForm.invalid && actualizarRol(detallarRolForm.value)"
+                        >
+                            <div class="row">
+                                <mat-form-field class="example-full-width text-center" style="width: 100%;">
+                                    <input novalidate matInput placeholder="{{'DETALLAR_ROL.rol_title' | translate}}" type="text" formControlName="titulo" ngDefaultControl >
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-form-field class="example-full-width text-center" style="width: 100%;">
+                                    <textarea matInput
+                                    matInput placeholder="{{'DETALLAR_ROL.descripcion' | translate}}"
+                                    formControlName="descripcion" ngDefaultControl></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-form-field class="example-full-width text-center" style="width: 100%;">
+                                    <mat-label>{{'DETALLAR_ROL.blandas' | translate}}</mat-label>
+                                    <mat-select novalidate multiple formControlName="blandas" ngDefaultControl>
+                                        <mat-option novalidate *ngFor="let habilidad of blandas" style="text-align: center;" [value]="habilidad.id_habilidad">
+                                            {{habilidad.habilidad}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-form-field class="example-full-width text-center" style="width: 100%;">
+                                    <mat-label>{{'DETALLAR_ROL.tecnicas' | translate}}</mat-label>
+                                    <mat-select novalidate multiple formControlName="tecnicas" ngDefaultControl>
+                                        <mat-option  *ngFor="let habilidad of tecnicas" style="text-align: center;" [value]="habilidad.id_habilidad">
+                                            {{habilidad.habilidad}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;">
+                                    <button mat-raised-button class="btn btn-danger btn-block" type="submit" 
+                                    [disabled]="!detallarRolForm.valid">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="copyright pull-right" style="margin-right: 5%;">
+    <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+        <mat-icon>translate</mat-icon> 
+        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" #selLang (change)="translateLanguageTo(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+        </select>
+    </div>
+  </div>
+  

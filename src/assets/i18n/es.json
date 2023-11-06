@@ -1,0 +1,167 @@
+{
+    "TITLE": "Bienvenido, los detalles de su perfil son",
+    "LANDING":{
+        "Title": "Selecciona Método de Autenticación",
+        "LoginCompany": "Iniciar Sesión como Empresa",
+        "LoginCandidate": "Iniciar Sesión como Candidato",
+        "SignUpCompany": "Registrarse como Empresa",
+        "SignUpCandidate": "Registrarse como Candidato"
+    },
+    "LOGIN_CANDIDATE":{
+        "Title": "Autenticación de candidatos",
+        "User": "Usuario",
+        "Password": "Contraseña",
+        "Back": "Regresar",
+        "LogIn": "Iniciar Sesión"
+    },
+    "CREATE_COMPANY":{
+        "Title": "Registro de empresa",
+        "CompanyInformation": "Datos de la empresa",
+        "CompanyDocumentType": "Tipo de documento de la empresa",
+        "CompanyDocumentID": "Número de documento de la empresa", 
+        "CompanyName": "Nombre de la empresa",
+        "AtLeastFiveChars": "Por favor ingrese al menos 5 caracteres",
+        "CompanyEmail": "Email de la empresa",
+        "EnterValidEmail": "Por favor ingrese un email válido",
+        "CompanyPhoneNumber": "Teléfono de la empresa",
+        "AtLeastSevenChars": "Por favor ingrese un número de teléfono con al menos 7 caracteres",
+        "LettersNotAllowed": "No se permiten letras",
+        "RepresentativeInformation": "Datos del representante",
+        "RepresentativeDocumentType": "Tipo de documento del representante",
+        "RepresentativeDocumentID": "Número de identificación del representante",
+        "RepresentativeName": "Nombre del representante",
+        "RepresentativeEmail": "Email del representante",
+        "RepresentativePhoneNumber": "Teléfono del representante",
+        "RepresentativeUser": "Usuario del representante",
+        "RepresentativePassword": "Clave del representante",
+        "Back": "Regresar",
+        "SignUp": "Registrarse como empresa"
+    },
+    "LANDING_COMPANY":{
+        "MenuProjects": "Proyectos",
+        "MenuTeams": "Equipos"
+    },
+    "NEW_PROJECT":{
+        "Title": "Proyecto Nuevo",
+        "ProjectTitle": "Título del proyecto",   
+        "Enter100Chars": "Por favor ingrese máximo 100 caracteres",
+        "ProjectStartDate": "Fecha de inicio de proyecto",
+        "EnterDateFormat": "Por favor ingrese una fecha con formato DD-MM-YYYY",
+        "ProjectEndDate": "Fecha de fin de proyecto",
+        "Teams": "Equipos",
+        "TeamNameHeader": "Nombre",
+        "TeamDescHeader": "Descripción",
+        "CreateProject": "Crear Proyecto"
+    },
+    "MY_PROJECTS":{
+        "Title": "Mis proyectos",
+        "TableTitle": "Título",
+        "TableStartDate": "Fecha inicio",
+        "TableEndDate": "Fecha fin"
+    },
+    "EDIT_PROJECT":{
+        "Title": "Editar Proyecto",
+        "ProjectTitle": "Título del proyecto",   
+        "Enter100Chars": "Por favor ingrese máximo 100 caracteres",
+        "ProjectStartDate": "Fecha de inicio de proyecto",
+        "EnterDateFormat": "Por favor ingrese una fecha con formato DD-MM-YYYY",
+        "ProjectEndDate": "Fecha de fin de proyecto",
+        "Teams": "Equipos",
+        "TeamNameHeader": "Nombre",
+        "TeamDescHeader": "Descripción",
+        "Save": "Guardar cambios"
+    },
+    "NEW_WORKSHEET":{
+        "Title": "Crear Hoja de Trabajo",
+        "WorkName": "Nombre del trabajo",   
+        "Enter100Chars": "Por favor ingrese máximo 100 caracteres",
+        "Enter5000Chars": "Por favor ingrese máximo 5000 caracteres",
+        "IdealCandidateDesc": "Descripción del candidato ideal",
+        "Candidates": "Candidatos",
+        "CandidateNameHeader": "Nombre",
+        "CandidateEvaluationDateHeader": "Fecha Evaluación",
+        "CandidateEvaluationsHeader": "Evaluaciones",
+        "Save": "Guardar Cambios"
+    },
+    "SEARCH_CANDIDATES":{
+        "Title": "Selecciona Filtros para los Candidatos",
+        "Technologies": "Tecnologías",
+        "Education": "Educación",
+        "Cancel": "Cancelar",
+        "Filter": "Filtrar",
+        "University": "Universitaria",
+        "Technological": "Tecnológica",
+        "Technical": "Técnica"
+    },
+    "CREATE_CANDIDATE":{
+        "Title": "Registrarse como candidato",
+        "DocumentType": "Tipo de documento",
+        "IdentificationCard": "Cédula de Ciudadanía",
+        "ForeignerCardId": "Cédula de extranjería",
+        "Passport": "Pasaporte",
+        "DocumentNumber": "Número de documento",
+        "Name": "Nombre",
+        "Email": "Correo",
+        "TelephoneNumber": "Número de teléfono",
+        "Country": "País",
+        "City": "Ciudad",
+        "WageAspiration": "Aspiración salarial",
+        "BirthDate": "Fecha de nacimiento",
+        "User": "Usuario",
+        "Password": "Clave",
+        "Languages": "Idiomas",
+        "BackButton": "Regresar",
+        "RegisterButton": "Registrar"
+    },
+    "INFO_CANDIDATE":{
+        "Title": "Información técnica",
+        "DocumentType": "Tipo de documento",
+        "DocumentNumber": "Número de documento",
+        "Name": "Nombre",
+        "Email": "Correo",
+        "Telephone": "Teléfono",
+        "Country": "País",
+        "City": "Ciudad",
+        "WageAspiration": "Aspiración salarial",
+        "BirthDate": "Fecha de nacimiento",
+        "AcademicInformation": "Información académica",
+        "TechnicalInformation": "Información técnica",
+        "WorkingInformation": "Información laboral",
+        "DeleteAccount": "Eliminar cuenta"
+    },
+    "TECHNICAL_INFO":{
+        "Title": "Información técnica",
+        "SkillType": "Habilidad técnica",
+        "Skill": "Habilidad",
+        "BackButton": "Regresar"
+    },
+    "LOGIN_EMPRESA":{
+        "title": "Autenticacion de representante",
+        "inputUser": "Usuario",
+        "inputPassword": "Contraseña",
+        "BackButton": "Regresar",
+        "loginButton": "Iniciar Sesion"
+    },
+    "HISTORIAL_ENTREVISTAS":{
+        "title": "Mis Entrevistas",
+        "fecha": "Fecha Entrevista",
+        "estado": "Estado",
+        "empresa": "Empresa"
+    },
+    "DETALLAR_ROL":{
+        "title": "Detallar Rol",
+        "rol_title": "Titulo del Rol",
+        "descripcion": "Descripcion",
+        "blandas": "Habilidades Blandas",
+        "tecnicas": "Habilidades Tecnicas"
+    },
+    "CONSULTAR_EQUIPO":{
+        "title":"Mis equipos",
+        "team_title":"Titulo",
+        "description":"Descripcion",
+        "members":"Miembros",
+        "name":"Nombre",
+        "savechanges":"Guardar cambios",
+        "saving":"Guardando ..."
+    }
+}

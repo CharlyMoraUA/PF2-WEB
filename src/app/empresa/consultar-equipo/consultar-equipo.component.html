@@ -1,0 +1,98 @@
+<div *ngIf="verEquipos">
+    <h3>{{"CONSULTAR_EQUIPO.title" | translate}}</h3>
+    <table class="table tabla_historial_entrevista">
+        <thead class=" text-primary">
+            <th style="color:black">
+                {{"CONSULTAR_EQUIPO.team_title" | translate}}
+            </th>
+            <th style="color:black">
+                {{"CONSULTAR_EQUIPO.description" | translate}}
+            </th>
+            <th style="color:black">
+                {{"CONSULTAR_EQUIPO.members" | translate}}
+            </th>
+            <th>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let equipo of listaEquipos">
+                <td style="width:20%">
+                    {{equipo["nombre"]}}
+                </td>
+                <td style="width:20%">
+                    {{equipo["descripcion"]}}
+                </td>
+                <td style="width:20%">
+                    {{equipo["miembros"]}}
+                </td>
+                <td style="width:20%">
+                    <button mat-button (click)="showEditarRoles(equipo['id'])">
+                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
+                    </button>
+                    <button mat-button>
+                        <img style="width:auto;height:40px" src="/assets/img/eliminar_gris.png" alt="eliminar"/>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="!verEquipos">
+    <div>
+        <button mat-button (click)="backToEquipos()">
+            <img style="width:auto;height:50px" src="/assets/img/gris_atras.png" alt="editar"/>
+        </button>
+    </div>
+    <h3>Roles</h3>
+    <table class="table tabla_historial_entrevista">
+        <thead class=" text-primary">
+            <th style="color:black">
+                {{"CONSULTAR_EQUIPO.name" | translate}}
+            </th>
+            <th style="color:black">
+                {{"CONSULTAR_EQUIPO.description" | translate}}
+            </th>
+            <th>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rol of listaRolesAlterada">
+                <td style="width:20%">
+                    {{rol["nombre"]}}
+                </td>
+                <td style="width:20%">
+                    {{rol["descripcion"]}}
+                </td>
+                <td style="width:20%">
+                    <mat-checkbox 
+                    [checked]='rol["is_included"]'
+                    (change)="setRol($event.checked, rol['id_rol'])"></mat-checkbox>
+                    <button mat-button (click)="openDialog(rol.id_rol)" >
+                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()"
+        type="submit"  i18n="Create project button@@createProjectButton">{{'NEW_PROJECT.CreateProject' | translate}}
+    </button> -->
+    <div *ngIf="!guardando">
+        <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()">
+            {{"CONSULTAR_EQUIPO.savechanges" | translate}}
+        </button>
+    </div>
+    <div *ngIf="guardando">
+        <button mat-raised-button class="btn btn-warning btn-block">
+            {{"CONSULTAR_EQUIPO.saving" | translate}}
+        </button>
+    </div>
+</div>
+<div class="copyright pull-right" style="margin-right: 5%;">
+    <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+        <mat-icon>translate</mat-icon> 
+        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" class="select-lang" id="sel-lang" #selLang (change)="translateLanguageTo(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+        </select>
+    </div>
+  </div>

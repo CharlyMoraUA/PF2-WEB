@@ -7,6 +7,15 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": {
+            "translation": "src/locale/messages.es.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -23,7 +32,10 @@
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -79,13 +91,19 @@
                 "fonts": true
               },
               "outputHashing": "all"
+            },
+            "es": {
+              "localize": ["es"],
+              "outputPath": "dist/material-dashboard-angular-es/",
+              "i18nMissingTranslation": "error"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "material-dashboard-angular:build"
+            "browserTarget": "material-dashboard-angular:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -93,6 +111,9 @@
             },
             "development": {
               "browserTarget": "material-dashboard-angular:build:development"
+            },
+            "es": {
+              "browserTarget": "material-dashboard-angular:build:es"
             }
           },
           "defaultConfiguration": "development"
@@ -172,7 +193,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
