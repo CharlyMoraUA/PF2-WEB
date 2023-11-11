@@ -37,6 +37,7 @@ import { EditarProyectoComponent } from 'app/empresa/gestion-empresa/editar-proy
 import { CrearHojaTrabajoComponent, DialogBuscarCandidatosDialog } from 'app/empresa/gestion-empresa/crear-hoja-trabajo/crear-hoja-trabajo.component';
 import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 import { DetallarRolComponent } from 'app/empresa/gestion-empresa/detallar-rol/detallar-rol.component';
+import { CandidatoInfoLaboralComponent } from 'app/candidato/candidato-infoLaboral/candidato-infoLaboral.component';
 
 
 
@@ -87,7 +88,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     EditarProyectoComponent,
     CrearHojaTrabajoComponent,
     ConsultarEquipoComponent,
-    DetallarRolComponent
+    DetallarRolComponent,
+    CandidatoInfoLaboralComponent
   ],
   providers:[
     CandidatoCrearService,

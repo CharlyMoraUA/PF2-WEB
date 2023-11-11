@@ -163,5 +163,17 @@
         "name":"Nombre",
         "savechanges":"Guardar cambios",
         "saving":"Guardando ..."
+    },
+    "WORKING_INFO":{
+        "Title": "Información laboral",
+        "Position": "Cargo",
+        "Company": "Empresa",
+        "StartYear": "Año de inicio",
+        "EndYear": "Año de fin",
+        "TableDescription": "Lista actual de información laboral",
+        "BackButton": "Regresar",
+        "WorkExperience": "Experiencia laboral",
+        "Description": "Descripción",
+        "AddButton": "Agregar"
     }
 }

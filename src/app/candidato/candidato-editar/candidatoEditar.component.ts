@@ -37,6 +37,10 @@ export class CandidatoEditarComponent implements OnInit {
     this._router.navigate(["infoTecnica"])
   }
 
+  goToInfoLaboral(){
+    this._router.navigate(["infoLaboral"])
+  }
+
   //Switch language
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
