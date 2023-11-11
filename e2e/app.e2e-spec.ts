@@ -1,14 +1,16 @@
-import { MaterialDashboardAngularPage } from './app.po';
+import { by, element } from 'protractor';
+import { ABCJobsPage } from './app.po';
+import { delay } from 'rxjs';
 
-describe('material-dashboard-angular App', () => {
-  let page: MaterialDashboardAngularPage;
+describe('ABC Jobs App', () => {
+  let page: ABCJobsPage;
 
   beforeEach(() => {
-    page = new MaterialDashboardAngularPage();
+    page = new ABCJobsPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display app title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(element(by.cssContainingText('.card .card-header .card-title', 'ABC Jobs'))).not.toBeNull();
   });
 });

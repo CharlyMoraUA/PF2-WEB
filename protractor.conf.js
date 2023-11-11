@@ -8,6 +8,8 @@ exports.config = {
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  chromeDriver: '/usr/local/bin/chromedriver',
   capabilities: {
     'browserName': 'chrome'
   },
