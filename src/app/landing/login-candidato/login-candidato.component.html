@@ -15,12 +15,12 @@
                           <div class="row">
                               <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input #usuario novalidate matInput placeholder="{{'LOGIN_CANDIDATE.User' | translate}}" formControlName="usuario" i18n-placeholder="User input placeholder@@UserInputLabel">                        
+                                    <input #usuario novalidate matInput placeholder="{{'LOGIN_CANDIDATE.User' | translate}}" formControlName="usuario" i18n-placeholder="User input placeholder@@UserInputLabel" id="userText">  
                                   </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input #clave novalidate matInput placeholder="{{'LOGIN_CANDIDATE.Password' | translate}}" type="password" formControlName="clave" i18n-placeholder="Password input placeholder@@PasswordInputLabel">
+                                    <input #clave novalidate matInput placeholder="{{'LOGIN_CANDIDATE.Password' | translate}}" type="password" formControlName="clave" i18n-placeholder="Password input placeholder@@PasswordInputLabel" id="passwordText">
                                   </mat-form-field>
                               </div>
                           </div>
@@ -34,7 +34,7 @@
                                     <button 
                                     mat-raised-button class="btn btn-danger btn-block" 
                                     type="submit" 
-                                    [disabled]="!loginCandidatoForm.valid" i18n="LogIn button label@@LogInButton">{{'LOGIN_CANDIDATE.LogIn' | translate}}</button>
+                                    [disabled]="!loginCandidatoForm.valid" i18n="LogIn button label@@LogInButton" id="loginCandidateBtn">{{'LOGIN_CANDIDATE.LogIn' | translate}}</button>
                                 </div>
                               </div>
                             </div>

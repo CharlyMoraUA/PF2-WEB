@@ -1,11 +1,7 @@
 import { browser, element, by } from 'protractor';
 
-export class MaterialDashboardAngularPage {
+export class ABCJobsPage {
   navigateTo() {
-    return browser.get('/');
-  }
-
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return browser.get('http://localhost:4200/#/landing');
   }
 }

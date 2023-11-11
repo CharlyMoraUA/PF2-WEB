@@ -86,7 +86,7 @@
                         <div class="col-lg-6 col-md-10 ml-auto mr-auto">
                           <div class="row">
                             <div class="col-md-6">
-                              <button mat-raised-button class="btn btn-danger btn-block" i18n="Working information button@@WorkingInformationButton">{{'INFO_CANDIDATE.WorkingInformation' | translate}}</button>
+                              <button mat-raised-button class="btn btn-danger btn-block" (click)="goToInfoLaboral()" id="infoLaboralBtn">{{'INFO_CANDIDATE.WorkingInformation' | translate}}</button>
                             </div>
                             <div class="col-md-6">
                               <button mat-raised-button class="btn btn-danger btn-block" i18n="Delete account button@@DeleteAccountButton">{{'INFO_CANDIDATE.DeleteAccount' | translate}}</button>

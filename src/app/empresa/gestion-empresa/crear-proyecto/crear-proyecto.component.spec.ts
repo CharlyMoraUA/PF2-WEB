@@ -7,10 +7,13 @@ import { CrearProyectoComponent } from './crear-proyecto.component';
 import { faker } from '@faker-js/faker';
 import { TranslateModule } from '@ngx-translate/core';
 import { By } from '@angular/platform-browser';
+import { EMPTY } from 'rxjs';
+import { Proyecto } from 'app/empresa/representaciones/proyecto';
 
 describe('CrearProyectoComponent', () => {
   let component: CrearProyectoComponent;
   let fixture: ComponentFixture<CrearProyectoComponent>;
+  let proyectoMock: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,7 +23,10 @@ describe('CrearProyectoComponent', () => {
         ToastrModule.forRoot(),
         TranslateModule.forRoot()
       ],
-      declarations: [ CrearProyectoComponent ]
+      declarations: [ CrearProyectoComponent ],
+      providers: [
+        { provide: Proyecto, useValue: proyectoMock }
+    ]
     })
     .compileComponents();
   }));
@@ -60,4 +66,29 @@ describe('CrearProyectoComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should invoke isAllSelected', () => {
+    const spyisAllSelected = spyOn(component, 'isAllSelected').and.callThrough();
+    component.isAllSelected();
+    expect(spyisAllSelected).toHaveBeenCalled();
+   });
+
+   it('should invoke masterToggle', () => {
+    const spymasterToggle = spyOn(component, 'masterToggle').and.callThrough();
+    component.masterToggle();
+    expect(spymasterToggle).toHaveBeenCalled();
+   });
+
+   it('should invoke masterToggle', () => {
+    const spyreloadComponent = spyOn(component, 'reloadComponent').and.callThrough();
+    component.reloadComponent(true);
+    expect(spyreloadComponent).toHaveBeenCalled();
+   });
+
+   it('should invoke crearProyecto', () => {
+    const spycrearProyecto = spyOn(component, 'crearProyecto').and.callThrough();
+    let proyectoMock = new Proyecto(1, 'titulo', new Date('2021-01-01'), new Date('2021-01-30'), [], [], []);
+    component.crearProyecto(proyectoMock);
+    expect(spycrearProyecto).toHaveBeenCalled();
+   });
+   
 });

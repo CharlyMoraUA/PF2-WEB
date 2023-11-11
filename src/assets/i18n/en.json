@@ -163,5 +163,17 @@
         "name":"Name",
         "savechanges":"Save Changes",
         "saving":"Saving ..."
+    },
+    "WORKING_INFO":{
+        "Title": "Working information",
+        "Position": "Postition",
+        "Company": "Company",
+        "StartYear": "Start year",
+        "EndYear": "End year",
+        "TableDescription": "Current working information list",
+        "BackButton": "Back",
+        "WorkExperience": "Work experience",
+        "Description": "Description",
+        "AddButton": "Add"
     }
 }
