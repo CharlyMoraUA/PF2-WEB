@@ -7,33 +7,29 @@
                     <h4 class="card-title">ABC JOBS</h4>
                   </div>
                   <div class="card-body">
+                    <div>
+                      <h5 class="mat-h2">{{'INTERVIEW_RESULTS.Title' | translate}}</h5>
+                    </div>
                    <form
                    [formGroup]="entrevistasForm"
                    (ngSubmit)="!entrevistasForm.invalid && obtenerResultados(entrevistasForm.value)"
                    >
-                   <div class="row">
-                    <div class="col-md-3">
-                      <mat-form-field>
-                        <select matNativeControl required formControlName="tipo_doc" novalidate placeholder="{{'CREATE_CANDIDATE.DocumentType' | translate}}" ngDefaultControl i18n-placeholder="Document type select@@DocumentTypeSelect">
-                          <option value="Cedula">{{'CREATE_CANDIDATE.IdentificationCard' | translate}}</option>
-                          <option value="Cextranjeria">{{'CREATE_CANDIDATE.ForeignerCardId' | translate}}</option>
-                          <option value="Pasaporte">{{'CREATE_CANDIDATE.Passport' | translate}}</option>
-                        </select>
-                      </mat-form-field>
-                    </div>
-                    <div class="col-md-9">
-                      <mat-form-field class="example-full-width">
-                        <input novalidate matInput placeholder="{{'CREATE_CANDIDATE.DocumentNumber' | translate}}" formControlName="num_doc" ngDefaultControl i18n-placeholder="Document number placeholder@@DocumentNumberPlaceholder">                        
-                        <div class="alert alert-danger alert-dismissible fade show"
-                        *ngIf=" entrevistasForm.get('num_doc')!.hasError('minlength') && entrevistasForm.get('num_doc')!.touched">
-                        Ingrese al menos 5 caracteres
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-2">
+                          <mat-form-field>
+                            <select matNativeControl required formControlName="tipo_doc" novalidate placeholder="{{'INTERVIEW_RESULTS.DocumentType' | translate}}" ngDefaultControl>
+                              <option value="cc">{{'INTERVIEW_RESULTS.IdentificationCard' | translate}}</option>
+                              <option value="ce">{{'INTERVIEW_RESULTS.ForeignerCardId' | translate}}</option>
+                              <option value="pass">{{'INTERVIEW_RESULTS.Passport' | translate}}</option>
+                            </select>
+                          </mat-form-field>
                         </div>
-                      </mat-form-field>
+                        <div class="col-md-3">
+                          <mat-form-field class="example-full-width">
+                            <input novalidate matInput placeholder="{{'INTERVIEW_RESULTS.DocumentNumber' | translate}}" formControlName="num_doc" ngDefaultControl>
+                          </mat-form-field>
+                        </div>
                     </div>
-                   </div>
-
-
-                   </form>
                     <div class="row">
                       <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                         <div class="row">
@@ -41,8 +37,48 @@
                             <button mat-raised-button class="btn btn-danger btn-block"
                             type="submit"
                             [disabled]="!entrevistasForm.valid"
-                            >{{'TECHNICAL_INFO.BackButton' | translate}}</button>
+                            >{{'INTERVIEW_RESULTS.GetButton' | translate}}</button>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                   </form>
+                   <hr>
+                   <div *ngIf="showTable" class="row">
+                    <div class="col-md-4">
+                      <h5>{{'INTERVIEW_RESULTS.CandidateName' | translate}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                      <h5>{{lista[0]["nombre_candidato"]}}</h5>
+                    </div>
+                   </div>
+                   <div *ngIf="showTable" class="table-responsive">
+                    <table class="table">
+                      <thead class="text-primary">
+                        <th class="mat-h2">{{'INTERVIEW_RESULTS.InterviewName' | translate}}</th>
+                        <th class="mat-h2">{{'INTERVIEW_RESULTS.Date' | translate}}</th>
+                        <th class="mat-h2">{{'INTERVIEW_RESULTS.Result' | translate}}</th>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let info of lista">
+                          <td style="width:25%">
+                            {{info["nombre_entrevista"]}}
+                          </td>
+                          <td style="width:25%">
+                            {{info["fecha"]}}
+                          </td>
+                          <td style="width:25%">
+                            {{info["resultado"]}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                   </div>
+                   <div class="row">
+                    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <button mat-raised-button class="btn btn-danger btn-block" (click)="backToInfo()">{{'INTERVIEW_RESULTS.BackButton' | translate}}</button>
                         </div>
                       </div>
                     </div>

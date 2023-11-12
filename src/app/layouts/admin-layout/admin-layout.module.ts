@@ -41,6 +41,7 @@ import { CandidatoInfoLaboralComponent } from 'app/candidato/candidato-infoLabor
 import { VerHojasTrabajoComponent } from 'app/empresa/gestion-empresa/ver-hojas-trabajo/ver-hojas-trabajo.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { ResultadosEntrevistasComponent } from 'app/candidato/gestion/resultados-entrevistas/resultadosEntrevistas.component';
+import { ResultadosEntrevistasService } from 'app/candidato/resultadosEntrevistas.service';
 
 
 
@@ -101,7 +102,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidatoCrearService,
     CandidatoInfoService,
     EquiposDataSource,
-    ConsultarFichasService
+    ConsultarFichasService,
+    ResultadosEntrevistasService
   ],
 
 })
