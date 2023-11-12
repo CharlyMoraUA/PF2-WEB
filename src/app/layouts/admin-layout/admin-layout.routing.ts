@@ -12,6 +12,7 @@ import { CandidatoInfoTecnicaComponent } from 'app/candidato/candidato-infoTecni
 import { GestionEmpresaComponent } from 'app/empresa/gestion-empresa/gestion-empresa.component';
 import { CrearProyectoComponent } from 'app/empresa/gestion-empresa/crear-proyecto/crear-proyecto.component';
 import { CandidatoInfoLaboralComponent } from 'app/candidato/candidato-infoLaboral/candidato-infoLaboral.component';
+import { ResultadosEntrevistasComponent } from 'app/candidato/gestion/resultados-entrevistas/resultadosEntrevistas.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'gestionCandidatos',      component: GestionCandidatoComponent },
@@ -76,5 +77,7 @@ export const AdminLayoutRoutes: Routes = [
     //{ path: 'maps',                   component: MapsComponent },
     { path: 'notifications',          component: NotificationsComponent },
     { path: 'upgrade',                component: UpgradeComponent },
-    { path: 'crear-proyecto',        component: CrearProyectoComponent },
+    { path: 'crear-proyecto',         component: CrearProyectoComponent },
+    { path: 'resultadosEntrevistas',  component: ResultadosEntrevistasComponent },
+
 ];

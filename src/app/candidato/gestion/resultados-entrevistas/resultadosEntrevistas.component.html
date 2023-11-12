@@ -1,0 +1,63 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger text-center">
+                    <h4 class="card-title">ABC JOBS</h4>
+                  </div>
+                  <div class="card-body">
+                   <form
+                   [formGroup]="entrevistasForm"
+                   (ngSubmit)="!entrevistasForm.invalid && obtenerResultados(entrevistasForm.value)"
+                   >
+                   <div class="row">
+                    <div class="col-md-3">
+                      <mat-form-field>
+                        <select matNativeControl required formControlName="tipo_doc" novalidate placeholder="{{'CREATE_CANDIDATE.DocumentType' | translate}}" ngDefaultControl i18n-placeholder="Document type select@@DocumentTypeSelect">
+                          <option value="Cedula">{{'CREATE_CANDIDATE.IdentificationCard' | translate}}</option>
+                          <option value="Cextranjeria">{{'CREATE_CANDIDATE.ForeignerCardId' | translate}}</option>
+                          <option value="Pasaporte">{{'CREATE_CANDIDATE.Passport' | translate}}</option>
+                        </select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-9">
+                      <mat-form-field class="example-full-width">
+                        <input novalidate matInput placeholder="{{'CREATE_CANDIDATE.DocumentNumber' | translate}}" formControlName="num_doc" ngDefaultControl i18n-placeholder="Document number placeholder@@DocumentNumberPlaceholder">                        
+                        <div class="alert alert-danger alert-dismissible fade show"
+                        *ngIf=" entrevistasForm.get('num_doc')!.hasError('minlength') && entrevistasForm.get('num_doc')!.touched">
+                        Ingrese al menos 5 caracteres
+                        </div>
+                      </mat-form-field>
+                    </div>
+                   </div>
+
+
+                   </form>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <button mat-raised-button class="btn btn-danger btn-block"
+                            type="submit"
+                            [disabled]="!entrevistasForm.valid"
+                            >{{'TECHNICAL_INFO.BackButton' | translate}}</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="copyright pull-right" style="margin-right: 5%;">
+  <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+      <mat-icon>translate</mat-icon> 
+      <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" #selLang (change)="translateLanguageTo(selLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+      </select>
+  </div>
+</div>
