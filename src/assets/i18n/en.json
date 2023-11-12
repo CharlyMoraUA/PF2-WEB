@@ -59,6 +59,21 @@
         "TableStartDate": "Start Date",
         "TableEndDate": "End Date"
     },
+    "HOJAS_TRABAJO":{
+        "VerHojas": "Ver Hojas de trabajo",
+        "HojasTrabajo": "Hojas de trabajo",
+        "Nombre": "Nombre",
+        "Descripcion": "Descripcion",
+        "Candidatos": "Candidatos",
+        "FechaEvaluacion": "Fecha Evaluacion",
+        "Evaluaciones": "Evaluaciones",
+        "EvaluarCandidato": "Evaluar desempeño candidato",
+        "Habilidades": "Habilidades",
+        "Evaluacion": "Evaluacion",
+        "LimiteCaracteres": "Campo obligatorio no puede tener mas de 1000 caracteres",
+        "Puntaje": "Puntaje",
+        "CrearEvaluacion": "Crear Evaluacion"
+    },
     "EDIT_PROJECT":{
         "Title": "Edit Project",
         "ProjectTitle": "Project Title",   

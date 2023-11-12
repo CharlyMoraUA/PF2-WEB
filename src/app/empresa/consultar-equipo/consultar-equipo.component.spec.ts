@@ -164,7 +164,6 @@ describe('ConsultarEquipoComponent', () => {
     //   expect(toastrServiceSpy.error).toHaveBeenCalledWith(errorMessage, 'Error');
     // });
   
-    // ... additional tests ...
   
 
   

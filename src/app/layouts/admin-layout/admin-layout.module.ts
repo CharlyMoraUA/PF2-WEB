@@ -38,6 +38,8 @@ import { CrearHojaTrabajoComponent, DialogBuscarCandidatosDialog } from 'app/emp
 import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 import { DetallarRolComponent } from 'app/empresa/gestion-empresa/detallar-rol/detallar-rol.component';
 import { CandidatoInfoLaboralComponent } from 'app/candidato/candidato-infoLaboral/candidato-infoLaboral.component';
+import { VerHojasTrabajoComponent } from 'app/empresa/gestion-empresa/ver-hojas-trabajo/ver-hojas-trabajo.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -62,6 +64,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     HttpClientModule,
     MatDialogModule,
     MatTableModule,
+    MatDividerModule,
     MatCheckboxModule,
     TranslateModule.forRoot({
       loader: {
@@ -89,7 +92,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CrearHojaTrabajoComponent,
     ConsultarEquipoComponent,
     DetallarRolComponent,
-    CandidatoInfoLaboralComponent
+    CandidatoInfoLaboralComponent,
+    VerHojasTrabajoComponent
   ],
   providers:[
     CandidatoCrearService,

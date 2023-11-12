@@ -17,11 +17,12 @@ export class GestionEmpresaComponent implements OnInit {
     translate.setDefaultLang('es');
   }
 
-  selectedIndex =1
+  selectedIndex = 0
   pantallaProyectos = "mis-proyectos"
   
   ngOnInit(): void {
     this.pantallaProyectos = sessionStorage.getItem("pantalla_proyectos")
+    this.selectedIndex = parseInt(sessionStorage.getItem("pantalla_proyectos_index"))
   }  
 
   setMyStyles(indx) {
@@ -42,6 +43,7 @@ export class GestionEmpresaComponent implements OnInit {
 
   onClickOption(index){
     this.selectedIndex = index
+    sessionStorage.setItem("pantalla_proyectos_index", index)
     if(index==0){
       this.pantallaProyectos = "mis-proyectos"
     }

@@ -82,6 +82,7 @@ export class CrearProyectoComponent implements OnInit {
 
   goBack(){
     sessionStorage.setItem("pantalla_proyectos", "mis-proyectos")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
     this._router.navigate(["gestion-empresa"])
     this.reloadComponent(true)
   }

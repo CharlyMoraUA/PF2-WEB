@@ -77,12 +77,21 @@ export class EditarProyectoComponent implements OnInit {
 
   goBack(){
     sessionStorage.setItem("pantalla_proyectos", "mis-proyectos")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
     this._router.navigate(["gestion-empresa"])
     this.reloadComponent(true)
   }
 
   goToNewWorksheet(){
     sessionStorage.setItem("pantalla_proyectos", "crear-hoja-trabajo")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
+    this._router.navigate(["gestion-empresa"])
+    this.reloadComponent(true)
+  }
+
+  goToWorksheets(){
+    sessionStorage.setItem("pantalla_proyectos", "hojas-de-trabajo")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
     this._router.navigate(["gestion-empresa"])
     this.reloadComponent(true)
   }
