@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { EMPTY } from 'rxjs';
 
 describe('CandidatoInfoTecnicaComponent', () => {
   let component: CandidatoInfoTecnicaComponent;
@@ -53,6 +54,36 @@ describe('CandidatoInfoTecnicaComponent', () => {
   it('should show the title', () => {
     expect(debug.query(By.css('h4')).attributes["class"]).toEqual("card-title");
   });
+
+  it('change language', ()  => {
+    fixture.detectChanges();
+    const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
+    select.value = select.options[1].value;  // <-- select a new value
+    select.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
+  });
+
+  it('should invoke consultarInfoTecnica', () => {
+    const spyConsultarInfoTecnica = spyOn(component, 'consultarInfoTecnica').and.callThrough();
+    component.consultarInfoTecnica(1);
+    expect(spyConsultarInfoTecnica).toHaveBeenCalled();
+   });
+
+   it('should invoke guardarInfoTecnica', () => {
+    const spyGuardarInfoTecnica = spyOn(component, 'guardarInfoTecnica').and.callThrough();
+    component.guardarInfoTecnica();
+    expect(spyGuardarInfoTecnica).toHaveBeenCalled();
+   });
+
+   it('open dialog test', () => {
+    const openDialogSpy = spyOn(component.dialog, 'open')
+      .and
+      .returnValue({afterClosed: () => EMPTY} as any);
+ 
+    component.openDialog();
+ 
+    expect(openDialogSpy).toHaveBeenCalled();
+   });
 
 
 

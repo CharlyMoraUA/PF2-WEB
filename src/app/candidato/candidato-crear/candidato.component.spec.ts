@@ -14,6 +14,7 @@ describe('CandidatoComponent', () => {
   let component: CandidatoComponent;
   let fixture: ComponentFixture<CandidatoComponent>;
   let debug: DebugElement;
+  let candidato: Candidato;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -35,7 +36,7 @@ describe('CandidatoComponent', () => {
     fixture = TestBed.createComponent(CandidatoComponent);
     component = fixture.componentInstance;
 
-    component.candidatos = [
+    candidato = 
       new Candidato(
         faker.datatype.number(),
         faker.datatype.string(),
@@ -56,7 +57,6 @@ describe('CandidatoComponent', () => {
         [],
         [],
       ),
-    ];
     fixture.detectChanges();
     debug = fixture.debugElement;
   });
@@ -98,5 +98,19 @@ describe('CandidatoComponent', () => {
   it('should have a dashboard element ', () => {
     expect(debug.query(By.css('h4')).attributes["class"]).toEqual("card-title");
   });
+
+  it('change language', ()  => {
+    fixture.detectChanges();
+    const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
+    select.value = select.options[1].value;  // <-- select a new value
+    select.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
+  });
+
+  it('should invoke crearCandidato', () => {
+    const spyCrearCandidato = spyOn(component, 'crearCandidato').and.callThrough();
+    component.crearCandidato(candidato);
+    expect(spyCrearCandidato).toHaveBeenCalled();
+   });
 
 });

@@ -8,6 +8,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Entrevista } from 'app/candidato/representaciones/entrevista';
 
 describe('ResultadosEntrevistasComponent', () => {
   let component: ResultadosEntrevistasComponent;
@@ -56,6 +57,20 @@ describe('ResultadosEntrevistasComponent', () => {
   it('should show input to put document number candidate', () => {
     expect(debug.query(By.css('input')).attributes["formControlName"]).toEqual("num_doc");
   });
+
+  it('change language', ()  => {
+    fixture.detectChanges();
+    const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
+    select.value = select.options[1].value;  // <-- select a new value
+    select.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
+  });
+
+  it('should invoke obtenerResultados', () => {
+    const spyConsultarEntrevistas = spyOn(component, 'obtenerResultados').and.callThrough();
+    component.obtenerResultados(Entrevista);
+    expect(spyConsultarEntrevistas).toHaveBeenCalled();
+   });
 
 
 });
