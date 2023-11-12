@@ -100,5 +100,4 @@ export class VerHojasTrabajoComponent implements OnInit {
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
   }
-  
 }
