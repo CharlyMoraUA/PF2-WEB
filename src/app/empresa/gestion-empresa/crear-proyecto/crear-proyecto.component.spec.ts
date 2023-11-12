@@ -61,7 +61,7 @@ describe('CrearProyectoComponent', () => {
   it('change language', ()  => {
     fixture.detectChanges();
     const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
-    select.value = select.options[1].value;  // <-- select a new value
+    select.value = select.options[1].value;
     select.dispatchEvent(new Event('change'));
     fixture.detectChanges();
   });
