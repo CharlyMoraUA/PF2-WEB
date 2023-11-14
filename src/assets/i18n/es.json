@@ -203,6 +203,7 @@
         "InterviewName": "Nombre de la entrevista",
         "Date": "Fecha",
         "Result": "Resultados",
-        "BackButton": "Regresar"
+        "BackButton": "Regresar",
+        "TableDescription": "Resultados de entrevistas"
     }
 }
