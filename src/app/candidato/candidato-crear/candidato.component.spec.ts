@@ -56,7 +56,7 @@ describe('CandidatoComponent', () => {
         "DISPONIBLE",
         [],
         [],
-      ),
+      );
     fixture.detectChanges();
     debug = fixture.debugElement;
   });
