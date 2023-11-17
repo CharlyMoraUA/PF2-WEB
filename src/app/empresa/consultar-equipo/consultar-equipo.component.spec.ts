@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ConsultarEquipoService } from '../consultar-equipo.service';
 import { of, throwError } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
 
 describe('ConsultarEquipoComponent', () => {
   let component: ConsultarEquipoComponent;
@@ -162,10 +163,17 @@ describe('ConsultarEquipoComponent', () => {
     //   component.guardarCambios();
   
     //   expect(toastrServiceSpy.error).toHaveBeenCalledWith(errorMessage, 'Error');
-    // });
+    // })
   
+    it('should invoke isAllSelected', () => {
+      const spyisAllSelected = spyOn(component, 'isAllSelected').and.callThrough();
+      component.isAllSelected();
+      expect(spyisAllSelected).toHaveBeenCalled();
+     });
   
-
-  
-
+     it('should invoke masterToggle', () => {
+      const spymasterToggle = spyOn(component, 'masterToggle').and.callThrough();
+      component.masterToggle();
+      expect(spymasterToggle).toHaveBeenCalled();
+     });
 });
