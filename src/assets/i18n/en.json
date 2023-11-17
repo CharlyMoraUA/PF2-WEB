@@ -177,7 +177,11 @@
         "members":"Members",
         "name":"Name",
         "savechanges":"Save Changes",
-        "saving":"Saving ..."
+        "saving":"Saving ...",
+        "candidates":"Candidates",
+        "candidateNameHeader": "Name",
+        "candidateEvaluationDateHeader": "Evaluation Date",
+        "candidateEvaluationsHeader": "Evaluations"
     },
     "WORKING_INFO":{
         "Title": "Working information",
