@@ -41,6 +41,22 @@ describe('CandidatoEditarComponent', () => {
     expect(debug.query(By.css('h4')).attributes["class"]).toEqual("card-title");
   });
 
+  it('change language', ()  => {
+    fixture.detectChanges();
+    const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
+    select.value = select.options[1].value;  // <-- select a new value
+    select.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
+  });
+
+  it('should invoke consultarInfo', () => {
+    const spyConsultarInfo = spyOn(component, 'consultarInfo').and.callThrough();
+    component.consultarInfo(1);
+    expect(spyConsultarInfo).toHaveBeenCalled();
+   });
+
+  
+
 
 
 

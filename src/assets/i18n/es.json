@@ -190,5 +190,20 @@
         "WorkExperience": "Experiencia laboral",
         "Description": "Descripción",
         "AddButton": "Agregar"
+    },
+    "INTERVIEW_RESULTS":{
+        "Title": "Consulta de entrevistas",
+        "DocumentType": "Tipo de documento",
+        "IdentificationCard": "Cédula de Ciudadanía",
+        "ForeignerCardId": "Cédula de extranjería",
+        "Passport": "Pasaporte",
+        "DocumentNumber": "Número de documento",
+        "GetButton": "Consultar",
+        "CandidateName": "Nombre del candidato",
+        "InterviewName": "Nombre de la entrevista",
+        "Date": "Fecha",
+        "Result": "Resultados",
+        "BackButton": "Regresar",
+        "TableDesc": "Resultados de entrevistas actualizados"
     }
 }

@@ -190,5 +190,20 @@
         "WorkExperience": "Work experience",
         "Description": "Description",
         "AddButton": "Add"
+    },
+    "INTERVIEW_RESULTS":{
+        "Title": "Interview results",
+        "DocumentType": "Document type",
+        "IdentificationCard": "Identification Card",
+        "ForeignerCardId": "Foreigner Card ID",
+        "Passport": "Passport",
+        "DocumentNumber": "Document Number",
+        "GetButton": "Get results",
+        "CandidateName": "Candidate Name",
+        "InterviewName": "Interview Name",
+        "Date": "Date",
+        "Result": "Result",
+        "BackButton": "Back",
+        "TableDesc": "Updated interview results"
     }
 }
