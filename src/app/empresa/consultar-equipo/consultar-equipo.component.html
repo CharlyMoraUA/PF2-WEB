@@ -47,6 +47,7 @@
     <h3 id="candidatosTitle">{{'CONSULTAR_EQUIPO.candidates' | translate}}</h3>
     <div>
         <table #tabla_candidatos mat-table class="table tabla-candidatos-equipos" [dataSource]="candidatosDisponiblesEquipoDataSource.candidatos$.value" id="tablaCandidatos">
+            <caption>{{'CONSULTAR_EQUIPO.candidates' | translate}}</caption>
             <ng-container matColumnDef="nombre" style="width:30%">
             <th mat-header-cell *matHeaderCellDef class="celda-tabla-candidatos">
                 {{'CONSULTAR_EQUIPO.candidateNameHeader' | translate}}
