@@ -15,12 +15,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                      <input novalidate matInput placeholder="{{'LOGIN_EMPRESA.inputUser' | translate}}" formControlName="usuario" #usuario>                        
+                                      <input novalidate matInput placeholder="{{'LOGIN_EMPRESA.inputUser' | translate}}" formControlName="usuario" #usuario id="userText">                        
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                      <input novalidate matInput placeholder="{{'LOGIN_EMPRESA.inputPassword' | translate}}" type="text" formControlName="clave" #clave>
+                                      <input novalidate matInput placeholder="{{'LOGIN_EMPRESA.inputPassword' | translate}}" type="text" formControlName="clave" #clave id="passwordText">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -35,6 +35,7 @@
                                       mat-raised-button class="btn btn-danger btn-block" 
                                       type="submit" 
                                       [disabled]="!loginEmpresaForm.valid"
+                                      id="loginButton"
                                       >{{'LOGIN_EMPRESA.loginButton' | translate}}
                                     </button>
                                   </div>

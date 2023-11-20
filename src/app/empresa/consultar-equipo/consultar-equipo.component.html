@@ -1,6 +1,6 @@
 <div *ngIf="verEquipos">
-    <h3>{{"CONSULTAR_EQUIPO.title" | translate}}</h3>
-    <table class="table tabla_historial_entrevista">
+    <h3 id="equiposTitle">{{"CONSULTAR_EQUIPO.title" | translate}}</h3>
+    <table class="table tabla_historial_entrevista" id="tablaEquipos">
         <thead class=" text-primary">
             <th style="color:black">
                 {{"CONSULTAR_EQUIPO.team_title" | translate}}
@@ -44,9 +44,9 @@
         </button>
     </div>
     <br><br>
-    <h3>{{'CONSULTAR_EQUIPO.candidates' | translate}}</h3>
+    <h3 id="candidatosTitle">{{'CONSULTAR_EQUIPO.candidates' | translate}}</h3>
     <div>
-        <table #tabla_candidatos mat-table class="table tabla-candidatos-equipos" [dataSource]="candidatosDisponiblesEquipoDataSource.candidatos$.value">
+        <table #tabla_candidatos mat-table class="table tabla-candidatos-equipos" [dataSource]="candidatosDisponiblesEquipoDataSource.candidatos$.value" id="tablaCandidatos">
             <ng-container matColumnDef="nombre" style="width:30%">
             <th mat-header-cell *matHeaderCellDef class="celda-tabla-candidatos">
                 {{'CONSULTAR_EQUIPO.candidateNameHeader' | translate}}
@@ -127,7 +127,7 @@
         type="submit"  i18n="Create project button@@createProjectButton">{{'NEW_PROJECT.CreateProject' | translate}}
     </button> -->
     <div *ngIf="!guardando">
-        <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()">
+        <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()" id="saveEquiposBtn">
             {{"CONSULTAR_EQUIPO.savechanges" | translate}}
         </button>
     </div>

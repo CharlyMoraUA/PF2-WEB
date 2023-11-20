@@ -2,6 +2,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
+var HtmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -28,5 +29,8 @@ exports.config = {
   },
   onPrepare() {
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'tmp/screenshots'
+    }).getJasmine2Reporter());
   }
 };
