@@ -54,6 +54,7 @@ export function getRoutes() : RouteInfo[]{
   else{
     return [
       { path: '/gestion-empresa', title: 'Gestion de Empresa',  icon: '', class: '' },
+      { path: '/resultadosEntrevistas', title: 'Resultado Entrevistas',  icon: '', class: '' },
     ];
   }
 }

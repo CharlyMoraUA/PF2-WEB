@@ -17,7 +17,7 @@ describe('ABC Jobs - Asociar candidato a equipo', () => {
     element(by.id('passwordText')).clear();
     element(by.id('passwordText')).sendKeys('user');
     browser.actions().sendKeys(protractor.Key.TAB).perform();
-    element(by.id('loginButton')).click().then(function () {
+    element(by.id('loginCompanyBtn')).click().then(function () {
       browser.sleep(3000)
     });
     expect<any>(browser.getCurrentUrl()).toEqual("http://localhost:4200/#/gestion-empresa");
@@ -47,7 +47,7 @@ describe('ABC Jobs - Asociar candidato a equipo', () => {
     element(by.id('passwordText')).clear();
     element(by.id('passwordText')).sendKeys('user');
     browser.actions().sendKeys(protractor.Key.TAB).perform();
-    element(by.id('loginButton')).click().then(function () {
+    element(by.id('loginCompanyBtn')).click().then(function () {
       browser.sleep(3000)
     });
     expect<any>(browser.getCurrentUrl()).toEqual("http://localhost:4200/#/gestion-empresa");
