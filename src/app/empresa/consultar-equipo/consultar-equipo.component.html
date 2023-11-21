@@ -1,6 +1,6 @@
 <div *ngIf="verEquipos">
-    <h3>{{"CONSULTAR_EQUIPO.title" | translate}}</h3>
-    <table class="table tabla_historial_entrevista">
+    <h3 id="equiposTitle">{{"CONSULTAR_EQUIPO.title" | translate}}</h3>
+    <table class="table tabla_historial_entrevista" id="tablaEquipos">
         <thead class=" text-primary">
             <th style="color:black">
                 {{"CONSULTAR_EQUIPO.team_title" | translate}}
@@ -43,6 +43,56 @@
             <img style="width:auto;height:50px" src="/assets/img/gris_atras.png" alt="editar"/>
         </button>
     </div>
+    <br><br>
+    <h3 id="candidatosTitle">{{'CONSULTAR_EQUIPO.candidates' | translate}}</h3>
+    <div>
+        <table #tabla_candidatos mat-table class="table tabla-candidatos-equipos" [dataSource]="candidatosDisponiblesEquipoDataSource.candidatos$.value" id="tablaCandidatos">
+            <caption>{{'CONSULTAR_EQUIPO.candidates' | translate}}</caption>
+            <ng-container matColumnDef="nombre" style="width:30%">
+            <th mat-header-cell *matHeaderCellDef class="celda-tabla-candidatos">
+                {{'CONSULTAR_EQUIPO.candidateNameHeader' | translate}}
+            </th>
+            <td mat-cell *matCellDef="let element" class="celda-tabla-candidatos">
+                {{ element.nombre }}
+            </td>
+            </ng-container>
+            <ng-container matColumnDef="fecha_evaluacion" style="width:30%">
+            <th mat-header-cell *matHeaderCellDef class="celda-tabla-candidatos">
+                {{'CONSULTAR_EQUIPO.candidateEvaluationDateHeader' | translate}}
+            </th>
+            <td mat-cell *matCellDef="let element" class="celda-tabla-candidatos">
+                {{ element.fecha_ultima_evaluacion }}
+            </td>
+            </ng-container>
+            <ng-container matColumnDef="evaluaciones" style="width:30%">
+            <th mat-header-cell *matHeaderCellDef class="celda-tabla-candidatos">
+                {{'CONSULTAR_EQUIPO.candidateEvaluationsHeader' | translate}}
+            </th>
+            <td mat-cell *matCellDef="let element" class="celda-tabla-candidatos">
+                {{ element.promedio_evaluaciones }}
+            </td>
+            </ng-container>
+
+            <ng-container matColumnDef="seleccionar" style="width:10%; text-align: right;">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()" #generalCheckbox>
+                </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null"
+                            [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+            </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+    <br><br>
     <h3>Roles</h3>
     <table class="table tabla_historial_entrevista">
         <thead class=" text-primary">
@@ -78,7 +128,7 @@
         type="submit"  i18n="Create project button@@createProjectButton">{{'NEW_PROJECT.CreateProject' | translate}}
     </button> -->
     <div *ngIf="!guardando">
-        <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()">
+        <button mat-raised-button class="btn btn-danger btn-block" (click)="guardarCambios()" id="saveEquiposBtn">
             {{"CONSULTAR_EQUIPO.savechanges" | translate}}
         </button>
     </div>
@@ -95,4 +145,4 @@
             <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
         </select>
     </div>
-  </div>
+</div>

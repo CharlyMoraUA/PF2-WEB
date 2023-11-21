@@ -177,7 +177,11 @@
         "members":"Miembros",
         "name":"Nombre",
         "savechanges":"Guardar cambios",
-        "saving":"Guardando ..."
+        "saving":"Guardando ...",
+        "candidates":"Candidatos",
+        "candidateNameHeader": "Nombre",
+        "candidateEvaluationDateHeader": "Fecha Evaluación",
+        "candidateEvaluationsHeader": "Evaluaciones"
     },
     "WORKING_INFO":{
         "Title": "Información laboral",
