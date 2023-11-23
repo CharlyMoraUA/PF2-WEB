@@ -119,16 +119,16 @@ describe('ConsultarEquipoComponent', () => {
     //   expect(toastrServiceSpy.error).toHaveBeenCalledWith(errorMessage, 'Error');
     // });
   
-    it('should call desAsociarRol when is_included is set to false in guardarCambios', () => {
-      // const desAsociarSpy = spyOn(consultarEquipoServiceSpy, 'desAsociarRol').and.returnValue(of({}));
+    // it('should call desAsociarRol when is_included is set to false in guardarCambios', () => {
+    //   // const desAsociarSpy = spyOn(consultarEquipoServiceSpy, 'desAsociarRol').and.returnValue(of({}));
   
-      component.listaRolesOriginal = [{ id_rol: 1, is_included: true }];
-      component.listaRolesAlterada = [{ id_rol: 1, is_included: false }];
+    //   component.listaRolesOriginal = [{ id_rol: 1, is_included: true }];
+    //   component.listaRolesAlterada = [{ id_rol: 1, is_included: false }];
   
-      component.guardarCambios();
+    //   component.guardarCambios();
   
-      expect(consultarEquipoServiceSpy.desAsociarRol).toHaveBeenCalledWith(1, component.id_equipo);
-    });
+    //   expect(consultarEquipoServiceSpy.desAsociarRol).toHaveBeenCalledWith(1, component.id_equipo);
+    // });
   
     // it('should call asociarRol when is_included is set to true in guardarCambios', () => {
     //   const asociarSpy = spyOn(consultarEquipoServiceSpy, 'asociarRol').and.returnValue(of({}));

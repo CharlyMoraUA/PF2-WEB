@@ -27,10 +27,10 @@
                 </td>
                 <td style="width:20%">
                     <button mat-button (click)="showEditarRoles(equipo['id'])">
-                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
+                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar" />
                     </button>
                     <button mat-button>
-                        <img style="width:auto;height:40px" src="/assets/img/eliminar_gris.png" alt="eliminar"/>
+                        <img style="width:auto;height:40px" src="/assets/img/eliminar_gris.png" alt="eliminar" />
                     </button>
                 </td>
             </tr>
@@ -40,7 +40,7 @@
 <div *ngIf="!verEquipos">
     <div>
         <button mat-button (click)="backToEquipos()">
-            <img style="width:auto;height:50px" src="/assets/img/gris_atras.png" alt="editar"/>
+            <img style="width:auto;height:50px" src="/assets/img/gris_atras.png" alt="editar" />
         </button>
     </div>
     <br><br>
@@ -114,11 +114,10 @@
                     {{rol["descripcion"]}}
                 </td>
                 <td style="width:20%">
-                    <mat-checkbox 
-                    [checked]='rol["is_included"]'
-                    (change)="setRol($event.checked, rol['id_rol'])"></mat-checkbox>
-                    <button mat-button (click)="openDialog(rol.id_rol)" >
-                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar"/>
+                    <mat-checkbox [checked]='rol["is_included"]'
+                        (change)="setRol($event.checked, rol['id_rol'])"></mat-checkbox>
+                    <button mat-button (click)="openDialog(rol.id_rol)">
+                        <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar" />
                     </button>
                 </td>
             </tr>
@@ -140,8 +139,9 @@
 </div>
 <div class="copyright pull-right" style="margin-right: 5%;">
     <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
-        <mat-icon>translate</mat-icon> 
-        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" class="select-lang" id="sel-lang" #selLang (change)="translateLanguageTo(selLang.value)">
+        <mat-icon>translate</mat-icon>
+        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;"
+            class="select-lang" id="sel-lang" #selLang (change)="translateLanguageTo(selLang.value)">
             <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
         </select>
     </div>

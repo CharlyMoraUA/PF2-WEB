@@ -39,7 +39,8 @@
     },
     "LANDING_COMPANY":{
         "MenuProjects": "Proyectos",
-        "MenuTeams": "Equipos"
+        "MenuTeams": "Equipos",
+        "TechnicalResults":"Resultados pruebas tecnicas"
     },
     "NEW_PROJECT":{
         "Title": "Proyecto Nuevo",
@@ -58,21 +59,6 @@
         "TableTitle": "Título",
         "TableStartDate": "Fecha inicio",
         "TableEndDate": "Fecha fin"
-    },
-    "HOJAS_TRABAJO":{
-        "VerHojas": "See work sheets",
-        "HojasTrabajo": "Work sheets",
-        "Nombre": "Name",
-        "Descripcion": "Description",
-        "Candidatos": "Candidates",
-        "FechaEvaluacion": "Evaluation date",
-        "Evaluaciones": "Evaluation",
-        "EvaluarCandidato": "Evaluate canidate performance",
-        "Habilidades": "Skills",
-        "Evaluacion": "Evaluation",
-        "LimiteCaracteres": "Mandatory field cannot be more than 1000 characters",
-        "Puntaje": "Score",
-        "CrearEvaluacion": "Create evaluation"
     },
     "EDIT_PROJECT":{
         "Title": "Editar Proyecto",
@@ -209,5 +195,30 @@
         "Result": "Resultados",
         "BackButton": "Regresar",
         "TableDesc": "Resultados de entrevistas actualizados"
+    },
+    "HOJAS_TRABAJO":{
+        "VerHojas": "Ver Hojas de trabajo",
+        "HojasTrabajo": "Hojas de trabajo",
+        "Nombre": "Nombre",
+        "Descripcion": "Descripcion",
+        "Candidatos": "Candidatos",
+        "FechaEvaluacion": "Fecha Evaluacion",
+        "Evaluaciones": "Evaluaciones",
+        "EvaluarCandidato": "Evaluar desempeño candidato",
+        "Habilidades": "Habilidades",
+        "Evaluacion": "Evaluacion",
+        "LimiteCaracteres": "Campo obligatorio no puede tener mas de 1000 caracteres",
+        "Puntaje": "Puntaje",
+        "CrearEvaluacion": "Crear Evaluacion"
+    },
+    "CONSULTAR_RESULTADOS_PRUEBAS":{
+        "titulo":"Consultar resultados de pruebas tecnicas",
+        "numerodocumento":"Numero de documento del candidato",
+        "maxchar":"Maximo 100 caracteres",
+        "consultar":"Consultar",
+        "name":"Nombre",
+        "fecha":"Fecha prueba",
+        "resultado":"Resultado",
+        "sinresultado":"No hay resultados apra este documento"
     }
 }

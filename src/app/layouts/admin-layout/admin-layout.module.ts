@@ -42,6 +42,7 @@ import { VerHojasTrabajoComponent } from 'app/empresa/gestion-empresa/ver-hojas-
 import {MatDividerModule} from '@angular/material/divider';
 import { ResultadosEntrevistasComponent } from 'app/candidato/gestion/resultados-entrevistas/resultadosEntrevistas.component';
 import { ResultadosEntrevistasService } from 'app/candidato/resultadosEntrevistas.service';
+import { ConsultarResultadosPruebasTecnicasComponent } from 'app/empresa/consultar-resultados-pruebas-tecnicas/consultar-resultados-pruebas-tecnicas.component';
 
 
 
@@ -96,7 +97,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     DetallarRolComponent,
     CandidatoInfoLaboralComponent,
     VerHojasTrabajoComponent,
-    ResultadosEntrevistasComponent
+    ResultadosEntrevistasComponent,
+    ConsultarResultadosPruebasTecnicasComponent,
   ],
   providers:[
     CandidatoCrearService,

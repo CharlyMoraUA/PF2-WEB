@@ -39,7 +39,8 @@
     },
     "LANDING_COMPANY":{
         "MenuProjects": "Projects",
-        "MenuTeams": "Teams"
+        "MenuTeams": "Teams",
+        "TechnicalResults":"Technical tests results"
     },
     "NEW_PROJECT":{
         "Title": "New Project",
@@ -58,21 +59,6 @@
         "TableTitle": "Title",
         "TableStartDate": "Start Date",
         "TableEndDate": "End Date"
-    },
-    "HOJAS_TRABAJO":{
-        "VerHojas": "Ver Hojas de trabajo",
-        "HojasTrabajo": "Hojas de trabajo",
-        "Nombre": "Nombre",
-        "Descripcion": "Descripcion",
-        "Candidatos": "Candidatos",
-        "FechaEvaluacion": "Fecha Evaluacion",
-        "Evaluaciones": "Evaluaciones",
-        "EvaluarCandidato": "Evaluar desempeño candidato",
-        "Habilidades": "Habilidades",
-        "Evaluacion": "Evaluacion",
-        "LimiteCaracteres": "Campo obligatorio no puede tener mas de 1000 caracteres",
-        "Puntaje": "Puntaje",
-        "CrearEvaluacion": "Crear Evaluacion"
     },
     "EDIT_PROJECT":{
         "Title": "Edit Project",
@@ -209,5 +195,30 @@
         "Result": "Result",
         "BackButton": "Back",
         "TableDesc": "Updated interview results"
+    },
+    "HOJAS_TRABAJO":{
+        "VerHojas": "See work sheets",
+        "HojasTrabajo": "Work sheets",
+        "Nombre": "Name",
+        "Descripcion": "Description",
+        "Candidatos": "Candidates",
+        "FechaEvaluacion": "Evaluation date",
+        "Evaluaciones": "Evaluation",
+        "EvaluarCandidato": "Evaluate canidate performance",
+        "Habilidades": "Skills",
+        "Evaluacion": "Evaluation",
+        "LimiteCaracteres": "Mandatory field cannot be more than 1000 characters",
+        "Puntaje": "Score",
+        "CrearEvaluacion": "Create evaluation"
+    },
+    "CONSULTAR_RESULTADOS_PRUEBAS":{
+        "titulo":"See technical tests results",
+        "numerodocumento":"Candidate document number",
+        "maxchar":"100 characters max",
+        "consultar":"Consult",
+        "name":"Name",
+        "fecha":"Test date",
+        "resultado":"Result",
+        "sinresultado":"No matches for this document"
     }
 }
