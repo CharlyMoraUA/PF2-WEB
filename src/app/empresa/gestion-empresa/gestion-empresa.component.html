@@ -18,8 +18,7 @@
                                     </div>
                                 </div>
                             </h4>
-                        </div>       
-                        <!-- <div style="background-color : #9e4849; border-radius:5px; width: 11rem;"> -->
+                        </div>
                         <div [ngStyle]="setMyStyles(1)" (click)="onClickOption(1)">
                             <h4 style="padding-top:2%"> 
                                 <div style="display: flex; flex-direction: row; padding: 0 0.5rem;">
@@ -28,6 +27,18 @@
                                     </div>
                                     <div class="align-self-center">
                                         {{'LANDING_COMPANY.MenuTeams' | translate}}
+                                    </div>
+                                </div>
+                            </h4>
+                        </div>       
+                        <div [ngStyle]="setMyStyles(2)" (click)="onClickOption(2)">
+                            <h4 style="padding-top:2%"> 
+                                <div style="display: flex; flex-direction: row; padding: 0 0.5rem;">
+                                    <div>
+                                        <img alt="{{'LANDING_COMPANY.TechnicalResults' | translate}}" style="width: 40px; height:auto; filter: grayscale(100%) brightness(200%);" src="/assets/img/editar_gris.png"/>
+                                    </div>
+                                    <div class="align-self-center">
+                                        {{'LANDING_COMPANY.TechnicalResults' | translate}}
                                     </div>
                                 </div>
                             </h4>
@@ -51,6 +62,9 @@
                         </div>
                         <div *ngIf="selectedIndex==1">
                             <app-consultar-equipo></app-consultar-equipo>
+                        </div>
+                        <div *ngIf="selectedIndex==2">
+                            <app-consultar-resultados-pruebas-tecnicas></app-consultar-resultados-pruebas-tecnicas>
                         </div>
                     </div>
                 </div>
