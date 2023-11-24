@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-5">
     <div class="card-title text-left">
-      <h4>{{'NEW_WORKSHEET.Title' | translate}}</h4>
+      <h4 id="crearHojaTrabajoTitle">{{'NEW_WORKSHEET.Title' | translate}}</h4>
     </div>
   </div>
   <div class="col-md-6" style="text-align: right;">
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12">
               <mat-form-field class="example-full-width text-center">
-                <input novalidate matInput placeholder="{{'NEW_WORKSHEET.WorkName' | translate}}" type="text" formControlName="nombre_trabajo" ngDefaultControl>
+                <input novalidate matInput placeholder="{{'NEW_WORKSHEET.WorkName' | translate}}" type="text" formControlName="nombre_trabajo" ngDefaultControl id="nombreTrabajoTxt">
                 <div class="alert alert-danger alert-dismissible fade show"
                 *ngIf=" crearHojaTrabajoForm.get('nombre_trabajo')!.hasError('maxlength') && crearHojaTrabajoForm.get('nombre_trabajo')!.touched">
                 {{'NEW_WORKSHEET.Enter100Chars' | translate}}
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-md-12">
               <mat-form-field class="example-full-width">
-                <textarea novalidate matInput placeholder="{{'NEW_WORKSHEET.IdealCandidateDesc' | translate}}" formControlName="descripcion_candidato_ideal" ngDefaultControl></textarea>
+                <textarea novalidate matInput placeholder="{{'NEW_WORKSHEET.IdealCandidateDesc' | translate}}" formControlName="descripcion_candidato_ideal" ngDefaultControl id="descripcionTxt"></textarea>
                 <div class="alert alert-danger alert-dismissible fade show"
                 *ngIf=" crearHojaTrabajoForm.get('descripcion_candidato_ideal')!.hasError('maxlength') && crearHojaTrabajoForm.get('descripcion_candidato_ideal')!.touched">
                 {{'NEW_WORKSHEET.Enter5000Chars' | translate}}
@@ -91,7 +91,8 @@
             <button 
               mat-raised-button class="btn btn-danger btn-block btn-crear-hoja-trabajo" 
               type="submit" 
-              [disabled]="!crearHojaTrabajoForm.valid">{{'NEW_WORKSHEET.Save' | translate}}
+              [disabled]="!crearHojaTrabajoForm.valid"
+              id="creaHojaBtn">{{'NEW_WORKSHEET.Save' | translate}}
             </button>
           </div>
         </div>
