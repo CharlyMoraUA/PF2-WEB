@@ -209,7 +209,8 @@
         "Evaluacion": "Evaluation",
         "LimiteCaracteres": "Mandatory field cannot be more than 1000 characters",
         "Puntaje": "Score",
-        "CrearEvaluacion": "Create evaluation"
+        "CrearEvaluacion": "Create evaluation",
+        "ComentariosEvaluacion": "Add here the comments for evaluation"
     },
     "CONSULTAR_RESULTADOS_PRUEBAS":{
         "titulo":"See technical tests results",
