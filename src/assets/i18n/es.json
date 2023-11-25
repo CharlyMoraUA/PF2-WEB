@@ -209,7 +209,8 @@
         "Evaluacion": "Evaluacion",
         "LimiteCaracteres": "Campo obligatorio no puede tener mas de 1000 caracteres",
         "Puntaje": "Puntaje",
-        "CrearEvaluacion": "Crear Evaluacion"
+        "CrearEvaluacion": "Crear Evaluacion",
+        "ComentariosEvaluacion": "Agregue aca los comentarios de la evaluacion"
     },
     "CONSULTAR_RESULTADOS_PRUEBAS":{
         "titulo":"Consultar resultados de pruebas tecnicas",
