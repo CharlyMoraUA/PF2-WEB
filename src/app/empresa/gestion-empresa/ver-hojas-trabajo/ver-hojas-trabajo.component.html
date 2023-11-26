@@ -32,7 +32,7 @@
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let hoja of hojasDetrabajo">
+                    <tr *ngFor="let hoja of hojasDetrabajo" id="hoja-trabajo-{{hoja['id']}}">
                         <td style="width:33%">
                             {{hoja["nombre_trabajo"]}}
                         </td>
@@ -76,7 +76,7 @@
                         </th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let candidato of candidatosHoja">
+                        <tr *ngFor="let candidato of candidatosHoja" id="candidato-hoja-{{candidato['id']}}">
                             <td style="width:25%">
                                 {{candidato["nombre"]}}
                             </td>
@@ -109,6 +109,7 @@
         </div>
     </div>
 </div>
+
 <div *ngIf="!verHojas && candidato">
     <div class="row">
         <button mat-button (click)="backToHojas()">
@@ -139,7 +140,7 @@
                         <div class="col-md-12">
                             <p><strong>{{'HOJAS_TRABAJO.Evaluacion' | translate}}</strong></p>
                             <mat-form-field class="example-full-width">
-                                <textarea matInput placeholder="{{'HOJAS_TRABAJO.ComentariosEvaluacion' | translate}}"
+                                <textarea id="evaluationcomments" matInput placeholder="{{'HOJAS_TRABAJO.ComentariosEvaluacion' | translate}}"
                                     formControlName="evaluacion" ngDefaultControl></textarea>
 
                                 <div class="alert alert-danger alert-dismissible fade show"
@@ -153,12 +154,12 @@
                         <div class="col-md-6">
                             <p><strong>{{'HOJAS_TRABAJO.Puntaje' | translate}}</strong></p>
                             <mat-form-field>
-                                <select matNativeControl required formControlName="puntaje">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                <select matNativeControl required formControlName="puntaje" id="selectscore">
+                                    <option id="select1" value="1">1</option>
+                                    <option id="select2" value="2">2</option>
+                                    <option id="select3" value="3">3</option>
+                                    <option id="select4" value="4">4</option>
+                                    <option id="select5" value="5">5</option>
                                 </select>
                             </mat-form-field>
                         </div>
@@ -166,7 +167,7 @@
 
                     <div class="row">
                         <div class="col-lg-6 col-md-12 ml-auto mr-auto">
-                            <button mat-raised-button class="btn btn-danger btn-block" type="submit"
+                            <button id="crearevaluacionboton" mat-raised-button class="btn btn-danger btn-block" type="submit"
                                 [disabled]="!crearEvaluacionForm.valid">
                                 {{'HOJAS_TRABAJO.CrearEvaluacion' | translate}}
                             </button>
