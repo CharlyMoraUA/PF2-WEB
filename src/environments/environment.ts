@@ -4,7 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 const baseUrl = 'https://micro-candidatos-kdbo2knypq-uc.a.run.app/'; //micro Candidate
-const urlBaseAutenticacion = 'https://micro-autenticacion-kdbo2knypq-uc.a.run.app/'; // micro auth
+const urlBaseAutenticacion = 'https://micro-autenticacion-kdbo2knypq-uc.a.run.app'; // micro auth
 const urlBaseEmpresa = 'https://micro-empresa-kdbo2knypq-uc.a.run.app/'; //micro Gestion empresa
 const urlBaseEquipos = 'https://micro-equipos-kdbo2knypq-uc.a.run.app/'; //micro Gestion equipos
 // const baseUrl = 'http://127.0.0.1:8080/'; //micro Candidate
