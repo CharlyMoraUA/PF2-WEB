@@ -26,7 +26,7 @@
               </th>
           </thead>
           <tbody>
-              <tr *ngFor="let proyecto of listaProyectos">
+              <tr *ngFor="let proyecto of listaProyectos" id="proyecto-{{proyecto['id']}}">
                   <td style="width:25%">
                       {{proyecto["titulo"]}}
                   </td>

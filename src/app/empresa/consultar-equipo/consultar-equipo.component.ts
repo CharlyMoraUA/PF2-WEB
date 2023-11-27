@@ -5,7 +5,11 @@ import { DetallarRolComponent } from '../gestion-empresa/detallar-rol/detallar-r
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-
+import { ConsultarCandidatosDisponiblesService } from 'app/candidato/consultar-candidatos-disponibles.service';
+import { CandidatosDisponiblesDataSource } from 'app/empresa/datasources/CandidatosDisponiblesDataSource';
+import { SelectionModel } from '@angular/cdk/collections';
+import { AsociarCandidatosEquipoService } from '../asociar-candidatos-equipo.service';
+import { Candidato } from 'app/candidato/representaciones/candidato';
 @Component({
   selector: 'app-consultar-equipo',
   templateUrl: './consultar-equipo.component.html',
@@ -15,11 +19,16 @@ export class ConsultarEquipoComponent implements OnInit {
   verEquipos = true;
   allComplete = true;
   guardando = false;
+  displayedColumns: string[] = ['nombre', 'fecha_evaluacion', 'evaluaciones', 'seleccionar'];
+  candidatosDisponiblesEquipoDataSource = new CandidatosDisponiblesDataSource(this.consultarCandidatosDisponiblesService);
+  selection = new SelectionModel<any>(true, []);
 
   constructor(private consultarEquipoService: ConsultarEquipoService,
     public dialog: MatDialog,
     public translate: TranslateService,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private consultarCandidatosDisponiblesService: ConsultarCandidatosDisponiblesService,
+    private asociarCandidatosService: AsociarCandidatosEquipoService) {
     // Register translation languages
     translate.addLangs(['en', 'es']);
     // Set default language
@@ -34,6 +43,7 @@ export class ConsultarEquipoComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarEntrevistas(sessionStorage.getItem("id_empresa"))
+    this.candidatosDisponiblesEquipoDataSource.cargarCandidatos(sessionStorage.getItem("empresa-token"))
   }
 
   cargarEntrevistas(id_empresa) {
@@ -75,9 +85,8 @@ export class ConsultarEquipoComponent implements OnInit {
       console.log(resp)
       this.listaRolesOriginal = JSON.parse(JSON.stringify(resp.roles));
       this.listaRolesAlterada = JSON.parse(JSON.stringify(resp.roles));
-
-
     })
+    this.candidatosDisponiblesEquipoDataSource.cargarCandidatos(sessionStorage.getItem("empresa-token"))
   }
 
   backToEquipos() {
@@ -129,23 +138,52 @@ export class ConsultarEquipoComponent implements OnInit {
     forkJoin(observables).subscribe({
       next: (results) => {
         console.log('All subscriptions completed.');
-        this.guardando = false
         this.toastr.success("Cambios realizados!", "Exito")
         // Handle the results here if needed
       },
       error: (error) => {
         console.error('An error occurred:', error);
-        this.guardando = false
       },
       complete: () => {
         // Handle completion if needed
         console.log("completed")
-        this.guardando = false
       },
     });
 
+    //Asociar candidatos al equipo
+    let candidatosSeleccionados: Candidato[] = []
+    let candidatosSeleccionadosIds = []
+    for(let item of this.selection.selected){
+      candidatosSeleccionados.push(item)
+    }
+    candidatosSeleccionados.forEach(element => {
+      candidatosSeleccionadosIds.push({"id_candidato": element.id})
+    });
+    let datos = {"candidatos": candidatosSeleccionadosIds}
+    this.asociarCandidatosService.asociarCandidatosAEquipo(this.id_equipo, datos).subscribe(res => {
+      console.log("asociar candidatos")
+      console.log(res)
+      if (res.status_code == "200"){
+        this.guardando = false
+        this.toastr.success("Success", "Asociaciones con empleados realizadas!")
+        this.candidatosDisponiblesEquipoDataSource.cargarCandidatos(sessionStorage.getItem("empresa-token"))
+      }else{
+        this.guardando = false
+        this.toastr.error("Error", res.message)  
+      }
+    });
+  }
 
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.candidatosDisponiblesEquipoDataSource.candidatos$.value.length;
+    return numSelected === numRows;
+  }
 
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.candidatosDisponiblesEquipoDataSource.candidatos$.value.forEach(row => this.selection.select(row));
   }
 
   //Switch language

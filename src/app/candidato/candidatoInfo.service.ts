@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 import { infoTecnica } from './representaciones/infoTecnica';
+import { infoLaboral } from './representaciones/infoLaboral'; 
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,20 @@ agregarInfoTecnica(infotecnica: infoTecnica, token: string): Observable<any> {
     'Authorization': `Bearer ${token}`
   })
   return this.http.post<any>(this.apiUrl+"infoTecnica", infotecnica, { headers: headers });
+}
+
+obtenerInfoLaboral(id_candidato, token: string): Observable<any> { 
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  })
+  return this.http.get<any>(this.apiUrl+"infoLaboral?id_candidato="+id_candidato, { headers: headers})
+}
+
+agregarInfoLaboral(infoLaboral: infoLaboral, token: string): Observable<any> {
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  }) 
+  return this.http.post<any>(this.apiUrl+"infoLaboral", infoLaboral, { headers: headers });
 }
 
 }

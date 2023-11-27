@@ -37,6 +37,12 @@ import { EditarProyectoComponent } from 'app/empresa/gestion-empresa/editar-proy
 import { CrearHojaTrabajoComponent, DialogBuscarCandidatosDialog } from 'app/empresa/gestion-empresa/crear-hoja-trabajo/crear-hoja-trabajo.component';
 import { ConsultarEquipoComponent } from 'app/empresa/consultar-equipo/consultar-equipo.component';
 import { DetallarRolComponent } from 'app/empresa/gestion-empresa/detallar-rol/detallar-rol.component';
+import { CandidatoInfoLaboralComponent } from 'app/candidato/candidato-infoLaboral/candidato-infoLaboral.component';
+import { VerHojasTrabajoComponent } from 'app/empresa/gestion-empresa/ver-hojas-trabajo/ver-hojas-trabajo.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { ResultadosEntrevistasComponent } from 'app/candidato/gestion/resultados-entrevistas/resultadosEntrevistas.component';
+import { ResultadosEntrevistasService } from 'app/candidato/resultadosEntrevistas.service';
+import { ConsultarResultadosPruebasTecnicasComponent } from 'app/empresa/consultar-resultados-pruebas-tecnicas/consultar-resultados-pruebas-tecnicas.component';
 
 
 
@@ -61,6 +67,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     HttpClientModule,
     MatDialogModule,
     MatTableModule,
+    MatDividerModule,
     MatCheckboxModule,
     TranslateModule.forRoot({
       loader: {
@@ -87,13 +94,18 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     EditarProyectoComponent,
     CrearHojaTrabajoComponent,
     ConsultarEquipoComponent,
-    DetallarRolComponent
+    DetallarRolComponent,
+    CandidatoInfoLaboralComponent,
+    VerHojasTrabajoComponent,
+    ResultadosEntrevistasComponent,
+    ConsultarResultadosPruebasTecnicasComponent,
   ],
   providers:[
     CandidatoCrearService,
     CandidatoInfoService,
     EquiposDataSource,
-    ConsultarFichasService
+    ConsultarFichasService,
+    ResultadosEntrevistasService
   ],
 
 })

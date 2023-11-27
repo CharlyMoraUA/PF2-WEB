@@ -1,0 +1,72 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger text-center">
+                    <h4 class="card-title">{{'WORKING_INFO.Title' | translate}}</h4>
+                  </div>
+                  <div class="card-body">
+                    <div>
+                      <button mat-fab color="success" (click)="openDialog()" id="agregarInfoLaboral">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                  </div>
+                    <div class="table-responsive tabla-info-laboral-actual">
+                      <table class="table" id="tablaInfoLaboral">
+                        <caption>{{'WORKING_INFO.TableDescription' | translate}}</caption>
+                        <thead class=" text-primary">
+                          <th class="mat-h2">
+                            {{'WORKING_INFO.Position' | translate}}
+                          </th>
+                          <th class="mat-h2">
+                            {{'WORKING_INFO.Company' | translate}}
+                          </th>
+                          <th class="mat-h2">
+                            {{'WORKING_INFO.StartYear' | translate}} 
+                          </th>
+                          <th class="mat-h2">
+                            {{'WORKING_INFO.EndYear' | translate}}
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let info of lista">
+                              <td style="width:25%">
+                                {{info["cargo"]}}
+                              </td>
+                              <td style="width:25%">
+                                {{info["empresa"]}}
+                              </td>
+                              <td style="width:25%">
+                                {{info["ano_inicio"]}}
+                              </td>
+                              <td style="width:25%">
+                                {{info["ano_fin"]}}
+                              </td>
+                          </tr>
+                      </tbody>
+                      </table>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <button mat-raised-button class="btn btn-danger btn-block" (click)="backToInfo()">{{'WORKING_INFO.BackButton' | translate}}</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="copyright pull-right" style="margin-right: 5%;">
+  <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+      <mat-icon>translate</mat-icon> 
+      <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;" class="select-lang" id="sel-lang" #selLang (change)="translateLanguageTo(selLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+      </select>
+  </div>
+</div>

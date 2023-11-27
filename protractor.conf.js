@@ -2,12 +2,15 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
+var HtmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  chromeDriver: '/usr/local/bin/chromedriver',
   capabilities: {
     'browserName': 'chrome'
   },
@@ -26,5 +29,8 @@ exports.config = {
   },
   onPrepare() {
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'tmp/screenshots'
+   }).getJasmine2Reporter());
   }
 };

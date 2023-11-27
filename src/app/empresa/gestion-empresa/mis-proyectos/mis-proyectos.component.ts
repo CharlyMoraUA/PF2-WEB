@@ -38,12 +38,15 @@ export class MisProyectosComponent implements OnInit {
 
   navigateToAddProject(){
     sessionStorage.setItem("pantalla_proyectos", "crear-proyecto")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
     this.reloadComponent(true)
   }
 
   navigateToEditProject(proyecto:any){
     sessionStorage.setItem("pantalla_proyectos", "editar-proyecto")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
     sessionStorage.setItem("proyecto_editar", JSON.stringify(proyecto))
+    sessionStorage.setItem("proyecto_editar_id", JSON.stringify(proyecto.id))
     this.reloadComponent(true)
   }
 

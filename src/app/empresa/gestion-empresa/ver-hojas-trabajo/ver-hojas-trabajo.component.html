@@ -1,0 +1,192 @@
+<div *ngIf="verHojas">
+    <div class="row">
+        <button mat-button (click)="backToProyecto()">
+            <img style="width:auto;height:40px" src="/assets/img/gris_atras.png" alt="editar" />
+        </button>
+        <div class="col-md-6">
+            <div class="card-title text-left">
+                <h4>{{'HOJAS_TRABAJO.VerHojas' | translate}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-left">
+                <p><strong> {{'HOJAS_TRABAJO.HojasTrabajo' | translate}}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <div>
+            <table class="table tabla_proyectos">
+                <caption>{{'HOJAS_TRABAJO.HojasTrabajo' | translate}}</caption>
+                <thead class=" text-primary">
+                    <th style="color:black">
+                        {{'HOJAS_TRABAJO.Nombre' | translate}}
+                    </th>
+                    <th style="color:black">
+                        {{'HOJAS_TRABAJO.Descripcion' | translate}}
+                    </th>
+                    <th>
+
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hoja of hojasDetrabajo" id="hoja-trabajo-{{hoja['id']}}">
+                        <td style="width:33%">
+                            {{hoja["nombre_trabajo"]}}
+                        </td>
+                        <td style="width:33%">
+                            {{hoja["descripcion_candidato_ideal"]}}
+                        </td>
+                        <td style="width:34%">
+                            <button mat-button (click)="showCandidatos(hoja['id'])">
+                                <img style="width:auto;height:50px" src="/assets/img/editar_gris.png" alt="editar" />
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div *ngIf="candidatosHoja.length>0">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-left">
+                    <p><strong> {{'HOJAS_TRABAJO.Candidatos' | translate}}</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <div>
+                <table class="table tabla_proyectos">
+                    <caption>{{'HOJAS_TRABAJO.Candidatos' | translate}}</caption>
+                    <thead class=" text-primary">
+                        <th style="color:black">
+                            {{'HOJAS_TRABAJO.Nombre' | translate}}
+                        </th>
+                        <th style="color:black">
+                            {{'HOJAS_TRABAJO.FechaEvaluacion' | translate}}
+                        </th>
+                        <th style="color:black">
+                            {{'HOJAS_TRABAJO.Evaluaciones' | translate}}
+                        </th>
+                        <th>
+
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let candidato of candidatosHoja" id="candidato-hoja-{{candidato['id']}}">
+                            <td style="width:25%">
+                                {{candidato["nombre"]}}
+                            </td>
+                            <td style="width:25%">
+                                {{candidato["fecha_evaluacion"]}}
+                            </td>
+                            <td style="width:25%">
+                                {{candidato["evaluaciones"]}}%
+                            </td>
+                            <td style="width:25%">
+                                <button mat-button (click)="evaluarDesempeno(candidato)">
+                                    <img style="width:auto;height:50px" src="/assets/img/editar_gris.png"
+                                        alt="editar" />
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="copyright pull-right" style="margin-right: 5%;">
+        <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+            <mat-icon>translate</mat-icon>
+            <select
+                style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;"
+                #selLang (change)="translateLanguageTo(selLang.value)">
+                <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!verHojas && candidato">
+    <div class="row">
+        <button mat-button (click)="backToHojas()">
+            <img style="width:auto;height:40px" src="/assets/img/gris_atras.png" alt="editar" />
+        </button>
+        <div class="col-md-6">
+            <div class="card-title text-left">
+                <h4>{{'HOJAS_TRABAJO.EvaluarCandidato' | translate}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="text-left">
+            <mat-divider></mat-divider>
+            <p><strong>{{'HOJAS_TRABAJO.Nombre' | translate}}</strong></p>
+            <p>{{candidato.nombre}}</p>
+            <mat-divider></mat-divider>
+            <p><strong>{{'HOJAS_TRABAJO.Habilidades' | translate}}</strong></p>
+            <div *ngFor="let h of candidato.habilidades">
+                <p>{{h.habilidad}}</p>
+            </div>
+            <mat-divider></mat-divider>
+
+            <div class="card-body">
+                <form [formGroup]="crearEvaluacionForm"
+                    (ngSubmit)="!crearEvaluacionForm.invalid && crearEvaluacion(crearEvaluacionForm.value)">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><strong>{{'HOJAS_TRABAJO.Evaluacion' | translate}}</strong></p>
+                            <mat-form-field class="example-full-width">
+                                <textarea id="evaluationcomments" matInput placeholder="{{'HOJAS_TRABAJO.ComentariosEvaluacion' | translate}}"
+                                    formControlName="evaluacion" ngDefaultControl></textarea>
+
+                                <div class="alert alert-danger alert-dismissible fade show"
+                                    *ngIf=" crearEvaluacionForm.get('evaluacion')!.hasError('maxlength') && crearEvaluacionForm.get('evaluacion')!.touched">
+                                    {{'HOJAS_TRABAJO.LimiteCaracteres' | translate}}
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>{{'HOJAS_TRABAJO.Puntaje' | translate}}</strong></p>
+                            <mat-form-field>
+                                <select matNativeControl required formControlName="puntaje" id="selectscore">
+                                    <option id="select1" value="1">1</option>
+                                    <option id="select2" value="2">2</option>
+                                    <option id="select3" value="3">3</option>
+                                    <option id="select4" value="4">4</option>
+                                    <option id="select5" value="5">5</option>
+                                </select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 ml-auto mr-auto">
+                            <button id="crearevaluacionboton" mat-raised-button class="btn btn-danger btn-block" type="submit"
+                                [disabled]="!crearEvaluacionForm.valid">
+                                {{'HOJAS_TRABAJO.CrearEvaluacion' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright pull-right" style="margin-right: 5%;">
+        <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+            <mat-icon>translate</mat-icon>
+            <select
+                style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;"
+                #selLang (change)="translateLanguageTo(selLang.value)">
+                <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+            </select>
+        </div>
+    </div>
+</div>

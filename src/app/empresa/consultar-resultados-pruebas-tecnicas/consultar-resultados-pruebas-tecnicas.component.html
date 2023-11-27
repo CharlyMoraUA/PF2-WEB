@@ -1,0 +1,60 @@
+<h3>
+    {{'CONSULTAR_RESULTADOS_PRUEBAS.titulo' | translate}}
+    
+</h3>
+<div class="horizontal-line"></div>
+
+<form
+[formGroup]="consultarPruebasForm"
+(ngSubmit)="!consultarPruebasForm.invalid && consultarDocumento(consultarPruebasForm.value.documento)"
+>
+    <div class="row">
+        <div class="col-lg-6 col-md-12 ml-auto mr-auto">
+          <mat-form-field class="example-full-width text-center">
+            <input id="docnumber" novalidate matInput placeholder="{{'CONSULTAR_RESULTADOS_PRUEBAS.numerodocumento' | translate}}" type="text" formControlName="documento" ngDefaultControl>
+            <div class="alert alert-danger alert-dismissible fade show"
+            *ngIf=" consultarPruebasForm.get('documento')!.hasError('maxlength') && consultarPruebasForm.get('documento')!.touched">
+            {{'CONSULTAR_RESULTADOS_PRUEBAS.maxchar' | translate}}
+          </div>
+          </mat-form-field>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="row">
+      <div class="col-lg-6 col-md-12 ml-auto mr-auto">
+        <button 
+          id="submitdoc"
+          mat-raised-button class="btn btn-danger btn-block" 
+          type="submit" 
+          [disabled]="!consultarPruebasForm.valid"> {{'CONSULTAR_RESULTADOS_PRUEBAS.consultar' | translate}}
+        </button>
+      </div>
+    </div>
+    <div *ngIf="listaPruebas.length>0">
+        <br>
+        <br>
+        <p id="namelabel"><strong>{{'CONSULTAR_RESULTADOS_PRUEBAS.name' | translate}}</strong></p>
+        <p>{{username}}</p>
+        <div class="horizontal-line"></div>
+        <div *ngFor="let prueba of listaPruebas" class="prueba">
+            <p><strong>{{prueba["nombre"]}}</strong></p>
+            <p>{{'CONSULTAR_RESULTADOS_PRUEBAS.fecha' | translate}}: {{prueba["fecha_prueba"]}}</p>
+            <p>{{'CONSULTAR_RESULTADOS_PRUEBAS.resultado' | translate}}: {{prueba["puntaje"]}}/100</p>
+            <div class="horizontal-line"></div>
+        </div>
+    </div>
+    <div *ngIf="noResults==true" id="noresultsmessage">
+        <p>{{'CONSULTAR_RESULTADOS_PRUEBAS.sinresultado' | translate}}</p>
+    </div>
+</form>
+
+<div class="copyright pull-right" style="margin-right: 5%;">
+    <div style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;">
+        <mat-icon>translate</mat-icon>
+        <select style="border-radius: 5px; background-color:red; color: white; padding-left: 2px; padding-right: 2px;"
+            class="select-lang" id="sel-lang" #selLang (change)="translateLanguageTo(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+        </select>
+    </div>
+</div>

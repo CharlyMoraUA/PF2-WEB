@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CrearEmpresaComponent } from './crear-empresa.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { By } from '@angular/platform-browser';
+import { Empresa } from '../representaciones/empresa';
 
 
 describe('CrearEmpresaComponent', () => {
@@ -24,7 +25,7 @@ describe('CrearEmpresaComponent', () => {
         ToastrModule.forRoot(),
         TranslateModule.forRoot()
       ],
-      declarations: [ CrearEmpresaComponent ]
+      declarations: [ CrearEmpresaComponent ],
     })
     .compileComponents();
   }));
@@ -111,9 +112,16 @@ describe('CrearEmpresaComponent', () => {
   it('change language', ()  => {
     fixture.detectChanges();
     const select: HTMLSelectElement = fixture.debugElement.query(By.css('#sel-lang')).nativeElement;
-    select.value = select.options[1].value;  // <-- select a new value
+    select.value = select.options[1].value;
     select.dispatchEvent(new Event('change'));
     fixture.detectChanges();
   });
+
+  it('should invoke crearEmpresa', () => {
+    const spyrecrearEmpresa = spyOn(component, 'crearEmpresa').and.callThrough();
+    let empresaMock = new Empresa('NIT', '1234567890', 'empresa', '3333333333', 'correo@correo.com', 'CC', '1234567890', 'representante', '3333333333', 'correo@correo.com', 'usuario', 'clave');
+    component.crearEmpresa(empresaMock);
+    expect(spyrecrearEmpresa).toHaveBeenCalled();
+   });
 
 });

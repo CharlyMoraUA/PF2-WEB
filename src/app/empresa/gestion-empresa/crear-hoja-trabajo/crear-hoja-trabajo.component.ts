@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { ConsultarCandidatosDisponiblesService } from 'app/candidato/consultar-candidatos-disponibles.service';
 import { CandidatosDisponiblesDataSource } from 'app/empresa/datasources/CandidatosDisponiblesDataSource';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Candidato } from 'app/candidato/representaciones/candidato';
+import { CrearHojaTrabajoService } from 'app/empresa/crear-hoja-trabajo.service';
 
 export interface DialogData {
   python: boolean;
@@ -37,7 +39,8 @@ export class CrearHojaTrabajoComponent implements OnInit {
     private _router: Router,
     private consultarCandidatosDisponiblesService: ConsultarCandidatosDisponiblesService,
     public translate: TranslateService,
-    public dialogoFiltrarCandidatos: MatDialog) { 
+    public dialogoFiltrarCandidatos: MatDialog,
+    private crearHojaTrabajoService: CrearHojaTrabajoService) { 
       // Register translation languages
       translate.addLangs(['en', 'es']);
       // Set default language
@@ -46,7 +49,7 @@ export class CrearHojaTrabajoComponent implements OnInit {
 
   ngOnInit() {
     this.crearHojaTrabajoForm = this.formBuilder.group({
-      nombre: ["", [Validators.required, Validators.maxLength(100)]],
+      nombre_trabajo: ["", [Validators.required, Validators.maxLength(100)]],
       descripcion_candidato_ideal: ["", [Validators.required, Validators.maxLength(5000)]],
     })
     this.candidatosDisponiblesDataSource.cargarCandidatos(sessionStorage.getItem("empresa-token"));
@@ -67,8 +70,33 @@ export class CrearHojaTrabajoComponent implements OnInit {
 
   goBack(){
     sessionStorage.setItem("pantalla_proyectos", "mis-proyectos")
+    sessionStorage.setItem("pantalla_proyectos_index", "0")
     this._router.navigate(["gestion-empresa"])
     this.reloadComponent(true)
+  }
+
+  crearHojaTrabajo(hojaTrabajo: any){
+     let candidatosSeleccionados: Candidato[] = []
+     let candidatosSeleccionadosIds = []
+     for(let item of this.selection.selected){
+       candidatosSeleccionados.push(item)
+     }
+     candidatosSeleccionados.forEach(element => {
+       candidatosSeleccionadosIds.push({"id": element.id})
+     });
+     hojaTrabajo.candidatos = candidatosSeleccionadosIds
+     this.crearHojaTrabajoService.crearHojaTrabajo(hojaTrabajo, sessionStorage.getItem("empresa-token"), sessionStorage.getItem("proyecto_editar_id")).subscribe(res => {
+       if (res.status_code == "201"){
+         this.toastr.success("Success", "Work sheet succesfully created")
+         this.goBack()
+       }else{
+         this.error = true
+         this.toastr.error("Error", "Work sheet creation error: "+res.error.message)  
+       }},
+       error => {
+         this.error = true
+         this.toastr.error("Error", "Work sheet creation error: "+error.error.message)
+       });
   }
 
   openSearchDialog() {
@@ -88,7 +116,6 @@ export class CrearHojaTrabajoComponent implements OnInit {
   }
 
   reloadComponent(self:boolean,urlToNavigateTo ?:string){
-    //skipLocationChange:true means dont update the url to / when navigating
    console.log("Current route I am on:",this._router.url);
    const url=self ? this._router.url :urlToNavigateTo;
    this._router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
@@ -98,7 +125,6 @@ export class CrearHojaTrabajoComponent implements OnInit {
    })
   }
 
-  //Switch language
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
   }

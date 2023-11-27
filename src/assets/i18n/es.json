@@ -39,7 +39,8 @@
     },
     "LANDING_COMPANY":{
         "MenuProjects": "Proyectos",
-        "MenuTeams": "Equipos"
+        "MenuTeams": "Equipos",
+        "TechnicalResults":"Resultados pruebas tecnicas"
     },
     "NEW_PROJECT":{
         "Title": "Proyecto Nuevo",
@@ -162,6 +163,63 @@
         "members":"Miembros",
         "name":"Nombre",
         "savechanges":"Guardar cambios",
-        "saving":"Guardando ..."
+        "saving":"Guardando ...",
+        "candidates":"Candidatos",
+        "candidateNameHeader": "Nombre",
+        "candidateEvaluationDateHeader": "Fecha Evaluación",
+        "candidateEvaluationsHeader": "Evaluaciones"
+    },
+    "WORKING_INFO":{
+        "Title": "Información laboral",
+        "Position": "Cargo",
+        "Company": "Empresa",
+        "StartYear": "Año de inicio",
+        "EndYear": "Año de fin",
+        "TableDescription": "Lista actual de información laboral",
+        "BackButton": "Regresar",
+        "WorkExperience": "Experiencia laboral",
+        "Description": "Descripción",
+        "AddButton": "Agregar"
+    },
+    "INTERVIEW_RESULTS":{
+        "Title": "Consulta de entrevistas",
+        "DocumentType": "Tipo de documento",
+        "IdentificationCard": "Cédula de Ciudadanía",
+        "ForeignerCardId": "Cédula de extranjería",
+        "Passport": "Pasaporte",
+        "DocumentNumber": "Número de documento",
+        "GetButton": "Consultar",
+        "CandidateName": "Nombre del candidato",
+        "InterviewName": "Nombre de la entrevista",
+        "Date": "Fecha",
+        "Result": "Resultados",
+        "BackButton": "Regresar",
+        "TableDesc": "Resultados de entrevistas actualizados"
+    },
+    "HOJAS_TRABAJO":{
+        "VerHojas": "Ver Hojas de trabajo",
+        "HojasTrabajo": "Hojas de trabajo",
+        "Nombre": "Nombre",
+        "Descripcion": "Descripcion",
+        "Candidatos": "Candidatos",
+        "FechaEvaluacion": "Fecha Evaluacion",
+        "Evaluaciones": "Evaluaciones",
+        "EvaluarCandidato": "Evaluar desempeño candidato",
+        "Habilidades": "Habilidades",
+        "Evaluacion": "Evaluacion",
+        "LimiteCaracteres": "Campo obligatorio no puede tener mas de 1000 caracteres",
+        "Puntaje": "Puntaje",
+        "CrearEvaluacion": "Crear Evaluacion",
+        "ComentariosEvaluacion": "Agregue aca los comentarios de la evaluacion"
+    },
+    "CONSULTAR_RESULTADOS_PRUEBAS":{
+        "titulo":"Consultar resultados de pruebas tecnicas",
+        "numerodocumento":"Numero de documento del candidato",
+        "maxchar":"Maximo 100 caracteres",
+        "consultar":"Consultar",
+        "name":"Nombre",
+        "fecha":"Fecha prueba",
+        "resultado":"Resultado",
+        "sinresultado":"No hay resultados apra este documento"
     }
 }
